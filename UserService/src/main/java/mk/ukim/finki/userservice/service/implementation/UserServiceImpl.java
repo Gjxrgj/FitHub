@@ -1,5 +1,6 @@
 package mk.ukim.finki.userservice.service.implementation;
 
+import jakarta.validation.constraints.NotNull;
 import mk.ukim.finki.userservice.dto.UserDto;
 import mk.ukim.finki.userservice.enums.RoleName;
 import mk.ukim.finki.userservice.exceptions.RoleNotFoundException;
@@ -29,7 +30,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserDto register(UpsertUserDto userDto) {
+    public UserDto register(@NotNull UpsertUserDto userDto) {
         User user = UserMapper.toEntity(userDto);
         user.onCreate();
         user.addRole(roleRepository
@@ -41,20 +42,20 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User findByUsername(String username) {
+    public User findByUsername(@NotNull String username) {
         return userRepository.findByUsername(username)
                 .orElseThrow(() -> new UserNotFoundException("User not found with username: " + username));
     }
 
     @Override
-    public UserDto findById(Long id) {
+    public UserDto findById(@NotNull Long id) {
         return UserMapper.toDto(userRepository
                 .findById(id)
                 .orElseThrow(() -> new UserNotFoundException("User not found with id: " + id)));
     }
 
     @Override
-    public Long disable(Long id) {
+    public Long disable(@NotNull Long id) {
         User user = userRepository
                 .findById(id)
                 .orElseThrow(() -> new UserNotFoundException("User not found with id: " + id));
@@ -64,7 +65,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserDto edit(Long id, UpsertUserDto userDto) {
+    public UserDto edit(@NotNull Long id, @NotNull  UpsertUserDto userDto) {
         if(userRepository.findById(id).isPresent()){
             User user = UserMapper.toEntity(userDto);
             user.onUpdate();
