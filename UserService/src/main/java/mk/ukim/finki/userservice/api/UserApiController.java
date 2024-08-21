@@ -1,5 +1,6 @@
 package mk.ukim.finki.userservice.api;
 
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import mk.ukim.finki.userservice.dto.UpsertUserDto;
 import mk.ukim.finki.userservice.dto.UserDto;
@@ -23,7 +24,7 @@ public class UserApiController {
     }
 
     @PutMapping("/edit/{id}")
-    public ResponseEntity<UserDto> updateUser(@PathVariable Long id, @RequestBody UpsertUserDto userDto) {
+    public ResponseEntity<UserDto> updateUser(@PathVariable Long id, @RequestBody @Valid UpsertUserDto userDto) {
         return ResponseEntity.ok(userService.edit(id, userDto));
     }
 
