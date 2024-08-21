@@ -1,5 +1,6 @@
 package mk.ukim.finki.userservice.api;
 
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import mk.ukim.finki.userservice.dto.LoginRequest;
 import mk.ukim.finki.userservice.dto.UpsertUserDto;
@@ -24,6 +25,11 @@ public class AuthApiController {
     }
 
     @PostMapping("/register")
+    public ResponseEntity<UserDto> registerUser(@RequestBody @NotNull @Valid UpsertUserDto userDto) {
+        return ResponseEntity.ok(userService.register(userDto));
+    }
+    @PostMapping("/login")
+    public ResponseEntity<String> login(@RequestBody @NotNull @Valid LoginRequest loginRequest) {
     public ResponseEntity<UserDto> registerUser(@RequestBody @NotNull UpsertUserDto userDto) {
         return ResponseEntity.ok(userService.register(userDto));
     }
