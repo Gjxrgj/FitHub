@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="88743e08-e3f1-491e-8bea-8d17e484608f" name="Changes" comment="Added @Valid annotation">
+      <change afterPath="$PROJECT_DIR$/../FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/api/FitnessRestaurantApiController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/api/FitnessShopApiController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/api/GymApiController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/api/VenueApiController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/dto/FitnessRestaurantDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/dto/FitnessShopDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/dto/GymDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/dto/UpsertFitnessRestaurantDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/dto/UpsertFitnessShopDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/dto/UpsertGymDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/enums/Currency.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/enums/FoodCategory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/mapper/FitnessRestaurantMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/mapper/FitnessShopMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/mapper/GymMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/model/FitnessRestaurant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/model/FitnessShop.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/model/GroupTraining.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/model/Gym.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/model/Image.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/model/Ingredient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/model/Meal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/model/Menu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/model/PersonalTraining.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/model/ProfessionalTrainer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/model/Promotion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/model/Review.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/model/Venue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/repository/FitnessRestaurantRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/repository/FitnessShopRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/repository/GymRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/service/FitnessRestaurantService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/service/FitnessShopService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/service/GymService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/service/impl/FitnessRestaurantServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/service/impl/FitnessShopServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/service/impl/GymServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/util/GeoUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/initializer/DataInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VenueService/src/main/java/mk/ukim/finki/venueservice/api/FitnessRestaurantApiController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VenueService/src/main/java/mk/ukim/finki/venueservice/api/FitnessShopApiController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VenueService/src/main/java/mk/ukim/finki/venueservice/api/GymApiController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VenueService/src/main/java/mk/ukim/finki/venueservice/api/VenueApiController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VenueService/src/main/java/mk/ukim/finki/venueservice/config/AppConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VenueService/src/main/java/mk/ukim/finki/venueservice/config/JwtRequestFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VenueService/src/main/java/mk/ukim/finki/venueservice/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VenueService/src/main/java/mk/ukim/finki/venueservice/dto/FitnessRestaurantDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VenueService/src/main/java/mk/ukim/finki/venueservice/dto/FitnessShopDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VenueService/src/main/java/mk/ukim/finki/venueservice/dto/GymDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VenueService/src/main/java/mk/ukim/finki/venueservice/dto/UpsertFitnessRestaurantDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VenueService/src/main/java/mk/ukim/finki/venueservice/dto/UpsertFitnessShopDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VenueService/src/main/java/mk/ukim/finki/venueservice/dto/UpsertGymDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VenueService/src/main/java/mk/ukim/finki/venueservice/enums/Currency.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VenueService/src/main/java/mk/ukim/finki/venueservice/enums/FoodCategory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VenueService/src/main/java/mk/ukim/finki/venueservice/initializer/DataInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VenueService/src/main/java/mk/ukim/finki/venueservice/mapper/FitnessRestaurantMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VenueService/src/main/java/mk/ukim/finki/venueservice/mapper/FitnessShopMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VenueService/src/main/java/mk/ukim/finki/venueservice/mapper/GymMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VenueService/src/main/java/mk/ukim/finki/venueservice/model/FitnessRestaurant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VenueService/src/main/java/mk/ukim/finki/venueservice/model/FitnessShop.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VenueService/src/main/java/mk/ukim/finki/venueservice/model/GroupTraining.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VenueService/src/main/java/mk/ukim/finki/venueservice/model/Gym.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VenueService/src/main/java/mk/ukim/finki/venueservice/model/Image.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VenueService/src/main/java/mk/ukim/finki/venueservice/model/Ingredient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VenueService/src/main/java/mk/ukim/finki/venueservice/model/Meal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VenueService/src/main/java/mk/ukim/finki/venueservice/model/Menu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VenueService/src/main/java/mk/ukim/finki/venueservice/model/PersonalTraining.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VenueService/src/main/java/mk/ukim/finki/venueservice/model/ProfessionalTrainer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VenueService/src/main/java/mk/ukim/finki/venueservice/model/Promotion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VenueService/src/main/java/mk/ukim/finki/venueservice/model/Review.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VenueService/src/main/java/mk/ukim/finki/venueservice/model/Venue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VenueService/src/main/java/mk/ukim/finki/venueservice/repository/FitnessRestaurantRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VenueService/src/main/java/mk/ukim/finki/venueservice/repository/FitnessShopRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VenueService/src/main/java/mk/ukim/finki/venueservice/repository/GymRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VenueService/src/main/java/mk/ukim/finki/venueservice/service/FitnessRestaurantService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VenueService/src/main/java/mk/ukim/finki/venueservice/service/FitnessShopService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VenueService/src/main/java/mk/ukim/finki/venueservice/service/GymService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VenueService/src/main/java/mk/ukim/finki/venueservice/service/impl/FitnessRestaurantServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VenueService/src/main/java/mk/ukim/finki/venueservice/service/impl/FitnessShopServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VenueService/src/main/java/mk/ukim/finki/venueservice/service/impl/GymServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VenueService/src/main/java/mk/ukim/finki/venueservice/util/GeoUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FitHubUI" beforeDir="false" afterPath="$PROJECT_DIR$/../FitHubUI" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/userservice/UserServiceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/userservice/api/AuthApiController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/userservice/api/UserApiController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/userservice/config/JwtRequestFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/userservice/config/JwtUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/userservice/config/OAuth2SuccessHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/userservice/config/SecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/userservice/dto/LoginRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/userservice/dto/UpsertUserDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/userservice/dto/UserDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/userservice/enums/RoleName.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/userservice/enums/Unit.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/userservice/exceptions/RoleNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/userservice/exceptions/UserNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/userservice/initializer/DataInitializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/userservice/mapper/UserMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/userservice/models/Role.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/userservice/models/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/userservice/repository/RoleRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/userservice/repository/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/userservice/service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/userservice/service/implementation/AuthenticationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/userservice/service/implementation/CustomUserDetailsService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/userservice/service/implementation/UserServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/userservice/validation/PasswordValidator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/userservice/validation/ValidPassword.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/mk/ukim/finki/userservice/UserServiceApplicationTests.java" beforeDir="false" />
+    </list>
+    <list id="eb9ab422-40ba-4c04-86e3-9e8648b46a55" name="do-not-commit" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Interface" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2knadtxrfqBPB3JLQyZ9xxvMd4a" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.UserServiceApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mark1/Downloads/jpa-security-master/FitHub/FitHubAPI&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.build.tools.auto.reload&quot;: &quot;ALL&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;settings.editor.splitter.proportion&quot;: &quot;0.2881526&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\mark1\Downloads\jpa-security-master\FitHub\UserService\src\main\java\mk\ukim\finki\userservice\service" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="mk.ukim.finki.userservice.repository" />
+      <recent name="mk.ukim.finki.userservice.service" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="UserServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="FitHubAPI" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="mk.ukim.finki.userservice.UserServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.2-openjdk-21.0.2-f644763e9732-c0c073db" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="88743e08-e3f1-491e-8bea-8d17e484608f" name="Changes" comment="" />
+      <changelist id="eb9ab422-40ba-4c04-86e3-9e8648b46a55" name="do-not-commit" comment="" />
+      <created>1723921887453</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1723921887453</updated>
+      <workItem from="1723921888498" duration="4478000" />
+      <workItem from="1723926388848" duration="5251000" />
+      <workItem from="1723984267839" duration="12185000" />
+      <workItem from="1724090772056" duration="4799000" />
+      <workItem from="1724264077449" duration="216000" />
+      <workItem from="1724264303034" duration="8000" />
+      <workItem from="1724268700176" duration="7989000" />
+      <workItem from="1724324663363" duration="7192000" />
+      <workItem from="1724417403533" duration="11698000" />
+      <workItem from="1724585222097" duration="10000" />
+      <workItem from="1724594037921" duration="9565000" />
+      <workItem from="1724781209068" duration="13421000" />
+      <workItem from="1725209336065" duration="1416000" />
+      <workItem from="1726254475554" duration="1016000" />
+      <workItem from="1726311784869" duration="13998000" />
+      <workItem from="1726411271068" duration="847000" />
+      <workItem from="1726412146410" duration="381000" />
+      <workItem from="1726412542661" duration="1249000" />
+      <workItem from="1726414039853" duration="701000" />
+      <workItem from="1726416368775" duration="1194000" />
+      <workItem from="1726418244538" duration="310000" />
+      <workItem from="1726421379894" duration="597000" />
+      <workItem from="1726422683778" duration="4000" />
+      <workItem from="1726426246496" duration="1494000" />
+      <workItem from="1726600299822" duration="1666000" />
+      <workItem from="1726672692453" duration="339000" />
+      <workItem from="1726776367483" duration="240000" />
+    </task>
+    <task id="LOCAL-00001" summary="Created the user service.">
+      <option name="closed" value="true" />
+      <created>1724095952322</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1724095952322</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Created the user service.">
+      <option name="closed" value="true" />
+      <created>1724096110754</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1724096110754</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Created the user service.">
+      <option name="closed" value="true" />
+      <created>1724096186234</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1724096186234</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added @Valid annotation">
+      <option name="closed" value="true" />
+      <created>1724264211013</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1724264211013</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Created the user service." />
+    <MESSAGE value="Added @Valid annotation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added @Valid annotation" />
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="mk.ukim.finki.userservice.dto.UpsertUserDto" memberName="avatar" />
+      </pinned-members>
+    </pin-to-top-manager>
+  </component>
+</project>
