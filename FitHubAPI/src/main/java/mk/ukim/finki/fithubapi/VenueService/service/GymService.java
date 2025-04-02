@@ -1,21 +1,21 @@
 package mk.ukim.finki.fithubapi.VenueService.service;
 
 import jakarta.validation.constraints.NotNull;
+import mk.ukim.finki.fithubapi.UserService.dto.SubscriptionResponse;
 import mk.ukim.finki.fithubapi.VenueService.dto.*;
 
 import java.util.List;
 
 public interface GymService {
-    public GymDto getById(@NotNull Long id);
+    GymDto getById(@NotNull Long id);
 
     List<GymDto> getAllByUser(@NotNull Long userId);
 
     List<GymDto> getAllByLocation(@NotNull Double latitude, @NotNull Double longitude);
 
-    public GymDto add(@NotNull UpsertGymDto gym);
+    GymDto add(@NotNull UpsertGymDto gym, @NotNull SubscriptionResponse subscriptionRespon);
 
-    public GymDto edit(@NotNull UpsertGymDto gym, @NotNull Long id);
-
+    GymDto edit(@NotNull UpsertGymDto gym, @NotNull Long id);
 
     Long delete(@NotNull Long id);
 

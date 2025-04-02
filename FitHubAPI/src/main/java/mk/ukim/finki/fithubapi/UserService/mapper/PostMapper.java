@@ -9,7 +9,6 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.Base64;
 
 import static mk.ukim.finki.fithubapi.UserService.util.ImageUtil.decodeFromBase64;
 import static mk.ukim.finki.fithubapi.UserService.util.ImageUtil.encodeToBase64;
@@ -26,6 +25,7 @@ public class PostMapper {
         postDto.setUserId(post.getUser() != null ? post.getUser().getId() : null);
         postDto.setOwnerUsername(post.getOwnerUsername());
         postDto.setCreationDate(post.getCreationDate());
+        postDto.setOwnerAvatar(post.getUser().getAvatar() != null ? encodeToBase64(post.getUser().getAvatar()) : null);
         postDto.setTitle(post.getTitle());
         postDto.setDescription(post.getDescription());
 
@@ -64,7 +64,7 @@ public class PostMapper {
         post.setComments(new ArrayList<>());
         post.setLikes(new ArrayList<>());
 
-        if (upsertPostDto.getImage() != null) {
+        if (upsertPostDto.getImage() != null && !upsertPostDto.getImage().isEmpty()) {
             post.setImage(decodeFromBase64(upsertPostDto.getImage()));
         }
 

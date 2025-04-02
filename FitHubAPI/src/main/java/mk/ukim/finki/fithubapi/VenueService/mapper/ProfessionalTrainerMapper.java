@@ -2,6 +2,7 @@ package mk.ukim.finki.fithubapi.VenueService.mapper;
 
 import mk.ukim.finki.fithubapi.VenueService.dto.ProfessionalTrainerAutocompleteDto;
 import mk.ukim.finki.fithubapi.VenueService.dto.ProfessionalTrainerDto;
+import mk.ukim.finki.fithubapi.VenueService.dto.UpsertProfessionalTrainerDto;
 import mk.ukim.finki.fithubapi.VenueService.model.ProfessionalTrainer;
 
 import java.util.ArrayList;
@@ -12,7 +13,7 @@ public class ProfessionalTrainerMapper {
 
     public static ProfessionalTrainerDto toDto(ProfessionalTrainer trainer) {
         if (trainer == null) {
-            return null; // or throw an exception if needed
+            return null;
         }
 
         ProfessionalTrainerDto dto = new ProfessionalTrainerDto();
@@ -24,13 +25,12 @@ public class ProfessionalTrainerMapper {
         return dto;
     }
 
-    public static ProfessionalTrainer toEntity(ProfessionalTrainerDto dto) {
+    public static ProfessionalTrainer toEntity(UpsertProfessionalTrainerDto dto) {
         if (dto == null) {
             return null;
         }
 
         ProfessionalTrainer trainer = new ProfessionalTrainer();
-        trainer.setId(dto.getId());
         trainer.setUserId(dto.getUserId());
         trainer.setUsername(dto.getUsername());
         trainer.setPhoneNumber(dto.getPhoneNumber());
@@ -40,6 +40,9 @@ public class ProfessionalTrainerMapper {
     }
 
     public static List<ProfessionalTrainerDto> toDtoList(List<ProfessionalTrainer> trainers) {
+        if (trainers == null) {
+            return new ArrayList<>();
+        }
         return trainers.stream()
                 .map(ProfessionalTrainerMapper::toDto)
                 .collect(Collectors.toList());
@@ -54,11 +57,5 @@ public class ProfessionalTrainerMapper {
             ));
         }
         return professionalTrainerAutocompleteDtos;
-    }
-
-    public static List<ProfessionalTrainer> toEntityList(List<ProfessionalTrainerDto> dtos) {
-        return dtos.stream()
-                .map(ProfessionalTrainerMapper::toEntity)
-                .collect(Collectors.toList());
     }
 }

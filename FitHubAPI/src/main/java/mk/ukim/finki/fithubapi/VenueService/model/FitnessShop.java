@@ -15,11 +15,11 @@ import java.util.List;
 @Entity
 @EqualsAndHashCode(callSuper = true)
 public class FitnessShop extends Venue {
-    @ElementCollection(fetch = FetchType.LAZY)
+    @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "fitness_shop_categories", joinColumns = @JoinColumn(name = "fitness_shop_id"))
     @Column(name = "category")
     private List<String> categories;
-    @ElementCollection(fetch = FetchType.LAZY)
+    @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "fitness_shop_brands", joinColumns = @JoinColumn(name = "fitness_shop_id"))
     @Column(name = "brand")
     private List<String> brands;

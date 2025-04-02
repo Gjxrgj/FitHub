@@ -35,6 +35,10 @@ public class MealTrack {
             this.foodItems.add(foodItem);
         }
     }
+
+    public void addMultipleFoodItems(List<FoodItem> foodItems){
+        foodItems.forEach(this::addFoodItem);
+    }
     public void removeFoodItem(FoodItem foodItem) {
         if (foodItem != null) {
             this.foodItems.remove(foodItem);

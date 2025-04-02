@@ -1,8 +1,10 @@
 package mk.ukim.finki.fithubapi.TrackingService.service.impl;
 
+import jakarta.transaction.Transactional;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import mk.ukim.finki.fithubapi.TrackingService.dto.ExerciseDto;
+import mk.ukim.finki.fithubapi.TrackingService.dto.UpsertExerciseDto;
 import mk.ukim.finki.fithubapi.TrackingService.enums.ExerciseCategory;
 import mk.ukim.finki.fithubapi.TrackingService.mappers.ExerciseMapper;
 import mk.ukim.finki.fithubapi.TrackingService.model.Exercise;
@@ -31,7 +33,7 @@ public class ExerciseServiceImpl implements ExerciseService {
     @Override
     public List<ExerciseDto> getAllBySearchAndCategory(@NotNull final String search, final ExerciseCategory category) {
         if (category == null) {
-            return ExerciseMapper.toDtoList(exerciseRepository.findAllByNameContainingIgnoreCase(search));
+            return ExerciseMapper.toDtoList(exerciseRepository.findAllByNameContainingIgnoreCaseAndUserIdNull(search));
         }
         return ExerciseMapper.toDtoList(exerciseRepository.findAllByCategoryAndNameContainingIgnoreCase(category, search));
     }
@@ -42,10 +44,23 @@ public class ExerciseServiceImpl implements ExerciseService {
 
         List<Exercise> exercises = new ArrayList<>();
 
-        for(Workout workout : recentWorkouts){
+        for (Workout workout : recentWorkouts) {
             exercises.addAll(workout.getExercises().stream().map(ExerciseInWorkout::getExercise).toList());
         }
 
         return ExerciseMapper.toDtoList(exercises);
+    }
+
+    @Override
+    @Transactional
+    public ExerciseDto createExercise(UpsertExerciseDto upsertExerciseDto) {
+        Exercise exercise = ExerciseMapper.toEntity(upsertExerciseDto);
+
+        return ExerciseMapper.toDto(exerciseRepository.save(exercise));
+    }
+
+    @Override
+    public List<ExerciseDto> getAllCreatedByUser(Long userId) {
+        return ExerciseMapper.toDtoList(exerciseRepository.findAllByUserId(userId));
     }
 }

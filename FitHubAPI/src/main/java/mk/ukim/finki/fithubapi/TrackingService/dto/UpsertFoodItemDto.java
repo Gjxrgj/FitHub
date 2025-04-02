@@ -1,5 +1,6 @@
 package mk.ukim.finki.fithubapi.TrackingService.dto;
 
+import jakarta.annotation.Nullable;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import mk.ukim.finki.fithubapi.TrackingService.enums.MealType;

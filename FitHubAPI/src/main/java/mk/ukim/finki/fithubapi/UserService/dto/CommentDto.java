@@ -2,7 +2,7 @@ package mk.ukim.finki.fithubapi.UserService.dto;
 
 import lombok.Data;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Data
 public class CommentDto {
@@ -10,5 +10,5 @@ public class CommentDto {
     private Long userId;
     private Long postId;
     private String comment;
-    private LocalDateTime creationDate;
+    private LocalDate creationDate;
 }

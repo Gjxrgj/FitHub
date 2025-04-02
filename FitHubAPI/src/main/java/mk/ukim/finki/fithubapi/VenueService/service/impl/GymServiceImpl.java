@@ -3,6 +3,7 @@ package mk.ukim.finki.fithubapi.VenueService.service.impl;
 import jakarta.transaction.Transactional;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
+import mk.ukim.finki.fithubapi.UserService.dto.SubscriptionResponse;
 import mk.ukim.finki.fithubapi.VenueService.dto.*;
 import mk.ukim.finki.fithubapi.VenueService.exception.PromotionNotFoundException;
 import mk.ukim.finki.fithubapi.VenueService.mapper.GroupTrainingMapper;
@@ -12,7 +13,6 @@ import mk.ukim.finki.fithubapi.VenueService.mapper.PromotionMapper;
 import mk.ukim.finki.fithubapi.VenueService.model.*;
 import mk.ukim.finki.fithubapi.VenueService.repository.*;
 import mk.ukim.finki.fithubapi.VenueService.service.GymService;
-import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -38,11 +38,16 @@ public class GymServiceImpl implements GymService {
 
     private final PromotionRepository promotionRepository;
 
+    private final SubscriptionRepository subscriptionRepository;
+
     @Override
     public GymDto getById(@NotNull Long id) {
         Gym gym = gymRepository.findById(id)
                 .orElseThrow(() -> new NoSuchElementException("Gym with ID " + id + " not found."));
-        return GymMapper.toDto(gym);
+        Subscription subscription = subscriptionRepository.findByVenueId(id);
+        GymDto gymDto = GymMapper.toDto(gym);
+        gymDto.setSubscriptionExpirationDate(subscription.getExpirationDate().toLocalDate());
+        return gymDto;
     }
 
     @Override
@@ -68,13 +73,19 @@ public class GymServiceImpl implements GymService {
 
     @Override
     @Transactional
-    public GymDto add(@NotNull UpsertGymDto dto) {
-        if (gymRepository.findByName(dto.getName()).isPresent()) {
-            throw new DuplicateKeyException("A gym with the name '" + dto.getName() + "' already exists.");
-        }
+    public GymDto add(@NotNull UpsertGymDto dto, @NotNull SubscriptionResponse subscriptionResponse) {
         Gym gym = GymMapper.toModel(dto);
-        gymRepository.save(gym);
-        return GymMapper.toDto(gym);
+        mk.ukim.finki.fithubapi.VenueService.model.Subscription subscriptionToSave = new mk.ukim.finki.fithubapi.VenueService.model.Subscription(
+                subscriptionResponse.id(),
+                subscriptionResponse.customerId(),
+                gym
+        );
+
+        gym.setSubscriptionForVenue(subscriptionToSave);
+
+        subscriptionRepository.save(subscriptionToSave);
+
+        return GymMapper.toDto(gymRepository.save(gym));
     }
 
     @Override
@@ -82,13 +93,6 @@ public class GymServiceImpl implements GymService {
     public GymDto edit(@NotNull UpsertGymDto dto, @NotNull Long id) {
         Gym gym = gymRepository.findById(id)
                 .orElseThrow(() -> new NoSuchElementException("Gym with ID " + id + " not found."));
-
-        gymRepository.findByName(dto.getName())
-                .ifPresent(existingFitnessRestaurant -> {
-                    if (!existingFitnessRestaurant.getId().equals(id)) {
-                        throw new DuplicateKeyException("A gym with the name '" + dto.getName() + "' already exists.");
-                    }
-                });
 
         gym.setUserId(dto.getUserId());
         gym.setName(dto.getName());
@@ -147,7 +151,9 @@ public class GymServiceImpl implements GymService {
         Gym gym = gymRepository.findById(id)
                 .orElseThrow(() -> new NoSuchElementException("Gym with ID " + id + " not found."));
         List<GroupTraining> currentGroupTrainings = gym.getGroupTrainings();
-        currentGroupTrainings.add(GroupTrainingMapper.toEntity(upsertGroupTrainingDto, gym));
+        ProfessionalTrainer professionalTrainer = professionalTrainerRepository.findById(upsertGroupTrainingDto.getProfessionalTrainerId())
+                        .orElseThrow(() -> new NoSuchElementException("Personal trainer with id " + upsertGroupTrainingDto.getProfessionalTrainerId()+ " doesn't exist"));
+        currentGroupTrainings.add(GroupTrainingMapper.toEntity(upsertGroupTrainingDto, gym, professionalTrainer));
         gym.setGroupTrainings(currentGroupTrainings);
         Gym savedGym = gymRepository.save(gym);
         return GroupTrainingMapper.toDtoList(savedGym.getGroupTrainings());
@@ -187,7 +193,10 @@ public class GymServiceImpl implements GymService {
         gym.setDailyPassPrice(pricingDto.getDailyPass());
         gym.setMonthlySubscription(pricingDto.getMonthlySubscription());
         gymRepository.save(gym);
-        return new PricingDto(gym.getDailyPassPrice(), gym.getMonthlySubscription());
+        PricingDto pricing = new PricingDto();
+        pricing.setDailyPass(gym.getDailyPassPrice());
+        pricing.setMonthlySubscription(gym.getMonthlySubscription());
+        return pricing;
     }
 
     @Override

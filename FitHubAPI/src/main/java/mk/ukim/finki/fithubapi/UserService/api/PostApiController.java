@@ -19,9 +19,21 @@ public class PostApiController {
 
     private final PostService postService;
 
+    @GetMapping("/postById/{postId}")
+    public ResponseEntity<PostDto> getPostById(@PathVariable @NotNull Long postId) {
+        return ResponseEntity.ok(postService.gePostById(postId));
+    }
+
     @PostMapping("/add")
-    public ResponseEntity<PostDto> addPost(@NotNull @Valid @RequestBody UpsertPostDto upsertPostDto) {
+    public ResponseEntity<PostDto> addPost(@NotNull @RequestBody UpsertPostDto upsertPostDto) {
         return ResponseEntity.ok(postService.addPost(upsertPostDto));
+    }
+
+    @PutMapping("/edit/{id}")
+    public ResponseEntity<PostDto> editPost(
+            @PathVariable Long id,
+            @NotNull @RequestBody UpsertPostDto upsertPostDto) {
+        return ResponseEntity.ok(postService.editPost(id, upsertPostDto));
     }
 
     @PutMapping("/likePost")
@@ -57,10 +69,12 @@ public class PostApiController {
                                                                 @RequestParam(defaultValue = "10") Integer size) {
         return ResponseEntity.ok(postService.getAllPostsForUsersFeed(userId, page, size));
     }
+
     @GetMapping("/{userId}")
     public ResponseEntity<List<PostDto>> getAllPostForUser(@PathVariable @NotNull Long userId) {
         return ResponseEntity.ok(postService.getAllPostsForUser(userId));
     }
+
     @DeleteMapping("/{postId}")
     public ResponseEntity<Long> deletePost(@PathVariable @NotNull Long postId) {
         return ResponseEntity.ok(postService.deletePost(postId));

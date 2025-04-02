@@ -31,5 +31,15 @@ public class AuthApiController {
         String token = authenticationService.login(loginRequest.getUsername(), loginRequest.getPassword());
         return ResponseEntity.ok(token);
     }
+
+    @GetMapping("/username_exists")
+    public ResponseEntity<Boolean> usernameAlreadyExists(@RequestParam String username) {
+        return ResponseEntity.ok(userService.usernameAlreadyExists(username));
+    }
+
+    @GetMapping("/email_exists")
+    public ResponseEntity<Boolean> emailAlreadyExists(@RequestParam String email) {
+        return ResponseEntity.ok(userService.emailAlreadyExists(email));
+    }
 }
 

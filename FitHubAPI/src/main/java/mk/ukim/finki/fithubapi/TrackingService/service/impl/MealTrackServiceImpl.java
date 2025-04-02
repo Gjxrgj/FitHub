@@ -7,6 +7,7 @@ import mk.ukim.finki.fithubapi.TrackingService.dto.MealTrackDto;
 import mk.ukim.finki.fithubapi.TrackingService.mappers.MealTrackMapper;
 import mk.ukim.finki.fithubapi.TrackingService.repository.MealTrackRepository;
 import mk.ukim.finki.fithubapi.TrackingService.service.MealTrackService;
+import mk.ukim.finki.fithubapi.UserService.exceptions.UserNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -38,5 +39,8 @@ public class MealTrackServiceImpl implements MealTrackService {
         return mealTracks;
     }
 
-
+    @Override
+    public MealTrackDto getMealById(Long id) {
+        return MealTrackMapper.toDto(mealTrackRepository.findById(id).orElseThrow(() -> new UserNotFoundException("MealTrack not found with id: " + id)));
+    }
 }

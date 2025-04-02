@@ -17,12 +17,15 @@ public interface GymRepository extends JpaRepository<Gym, Long> {
     List<Gym> findAllByUserId(@NotNull Long userId);
 
     @Query(value = "SELECT g.id, g.currency, g.daily_pass_price, g.monthly_subscription, " +
-            "v.id, v.user_id, v.name, v.vicinity, v.latitude, v.longitude, v.description, v.contact_number," +
-            " v.contact_email, v.business_website, v.avatar " +
-            "FROM gym g " +
+            "v.id, v.user_id, v.name, v.vicinity, v.latitude, v.longitude, v.description, v.contact_number, " +
+            "v.contact_email, v.business_website, v.avatar, v.subscription_for_venue_id, " +
+            "s.id, s.customer_id, s.expiration_date, s.is_active, s.subscription_id, s.venue_id " +
+            "FROM gym as g " +
+            "RIGHT JOIN subscription as s ON s.venue_id = g.id " +
             "LEFT JOIN venue v ON g.id = v.id " +
             "WHERE v.latitude BETWEEN :minLatitude AND :maxLatitude " +
             "AND v.longitude BETWEEN :minLongitude AND :maxLongitude " +
+            "AND s.is_active = true " +
             "AND (6371 * acos( " +
             "   cos(radians(:latitude)) * cos(radians(v.latitude)) * " +
             "   cos(radians(v.longitude) - radians(:longitude)) + " +

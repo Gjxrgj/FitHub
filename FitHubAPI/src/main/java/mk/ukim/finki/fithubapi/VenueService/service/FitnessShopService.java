@@ -1,6 +1,8 @@
 package mk.ukim.finki.fithubapi.VenueService.service;
 
 import jakarta.validation.constraints.NotNull;
+import mk.ukim.finki.fithubapi.UserService.dto.SubscriptionRequest;
+import mk.ukim.finki.fithubapi.UserService.dto.SubscriptionResponse;
 import mk.ukim.finki.fithubapi.VenueService.dto.FitnessShopDto;
 import mk.ukim.finki.fithubapi.VenueService.dto.UpsertFitnessShopDto;
 
@@ -13,9 +15,9 @@ public interface FitnessShopService {
 
     List<FitnessShopDto> getAllByLocation(@NotNull Double latitude, @NotNull Double longitude);
 
-    FitnessShopDto add(@NotNull UpsertFitnessShopDto gym);
+    FitnessShopDto add(@NotNull UpsertFitnessShopDto shop, SubscriptionResponse subscriptionResponse);
 
-    FitnessShopDto edit(@NotNull UpsertFitnessShopDto gym, @NotNull Long id);
+    FitnessShopDto edit(@NotNull UpsertFitnessShopDto shop, @NotNull Long id);
 
 
     Long delete(@NotNull Long id);

@@ -21,6 +21,9 @@ public class PromotionMapper {
 
     public static List<PromotionDto> toDtoList(List<Promotion> promotions) {
         List<PromotionDto> promotionDtos = new ArrayList<>();
+        if (promotions == null) {
+            return promotionDtos;
+        }
         for (Promotion promotion : promotions) {
             promotionDtos.add(toDto(promotion));
         }

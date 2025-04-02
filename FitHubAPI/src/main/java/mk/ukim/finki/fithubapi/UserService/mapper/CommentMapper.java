@@ -17,7 +17,7 @@ public class CommentMapper {
 
         CommentDto commentDto = new CommentDto();
         commentDto.setId(comment.getId());
-        commentDto.setCreationDate(comment.getCreationDate());
+        commentDto.setCreationDate(comment.getCreationDate() == null ? null : comment.getCreationDate().toLocalDate());
         commentDto.setUserId(comment.getUserId());
         commentDto.setPostId(comment.getPost() != null ? comment.getPost().getId() : null);
         commentDto.setComment(comment.getComment());

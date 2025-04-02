@@ -2,6 +2,8 @@ package mk.ukim.finki.fithubapi.VenueService.api;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
+import mk.ukim.finki.fithubapi.UserService.dto.SubscriptionRequest;
+import mk.ukim.finki.fithubapi.UserService.dto.SubscriptionResponse;
 import mk.ukim.finki.fithubapi.VenueService.dto.*;
 import mk.ukim.finki.fithubapi.VenueService.service.GymService;
 import org.springframework.http.ResponseEntity;
@@ -28,12 +30,15 @@ public class GymApiController {
             @RequestParam Double latitude,
             @RequestParam Double longitude
     ) {
-        return ResponseEntity.ok(gymService.getAllByLocation(latitude, longitude));
+        List<GymDto> gyms = gymService.getAllByLocation(latitude, longitude);
+        return ResponseEntity.ok(gyms);
     }
 
     @PostMapping("/add")
-    public ResponseEntity<GymDto> addGym(@RequestBody @NotNull @Valid UpsertGymDto gym) {
-        return ResponseEntity.ok(gymService.add(gym));
+    public ResponseEntity<GymDto> addGym(
+            @RequestBody @NotNull @Valid AddGymRequest gymRequest
+    ) {
+        return ResponseEntity.ok(gymService.add(gymRequest.getUpsertGymDto(), gymRequest.getSubscriptionResponse()));
     }
 
     @PutMapping("/edit/{id}")

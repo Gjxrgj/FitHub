@@ -24,4 +24,5 @@ public interface VenueService {
 
     LocationDto updateLocation(Long id, LocationDto upsertLocationDto);
 
+
 }

@@ -22,4 +22,8 @@ public interface PostService {
     PostDto removeComment(Long commentId);
 
     List<PostDto> getAllPostsForUser(Long userId);
+
+    PostDto gePostById(Long postId);
+
+    PostDto editPost(Long id, UpsertPostDto upsertPostDto);
 }

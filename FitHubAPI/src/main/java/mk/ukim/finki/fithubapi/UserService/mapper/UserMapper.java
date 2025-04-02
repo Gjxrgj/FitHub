@@ -15,8 +15,8 @@ public class UserMapper {
     public static UserDto toDto(User user) {
         UserDto dto = new UserDto();
         dto.setId(user.getId());
-        dto.setNumFollowers(user.getFollowers().size());
-        dto.setNumFollowing(user.getFollowing().size());
+        dto.setNumFollowers(user.getFollowers() != null ? user.getFollowers().size() : 0);
+        dto.setNumFollowing(user.getFollowing() != null ? user.getFollowing().size() : 0);
         dto.setNumPosts(user.getPosts().size());
         dto.setUsername(user.getUsername());
         dto.setFirstName(user.getFirstName());
@@ -26,6 +26,14 @@ public class UserMapper {
         dto.setBio(user.getBio());
         dto.setDailyCalories(user.getDailyCalories());
         dto.setOauth2Id(user.getOauth2Id());
+        dto.setProfessionalTrainerId(user.getProfessionalTrainerId());
+        dto.setHeight(user.getHeight());
+        dto.setWeight(user.getWeight());
+        dto.setBirthDate(user.getBirthDate());
+        dto.setGoal(user.getGoal());
+        dto.setActivityLevel(user.getActivityLevel());
+        dto.setGender(user.getGender());
+        dto.setUnit(user.getUnit());
         return dto;
     }
 
@@ -40,7 +48,7 @@ public class UserMapper {
         user.setBio(dto.getBio());
         user.setHeight(dto.getHeight());
         user.setWeight(dto.getWeight());
-        user.setAge(dto.getAge());
+        user.setBirthDate(dto.getBirthDate());
         user.setUnit(dto.getUnits());
         user.setGender(dto.getGender());
         user.setGoal(dto.getGoal());

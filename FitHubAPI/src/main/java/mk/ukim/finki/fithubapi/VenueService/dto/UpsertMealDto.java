@@ -1,5 +1,6 @@
 package mk.ukim.finki.fithubapi.VenueService.dto;
 
+import jakarta.annotation.Nullable;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import mk.ukim.finki.fithubapi.VenueService.enums.Currency;
@@ -24,7 +25,7 @@ public class UpsertMealDto {
     private Double price;
     @NotNull
     private Currency currency;
-    @NotNull
+    @Nullable
     private Double milliliters;
     @NotNull
     private FoodCategory category;

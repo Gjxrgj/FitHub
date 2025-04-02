@@ -22,6 +22,10 @@ public class Image {
         this.venue = venue;
     }
 
+    public Image(byte[] data) {
+        this.data = data;
+    }
+
     public Image() {
 
     }

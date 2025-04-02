@@ -18,6 +18,12 @@ import java.util.List;
 public class WorkoutApiController {
     private final WorkoutService workoutService;
 
+    @GetMapping("/{id}")
+    public ResponseEntity<WorkoutDto> getById(
+            @PathVariable @NotNull Long id){
+        return ResponseEntity.ok(workoutService.getWorkoutById(id));
+    }
+
     @PostMapping("/add/{userId}")
     public ResponseEntity<WorkoutDto> addWorkout(
             @RequestBody @NotNull @Valid UpsertWorkoutDto upsertWorkoutDto,
@@ -32,5 +38,10 @@ public class WorkoutApiController {
             @RequestParam(required = false) LocalDate date,
             @RequestParam(required = false) String workoutName){
         return ResponseEntity.ok(workoutService.getWorkoutsByDateOrName(userId, date, workoutName));
+    }
+
+    @DeleteMapping("/{workoutId}")
+    public ResponseEntity<Long> deleteWorkout(@PathVariable @NotNull Long workoutId) {
+        return ResponseEntity.ok(workoutService.deleteWorkout(workoutId));
     }
 }

@@ -16,7 +16,6 @@ public class GroupTraining {
     private String name;
     @Column(length = 500)
     private String description;
-    //Per month
     private Double price;
     @Enumerated(EnumType.STRING)
     private Currency currency;
@@ -24,12 +23,16 @@ public class GroupTraining {
     @JsonIgnore
     @JoinColumn(name = "gym_id")
     private Gym gym;
+    @ManyToOne
+    @JsonIgnore
+    private ProfessionalTrainer professionalTrainer;
 
-    public GroupTraining(String name, String description, Double price, Currency currency, Gym gym) {
+    public GroupTraining(String name, String description, Double price, Currency currency, Gym gym, ProfessionalTrainer professionalTrainer) {
         this.name = name;
         this.description = description;
         this.price = price;
         this.currency = currency;
         this.gym = gym;
+        this.professionalTrainer = professionalTrainer;
     }
 }

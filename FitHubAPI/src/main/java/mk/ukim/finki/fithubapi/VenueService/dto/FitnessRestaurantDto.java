@@ -1,9 +1,10 @@
 package mk.ukim.finki.fithubapi.VenueService.dto;
 
+import jakarta.annotation.Nullable;
 import lombok.Data;
-import mk.ukim.finki.fithubapi.VenueService.model.Image;
-import mk.ukim.finki.fithubapi.VenueService.model.Menu;
-import mk.ukim.finki.fithubapi.VenueService.model.Review;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
@@ -22,4 +23,6 @@ public class FitnessRestaurantDto {
     private List<ReviewDto> reviews;
     private List<ImageDto> images;
     private MenuDto menu;
+    @Nullable
+    private LocalDate subscriptionExpirationDate;
 }

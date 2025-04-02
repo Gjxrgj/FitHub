@@ -10,6 +10,8 @@ import mk.ukim.finki.fithubapi.UserService.enums.Gender;
 import mk.ukim.finki.fithubapi.UserService.enums.Goal;
 import mk.ukim.finki.fithubapi.UserService.enums.Unit;
 
+import java.time.LocalDate;
+
 @Data
 public class UpsertUserDto {
     @NotBlank
@@ -33,7 +35,7 @@ public class UpsertUserDto {
     @NotNull
     private Double height;
     @NotNull
-    private Integer age;
+    private LocalDate birthDate;
     @NotNull
     private Unit units;
     @NotNull

@@ -22,5 +22,4 @@ public interface PostRepository extends JpaRepository<Post, Long> {
 
     @Query("SELECT COUNT(p) FROM Post p WHERE p.user.id IN :followingIds AND p.creationDate >= :fromDate")
     Long countPostsByFollowingIds(@Param("followingIds") List<Long> followingIds, @Param("fromDate") LocalDateTime fromDate);
-
 }

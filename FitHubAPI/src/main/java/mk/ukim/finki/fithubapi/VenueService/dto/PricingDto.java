@@ -9,9 +9,4 @@ public class PricingDto {
     private Double dailyPass;
     @NotNull
     private Double monthlySubscription;
-
-    public PricingDto(Double dailyPass, Double monthlySubscription) {
-        this.dailyPass = dailyPass;
-        this.monthlySubscription = monthlySubscription;
-    }
 }

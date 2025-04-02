@@ -22,6 +22,4 @@ public class Gym extends Venue {
     private List<PersonalTraining> personalTrainings;
     @OneToMany(mappedBy = "gym", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private List<GroupTraining> groupTrainings;
-
-
 }

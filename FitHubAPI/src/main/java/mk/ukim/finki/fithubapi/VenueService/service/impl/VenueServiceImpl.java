@@ -2,6 +2,7 @@ package mk.ukim.finki.fithubapi.VenueService.service.impl;
 
 import jakarta.transaction.Transactional;
 import jakarta.validation.constraints.NotNull;
+import mk.ukim.finki.fithubapi.UserService.dto.SubscriptionDto;
 import mk.ukim.finki.fithubapi.UserService.enums.VenueType;
 import mk.ukim.finki.fithubapi.VenueService.dto.*;
 import mk.ukim.finki.fithubapi.VenueService.exception.ImageNotFoundException;
@@ -10,20 +11,16 @@ import mk.ukim.finki.fithubapi.VenueService.mapper.ImageMapper;
 import mk.ukim.finki.fithubapi.VenueService.mapper.ReviewMapper;
 import mk.ukim.finki.fithubapi.VenueService.model.Image;
 import mk.ukim.finki.fithubapi.VenueService.model.Review;
+import mk.ukim.finki.fithubapi.VenueService.model.Subscription;
 import mk.ukim.finki.fithubapi.VenueService.model.Venue;
 import mk.ukim.finki.fithubapi.VenueService.repository.ImageRepository;
 import mk.ukim.finki.fithubapi.VenueService.repository.VenueRepository;
-import mk.ukim.finki.fithubapi.VenueService.service.FitnessRestaurantService;
-import mk.ukim.finki.fithubapi.VenueService.service.FitnessShopService;
-import mk.ukim.finki.fithubapi.VenueService.service.GymService;
-import mk.ukim.finki.fithubapi.VenueService.service.VenueService;
+import mk.ukim.finki.fithubapi.VenueService.service.*;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 import static mk.ukim.finki.fithubapi.VenueService.util.ImageUtil.decodeFromBase64;
 import static mk.ukim.finki.fithubapi.VenueService.util.ImageUtil.encodeToBase64;
@@ -35,14 +32,15 @@ public class VenueServiceImpl implements VenueService {
     private final GymService gymService;
     private final FitnessRestaurantService fitnessRestaurantService;
     private final VenueRepository venueRepository;
-
+    private final SubscriptionService subscriptionService;
     private final ImageRepository imageRepository;
 
-    public VenueServiceImpl(FitnessShopService fitnessShopService, GymService gymService, FitnessRestaurantService fitnessRestaurantService, VenueRepository venueRepository, ImageRepository imageRepository) {
+    public VenueServiceImpl(FitnessShopService fitnessShopService, GymService gymService, FitnessRestaurantService fitnessRestaurantService, VenueRepository venueRepository, SubscriptionService subscriptionService, ImageRepository imageRepository) {
         this.fitnessShopService = fitnessShopService;
         this.gymService = gymService;
         this.fitnessRestaurantService = fitnessRestaurantService;
         this.venueRepository = venueRepository;
+        this.subscriptionService = subscriptionService;
         this.imageRepository = imageRepository;
     }
 
@@ -55,24 +53,59 @@ public class VenueServiceImpl implements VenueService {
         List<FitnessShopDto> shops = fitnessShopService.getAllByUserId(userId);
         List<FitnessRestaurantDto> restaurants = fitnessRestaurantService.getAllForUser(userId);
 
+        List<Long> venueIds = new ArrayList<>();
+
         gyms.forEach(gym -> {
+            venueIds.add(gym.getId());
             gym.setImages(Collections.emptyList());
             gym.setReviews(Collections.emptyList());
         });
 
         shops.forEach(shop -> {
+            venueIds.add(shop.getId());
             shop.setImages(Collections.emptyList());
             shop.setReviews(Collections.emptyList());
         });
 
         restaurants.forEach(restaurant -> {
+            venueIds.add(restaurant.getId());
             restaurant.setImages(Collections.emptyList());
             restaurant.setReviews(Collections.emptyList());
         });
 
-        venues.put(VenueType.GYM, Collections.singletonList(gyms));
-        venues.put(VenueType.SHOP, Collections.singletonList(shops));
-        venues.put(VenueType.RESTAURANT, Collections.singletonList(restaurants));
+        List<SubscriptionDto> subscriptions = subscriptionService.getAllByIds(venueIds);
+
+        Map<Long, SubscriptionDto> subscriptionMap = subscriptions.stream()
+                .collect(Collectors.toMap(SubscriptionDto::getVenueId, subscription -> subscription));
+
+        List<GymDto> gymsWithExpirationDate = gyms.stream()
+                .peek(gym -> {
+                    SubscriptionDto subscriptionDto = subscriptionMap.get(gym.getId());
+                    if (subscriptionDto != null) {
+                        gym.setSubscriptionExpirationDate(subscriptionDto.getExpirationDate().toLocalDate());
+                    }
+                }).toList();
+
+        List<FitnessShopDto> shopsWithExpirationDate = shops.stream()
+                .peek(shop -> {
+                    SubscriptionDto subscriptionDto = subscriptionMap.get(shop.getId());
+                    if (subscriptionDto != null) {
+                        shop.setSubscriptionExpirationDate(subscriptionDto.getExpirationDate().toLocalDate());
+                    }
+                }).toList();
+
+        List<FitnessRestaurantDto> restaurantsWithExpirationDate = restaurants.stream()
+                .peek(shop -> {
+                    SubscriptionDto subscriptionDto = subscriptionMap.get(shop.getId());
+                    if (subscriptionDto != null) {
+                        shop.setSubscriptionExpirationDate(subscriptionDto.getExpirationDate().toLocalDate());
+                    }
+                }).toList();
+
+
+        venues.put(VenueType.GYM, Collections.singletonList(gymsWithExpirationDate));
+        venues.put(VenueType.SHOP, Collections.singletonList(shopsWithExpirationDate));
+        venues.put(VenueType.RESTAURANT, Collections.singletonList(restaurantsWithExpirationDate));
 
         return venues;
     }
@@ -153,7 +186,11 @@ public class VenueServiceImpl implements VenueService {
         venue.setContactNumber(contactInformationDto.getContactNumber());
         venue.setBusinessWebsite(contactInformationDto.getBusinessWebsite());
         Venue savedVenue = venueRepository.save(venue);
-        return new ContactInformationDto(savedVenue.getContactNumber(), savedVenue.getContactEmail(), savedVenue.getBusinessWebsite());
+        ContactInformationDto savedContactInformationDto = new ContactInformationDto();
+        savedContactInformationDto.setContactNumber(savedVenue.getContactNumber());
+        savedContactInformationDto.setContactEmail(savedVenue.getContactEmail());
+        savedContactInformationDto.setBusinessWebsite(savedVenue.getBusinessWebsite());
+        return savedContactInformationDto;
     }
 
     @Override
@@ -165,7 +202,11 @@ public class VenueServiceImpl implements VenueService {
         venue.setLatitude(upsertLocationDto.getLatitude());
         venue.setLongitude(upsertLocationDto.getLongitude());
         Venue savedVenue = venueRepository.save(venue);
-        return new LocationDto(savedVenue.getVicinity(), savedVenue.getLatitude(), savedVenue.getLongitude());
+        LocationDto locationDto = new LocationDto();
+        locationDto.setVicinity(savedVenue.getVicinity());
+        locationDto.setLatitude(savedVenue.getLatitude());
+        locationDto.setLongitude(savedVenue.getLongitude());
+        return locationDto;
     }
 
 }

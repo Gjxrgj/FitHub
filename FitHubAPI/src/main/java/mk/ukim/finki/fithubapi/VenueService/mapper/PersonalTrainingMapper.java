@@ -34,6 +34,9 @@ public class PersonalTrainingMapper {
 
     public static List<PersonalTrainingDto> toDtoList(List<PersonalTraining> personalTrainings) {
         List<PersonalTrainingDto> personalTrainingDtos = new ArrayList<>();
+        if(personalTrainings == null){
+            return personalTrainingDtos;
+        }
         for (PersonalTraining personalTraining : personalTrainings) {
             personalTrainingDtos.add(toDto(personalTraining));
         }

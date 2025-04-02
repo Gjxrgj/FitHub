@@ -52,9 +52,11 @@ public class DataInitializer implements CommandLineRunner {
     @Override
     @Transactional
     public void run(String... args) throws IOException {
-        initializeRolesAndUsers();
-        initializeVenues();
-        populateExercisesDatabase();
+        if(userRepository.findAll().isEmpty()){
+            initializeRolesAndUsers();
+            initializeVenues();
+            populateExercisesDatabase();
+        }
     }
 
     private void populateExercisesDatabase() {
@@ -67,7 +69,7 @@ public class DataInitializer implements CommandLineRunner {
         }
     }
 
-    private void initializeRolesAndUsers() {
+    private void initializeRolesAndUsers() throws IOException {
         if (roleRepository.findByName(RoleName.USER).isEmpty()) {
             Role userRole = new Role(RoleName.USER);
             userRole.onCreate();
@@ -109,7 +111,6 @@ public class DataInitializer implements CommandLineRunner {
                     return userRepository.save(newUser);
                 });
 
-        // Create additional users
         for (int i = 3; i <= 20; i++) {
             final int userId = i;
             userRepository.findByUsername("user" + userId).orElseGet(() -> {
@@ -142,7 +143,11 @@ public class DataInitializer implements CommandLineRunner {
                 // Set realistic fields
                 newUser.setHeight(150 + new Random().nextDouble() * 50); // Random height between 150cm and 200cm
                 newUser.setWeight(50 + new Random().nextDouble() * 50); // Random weight between 50kg and 100kg
-                newUser.setAge(18 + new Random().nextInt(40)); // Random age between 18 and 58
+                Random random = new Random();
+                int randomAge = 18 + random.nextInt(41);
+                LocalDate currentDate = LocalDate.now();
+                LocalDate birthDate = currentDate.minusYears(randomAge).minusDays(random.nextInt(365)); // Random day of the year
+                newUser.setBirthDate(birthDate);
                 newUser.setGender(new Random().nextBoolean() ? Gender.MALE : Gender.FEMALE); // Random gender
                 newUser.setActivityLevel(ActivityLevel.values()[new Random().nextInt(ActivityLevel.values().length)]); // Random activity level
                 newUser.setGoal(Goal.values()[new Random().nextInt(Goal.values().length)]); // Random goal
@@ -197,8 +202,22 @@ public class DataInitializer implements CommandLineRunner {
             userRepository.save(u);
         }
 
+        Resource resource = resourceLoader.getResource("classpath:static/imageUrl.txt");
+
+        StringBuilder contentBuilder = new StringBuilder();
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(resource.getInputStream()))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                contentBuilder.append(line).append(System.lineSeparator());
+            }
+        }
+
+
+        String fileContent = contentBuilder.toString();
+
         List<Post> allPosts = postRepository.findAll();
         for (Post post : allPosts) {
+            post.setImage(decodeFromBase64(fileContent));
             for (int i = 0; i < random.nextInt(3) + 1; i++) {
                 Comment comment = new Comment();
                 comment.setPost(post);
@@ -415,7 +434,8 @@ public class DataInitializer implements CommandLineRunner {
                                 "Lose fat, fast with friends.",
                                 1800.0,
                                 Currency.MKD,
-                                gym));
+                                gym,
+                                professionalTrainer1));
 
                 gym.setGroupTrainings(groupTrainings);
                 gymRepository.save(gym);

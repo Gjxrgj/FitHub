@@ -4,8 +4,131 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7fe6fafb-54cd-44fc-a15a-9f7d784fee94" name="Changes" comment="Did a huge part of the application.&#10;Venue service done.&#10;Tracking service nearly done.&#10;Working on User(Social media) service.">
+    <list default="true" id="7fe6fafb-54cd-44fc-a15a-9f7d784fee94" name="Changes" comment="Removed the application.properties">
+      <change afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/dto/UpsertExerciseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/enums/ExerciseLevel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/enums/Force.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/enums/Mechanic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/dto/ResubscribeRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/dto/SubscriptionDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/dto/SubscriptionRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/dto/SubscriptionResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/dto/UpdatePersonalInfoDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/service/implementation/SubscriptionReminderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/api/PaymentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/dto/AddFitnessRestaurantRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/dto/AddFitnessShopRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/dto/AddGymRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/dto/UpsertProfessionalTrainerDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/mapper/SubscriptionMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/model/Subscription.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/repository/SubscriptionRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/service/StripeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/service/SubscriptionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/service/impl/EmailService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/service/impl/StripeServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/service/impl/SubscriptionServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FitHubUI/eas.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_27_2024_1_46_AM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_27_2024_1_46_AM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/FitHubAPIApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/FitHubAPIApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/api/ExerciseInWorkoutApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/api/ExerciseInWorkoutApiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/api/ExercisesApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/api/ExercisesApiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/api/FoodItemApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/api/FoodItemApiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/api/MealApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/api/MealApiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/api/WorkoutApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/api/WorkoutApiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/dto/ExerciseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/dto/ExerciseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/dto/ExerciseInWorkoutDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/dto/ExerciseInWorkoutDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/dto/FoodItemDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/dto/FoodItemDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/dto/UpsertFoodItemDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/dto/UpsertFoodItemDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/enums/ExerciseCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/enums/ExerciseCategory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/mappers/ExerciseInWorkoutMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/mappers/ExerciseInWorkoutMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/mappers/ExerciseMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/mappers/ExerciseMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/mappers/FoodItemMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/mappers/FoodItemMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/model/Exercise.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/model/Exercise.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/model/FoodItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/model/FoodItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/model/MealTrack.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/model/MealTrack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/repository/ExerciseInWorkoutRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/repository/ExerciseInWorkoutRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/repository/ExerciseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/repository/ExerciseRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/repository/FoodItemRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/repository/FoodItemRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/service/ExerciseInWorkoutService.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/service/ExerciseInWorkoutService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/service/ExerciseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/service/ExerciseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/service/FoodItemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/service/FoodItemService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/service/MealTrackService.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/service/MealTrackService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/service/WorkoutService.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/service/WorkoutService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/service/impl/ExerciseInWorkoutServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/service/impl/ExerciseInWorkoutServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/service/impl/ExerciseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/service/impl/ExerciseServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/service/impl/FoodItemServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/service/impl/FoodItemServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/service/impl/MealTrackServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/service/impl/MealTrackServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/service/impl/WorkoutServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/service/impl/WorkoutServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/util/ExerciseCategoryDeserializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/api/AuthApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/api/AuthApiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/api/PostApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/api/PostApiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/api/UserApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/api/UserApiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/dto/CommentDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/dto/CommentDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/dto/PostDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/dto/PostDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/dto/UpsertUserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/dto/UpsertUserDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/dto/UserDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/mapper/CommentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/mapper/CommentMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/mapper/PostMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/mapper/PostMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/repository/PostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/repository/PostRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/service/PostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/service/implementation/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/service/implementation/AuthenticationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/service/implementation/PostServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/service/implementation/PostServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/service/implementation/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/service/implementation/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/api/FitnessRestaurantApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/api/FitnessRestaurantApiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/api/FitnessShopApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/api/FitnessShopApiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/api/GymApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/api/GymApiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/api/ProfessionalTrainerApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/api/ProfessionalTrainerApiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/dto/ContactInformationDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/dto/ContactInformationDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/dto/FitnessRestaurantDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/dto/FitnessRestaurantDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/dto/FitnessShopDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/dto/FitnessShopDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/dto/GroupTrainingDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/dto/GroupTrainingDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/dto/GymDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/dto/GymDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/dto/LocationDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/dto/LocationDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/dto/PricingDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/dto/PricingDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/dto/UpsertGroupTrainingDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/dto/UpsertGroupTrainingDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/dto/UpsertMealDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/dto/UpsertMealDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/mapper/GroupTrainingMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/mapper/GroupTrainingMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/mapper/PersonalTrainingMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/mapper/PersonalTrainingMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/mapper/ProfessionalTrainerMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/mapper/ProfessionalTrainerMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/mapper/PromotionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/mapper/PromotionMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/model/FitnessShop.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/model/FitnessShop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/model/GroupTraining.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/model/GroupTraining.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/model/Gym.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/model/Gym.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/model/Image.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/model/Image.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/model/Venue.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/model/Venue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/repository/FitnessRestaurantRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/repository/FitnessRestaurantRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/repository/FitnessShopRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/repository/FitnessShopRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/repository/GymRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/repository/GymRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/repository/ProfessionalTrainerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/repository/ProfessionalTrainerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/service/FitnessRestaurantService.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/service/FitnessRestaurantService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/service/FitnessShopService.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/service/FitnessShopService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/service/GymService.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/service/GymService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/service/ProfessionalTrainerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/service/ProfessionalTrainerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/service/VenueService.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/service/VenueService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/service/impl/FitnessRestaurantServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/service/impl/FitnessRestaurantServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/service/impl/FitnessShopServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/service/impl/FitnessShopServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/service/impl/GymServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/service/impl/GymServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/service/impl/ProfessionalTrainerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/service/impl/ProfessionalTrainerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/service/impl/VenueServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/service/impl/VenueServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/config/CacheConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/config/CacheConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/initializer/DataInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/initializer/DataInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/yarn.lock" beforeDir="false" />
     </list>
     <list id="9ad12d3f-878a-45bc-852a-34975897acf4" name="do-not-commit" comment="do-not-commit">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
@@ -22,7 +145,7 @@
         <entry key="$PROJECT_DIR$/FitHubUI" value="main" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/FitHubUI" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -50,10 +173,10 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.FitHubAPIApplication.executor": "Debug",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/mark1/OneDrive/Desktop/FitHub",
+    "last_opened_file_path": "C:/Users/mark1/OneDrive/Desktop/FitHubBackUp2/FitHub",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -61,7 +184,7 @@
     "nodejs_package_manager_path": "npm",
     "npm.run-ui.executor": "Run",
     "npm.start.executor": "Run",
-    "settings.editor.selected.configurable": "reactor",
+    "settings.editor.selected.configurable": "configurable.group.build",
     "ts.external.directory.path": "C:\\Users\\mark1\\Downloads\\jpa-security-master\\FitHub\\FitHubUI\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
@@ -75,7 +198,7 @@
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.FitHubAPIApplication">
     <configuration name="FitHubAPIApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="FitHubAPI" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="mk.ukim.finki.fithubapi.FitHubAPIApplication" />
@@ -88,16 +211,6 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
-    </configuration>
-    <configuration name="run-ui" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/FitHubUI/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="run-ui" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
     </configuration>
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/FitHubUI/package.json" />
@@ -112,19 +225,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.FitHubAPIApplication" />
-        <item itemvalue="npm.run-ui" />
         <item itemvalue="npm.start" />
         <item itemvalue="Spring Boot.FitHubAPIApplication" />
-        <item itemvalue="npm.run-ui" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-21.0.2-openjdk-21.0.2-f644763e9732-c0c073db" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -144,7 +248,10 @@
       <workItem from="1724585233743" duration="455000" />
       <workItem from="1735258258259" duration="940000" />
       <workItem from="1735259314822" duration="1766000" />
-      <workItem from="1735598002869" duration="433000" />
+      <workItem from="1735598002869" duration="1139000" />
+      <workItem from="1735836709156" duration="1679000" />
+      <workItem from="1743628990232" duration="88000" />
+      <workItem from="1743629278912" duration="17000" />
     </task>
     <task id="LOCAL-00001" summary="Created UserService">
       <option name="closed" value="true" />
@@ -178,7 +285,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735259062493</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Removed the application.properties">
+      <option name="closed" value="true" />
+      <created>1735598664475</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1735598664475</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,7 +315,8 @@
     <MESSAGE value="Created FitHubUI" />
     <MESSAGE value="do-not-commit" />
     <MESSAGE value="Did a huge part of the application.&#10;Venue service done.&#10;Tracking service nearly done.&#10;Working on User(Social media) service." />
-    <option name="LAST_COMMIT_MESSAGE" value="Did a huge part of the application.&#10;Venue service done.&#10;Tracking service nearly done.&#10;Working on User(Social media) service." />
+    <MESSAGE value="Removed the application.properties" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed the application.properties" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -2,6 +2,7 @@ package mk.ukim.finki.fithubapi.UserService.service.implementation;
 
 import jakarta.transaction.Transactional;
 import jakarta.validation.constraints.NotNull;
+import mk.ukim.finki.fithubapi.UserService.dto.UpdatePersonalInfoDto;
 import mk.ukim.finki.fithubapi.UserService.dto.UpsertUserDto;
 import mk.ukim.finki.fithubapi.UserService.dto.UserDto;
 import mk.ukim.finki.fithubapi.UserService.enums.ActivityLevel;
@@ -20,12 +21,15 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.List;
 import java.util.Optional;
 
+import static mk.ukim.finki.fithubapi.UserService.util.ImageUtil.decodeFromBase64;
+
 @Service
 public class UserServiceImpl implements UserService {
-
     private final PasswordEncoder passwordEncoder;
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
@@ -40,7 +44,13 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public UserDto register(@NotNull UpsertUserDto userDto) {
+        if (emailAlreadyExists(userDto.getEmail())) {
+            throw new IllegalArgumentException("Email already exists");
+        } else if (usernameAlreadyExists(userDto.getUsername())) {
+            throw new IllegalArgumentException("Username already exists");
+        }
         User user = UserMapper.toEntity(userDto);
+
         user.onCreate();
         user.addRole(roleRepository
                 .findByName(RoleName.USER)
@@ -58,9 +68,9 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
     public UserDto findById(@NotNull Long id) {
-        return UserMapper.toDto(userRepository
-                .findById(id)
+        return UserMapper.toDto(userRepository.findById(id)
                 .orElseThrow(() -> new UserNotFoundException("User not found with id: " + id)));
     }
 
@@ -81,6 +91,7 @@ public class UserServiceImpl implements UserService {
         if (userToUpdate.isPresent()) {
             User user = UserMapper.toEntity(userDto);
             user.setId(userToUpdate.get().getId());
+            user.setDailyCalories(getDailyCaloriesForLoggedUser(user));
             user.onUpdate();
             User savedUser = userRepository.save(user);
             return UserMapper.toDto(savedUser);
@@ -108,7 +119,11 @@ public class UserServiceImpl implements UserService {
         Goal goal = user.getGoal();
         Double weight = user.getWeight();
         Double height = user.getHeight();
-        Integer age = user.getAge();
+        LocalDate currentDate = LocalDate.now();
+        LocalDate birthDate = user.getBirthDate();
+
+        Period period = Period.between(birthDate, currentDate);
+        int age = period.getYears();
         double bmr;
         if (gender == Gender.MALE) {
             bmr = 88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age);
@@ -116,26 +131,14 @@ public class UserServiceImpl implements UserService {
             bmr = 447.593 + (9.247 * weight) + (3.098 * height) - (4.330 * age);
         }
 
-        double activityFactor;
-        switch (activityLevel) {
-            case SEDENTARY:
-                activityFactor = 1.2;
-                break;
-            case LIGHT:
-                activityFactor = 1.375;
-                break;
-            case MODERATE:
-                activityFactor = 1.55;
-                break;
-            case ACTIVE:
-                activityFactor = 1.725;
-                break;
-            case VERY_ACTIVE:
-                activityFactor = 1.9;
-                break;
-            default:
-                throw new IllegalArgumentException("Unknown activity level: " + activityLevel);
-        }
+        double activityFactor = switch (activityLevel) {
+            case SEDENTARY -> 1.2;
+            case LIGHT -> 1.375;
+            case MODERATE -> 1.55;
+            case ACTIVE -> 1.725;
+            case VERY_ACTIVE -> 1.9;
+            default -> throw new IllegalArgumentException("Unknown activity level: " + activityLevel);
+        };
 
         double dailyCalories = bmr * activityFactor;
 
@@ -177,5 +180,105 @@ public class UserServiceImpl implements UserService {
         List<User> users = userRepository.findAllByIdIn(user.getFollowing());
 
         return UserMapper.toDtoList(users);
+    }
+
+    @Override
+    public UserDto updateAvatar(Long userId, String avatarData) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new UserNotFoundException("User not found with id: " + userId));
+        user.setAvatar(decodeFromBase64(avatarData));
+        User savedUser = userRepository.save(user);
+        return UserMapper.toDto(savedUser);
+    }
+
+    @Override
+    public UserDto updateBio(Long userId, String bio) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new UserNotFoundException("User not found with id: " + userId));
+        user.setBio(bio);
+
+        return UserMapper.toDto(userRepository.save(user));
+    }
+
+    @Override
+    public UserDto updatePersonalInfo(Long userId, UpdatePersonalInfoDto upsertUserDto) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new UserNotFoundException("User not found with id: " + userId));
+        user.setFirstName(upsertUserDto.getFirstName());
+        user.setLastName(upsertUserDto.getLastName());
+        user.setHeight(upsertUserDto.getHeight());
+        user.setWeight(upsertUserDto.getWeight());
+        user.setBirthDate(upsertUserDto.getBirthDate());
+        user.setGoal(upsertUserDto.getGoal());
+        user.setActivityLevel(upsertUserDto.getActivityLevel());
+        user.setDailyCalories(getDailyCaloriesForLoggedUser(user));
+
+        return UserMapper.toDto(userRepository.save(user));
+    }
+
+    @Override
+    public List<UserDto> findUsersByUsername(String username) {
+        return UserMapper.toDtoList(userRepository.findAllByUsernameContainingIgnoreCase(username));
+    }
+
+    @Override
+    @Transactional
+    public UserDto followUser(Long userId) {
+        String username = SecurityContextHolder.getContext().getAuthentication().getName();
+        User loggedInUser = findByUsername(username);
+
+        if (loggedInUser == null) {
+            throw new UserNotFoundException("User not found with username: " + username);
+        }
+
+        loggedInUser.addFollowing(userId);
+
+        User followedUser = userRepository.findById(userId)
+                .orElseThrow(() -> new UserNotFoundException("User not found with id: " + userId));
+        followedUser.addFollower(loggedInUser.getId());
+
+        userRepository.save(loggedInUser);
+        return UserMapper.toDto(userRepository.save(followedUser));
+    }
+
+    @Override
+    public UserDto unfollowUser(Long userId) {
+        String username = SecurityContextHolder.getContext().getAuthentication().getName();
+        User loggedInUser = findByUsername(username);
+
+        if (loggedInUser == null) {
+            throw new UserNotFoundException("User not found with username: " + username);
+        }
+
+        loggedInUser.removeFollowing(userId);
+
+        User followedUser = userRepository.findById(userId)
+                .orElseThrow(() -> new UserNotFoundException("User not found with id: " + userId));
+        followedUser.removeFollower(loggedInUser.getId());
+
+        userRepository.save(loggedInUser);
+        return UserMapper.toDto(userRepository.save(followedUser));
+    }
+
+    @Override
+    public UserDto addProfessionalTrainerToUser(Long userId, Long professionalTrainerId) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new UserNotFoundException("User not found with id: " + userId));
+        user.setProfessionalTrainerId(professionalTrainerId);
+
+        User savedUser = userRepository.save(user);
+        return UserMapper.toDto(savedUser);
+    }
+
+    @Override
+    public Boolean usernameAlreadyExists(String username) {
+        Optional<User> user = userRepository.findByUsername(username);
+        return user.isPresent();
+    }
+
+    @Override
+    public Boolean emailAlreadyExists(String email) {
+        Optional<User> user = userRepository.findByEmail(email);
+        return user.isPresent();
     }
 }

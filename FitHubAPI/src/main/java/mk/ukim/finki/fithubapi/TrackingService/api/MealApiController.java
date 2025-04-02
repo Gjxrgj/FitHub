@@ -16,6 +16,12 @@ import java.util.List;
 public class MealApiController {
     private final MealTrackService mealTrackService;
 
+    @GetMapping("/{id}")
+    public ResponseEntity<MealTrackDto> getById(
+            @PathVariable @NotNull Long id) {
+        return ResponseEntity.ok(mealTrackService.getMealById(id));
+    }
+
     @GetMapping("/getAllForDay/{userId}")
     public ResponseEntity<List<MealTrackDto>> getMealsForDay(@PathVariable @NotNull Long userId,
                                                              @RequestParam @NotNull LocalDate dayDate) {

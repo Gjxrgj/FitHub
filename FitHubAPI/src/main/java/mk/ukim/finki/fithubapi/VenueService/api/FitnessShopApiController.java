@@ -2,6 +2,8 @@ package mk.ukim.finki.fithubapi.VenueService.api;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
+import mk.ukim.finki.fithubapi.UserService.dto.SubscriptionResponse;
+import mk.ukim.finki.fithubapi.VenueService.dto.AddFitnessShopRequest;
 import mk.ukim.finki.fithubapi.VenueService.dto.FitnessShopDto;
 import mk.ukim.finki.fithubapi.VenueService.dto.UpsertFitnessShopDto;
 import mk.ukim.finki.fithubapi.VenueService.service.FitnessShopService;
@@ -34,9 +36,9 @@ public class FitnessShopApiController {
 
     @PostMapping("/add")
     public ResponseEntity<FitnessShopDto> addFitnessShop(
-            @RequestBody @NotNull @Valid UpsertFitnessShopDto fitnessShopDto
+            @RequestBody @NotNull @Valid AddFitnessShopRequest shopRequest
     ) {
-        return ResponseEntity.ok(fitnessShopService.add(fitnessShopDto));
+        return ResponseEntity.ok(fitnessShopService.add(shopRequest.getUpsertFitnessShopDto(), shopRequest.getSubscriptionResponse()));
     }
 
     @PutMapping("/edit/{id}")

@@ -1,9 +1,11 @@
 package mk.ukim.finki.fithubapi.VenueService.dto;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.annotation.Nullable;
 import lombok.Data;
 import mk.ukim.finki.fithubapi.VenueService.enums.Currency;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
@@ -27,4 +29,6 @@ public class GymDto {
     private List<PromotionDto> promotions;
     private List<PersonalTrainingDto> personalTrainings;
     private List<GroupTrainingDto> groupTrainings;
+    @Nullable
+    private LocalDate subscriptionExpirationDate;
 }

@@ -10,4 +10,6 @@ public interface MealTrackService {
     List<MealTrackDto> getMealsForDay(@NotNull Long userId, @NotNull LocalDate dayDate);
 
     List<MealTrackDto> getRecentMeals(Long userId);
+
+    MealTrackDto getMealById(Long id);
 }

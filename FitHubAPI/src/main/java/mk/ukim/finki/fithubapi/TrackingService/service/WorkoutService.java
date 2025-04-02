@@ -10,4 +10,8 @@ public interface WorkoutService {
     WorkoutDto addWorkout(UpsertWorkoutDto upsertWorkoutDto, Long userId);
 
     List<WorkoutDto> getWorkoutsByDateOrName(Long userId, LocalDate date, String workoutName);
+
+    WorkoutDto getWorkoutById(Long id);
+
+    Long deleteWorkout(Long workoutId);
 }

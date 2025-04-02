@@ -1,6 +1,7 @@
 package mk.ukim.finki.fithubapi.TrackingService.mappers;
 
 import mk.ukim.finki.fithubapi.TrackingService.dto.ExerciseDto;
+import mk.ukim.finki.fithubapi.TrackingService.dto.UpsertExerciseDto;
 import mk.ukim.finki.fithubapi.TrackingService.model.Exercise;
 
 import java.util.List;
@@ -30,23 +31,21 @@ public class ExerciseMapper {
         return dto;
     }
 
-    public static Exercise toEntity(ExerciseDto dto) {
+    public static Exercise toEntity(UpsertExerciseDto dto) {
         if (dto == null) {
             return null;
         }
 
         Exercise exercise = new Exercise();
-        exercise.setId(dto.getId());
+        exercise.setUserId(dto.getUserId());
         exercise.setName(dto.getName());
         exercise.setForce(dto.getForce());
         exercise.setLevel(dto.getLevel());
         exercise.setMechanic(dto.getMechanic());
-        exercise.setEquipment(dto.getEquipment());
         exercise.setCategory(dto.getCategory());
         exercise.setPrimaryMuscles(dto.getPrimaryMuscles());
         exercise.setSecondaryMuscles(dto.getSecondaryMuscles());
-        exercise.setInstructions(dto.getInstructions());
-        exercise.setImages(dto.getImages());
+        exercise.setInstructions(List.of(dto.getInstructions()));
 
         return exercise;
     }

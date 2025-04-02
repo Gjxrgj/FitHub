@@ -2,17 +2,22 @@ package mk.ukim.finki.fithubapi.VenueService.service.impl;
 
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
-import mk.ukim.finki.fithubapi.VenueService.dto.*;
+import mk.ukim.finki.fithubapi.UserService.dto.SubscriptionResponse;
+import mk.ukim.finki.fithubapi.VenueService.dto.FitnessRestaurantDto;
+import mk.ukim.finki.fithubapi.VenueService.dto.MenuDto;
+import mk.ukim.finki.fithubapi.VenueService.dto.UpsertFitnessRestaurantDto;
+import mk.ukim.finki.fithubapi.VenueService.dto.UpsertMealDto;
 import mk.ukim.finki.fithubapi.VenueService.mapper.FitnessRestaurantMapper;
 import mk.ukim.finki.fithubapi.VenueService.mapper.MealMapper;
 import mk.ukim.finki.fithubapi.VenueService.mapper.MenuMapper;
 import mk.ukim.finki.fithubapi.VenueService.model.FitnessRestaurant;
 import mk.ukim.finki.fithubapi.VenueService.model.Meal;
 import mk.ukim.finki.fithubapi.VenueService.model.Menu;
+import mk.ukim.finki.fithubapi.VenueService.model.Subscription;
 import mk.ukim.finki.fithubapi.VenueService.repository.FitnessRestaurantRepository;
 import mk.ukim.finki.fithubapi.VenueService.repository.MealRepository;
+import mk.ukim.finki.fithubapi.VenueService.repository.SubscriptionRepository;
 import mk.ukim.finki.fithubapi.VenueService.service.FitnessRestaurantService;
-import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -28,8 +33,13 @@ import static mk.ukim.finki.fithubapi.VenueService.util.GeoUtils.calculateBoundi
 @Service
 @AllArgsConstructor
 public class FitnessRestaurantServiceImpl implements FitnessRestaurantService {
+
     private final FitnessRestaurantRepository fitnessRestaurantRepository;
+
     private final MealRepository mealRepository;
+
+    private final SubscriptionRepository subscriptionRepository;
+
 
     @Override
     @Transactional
@@ -37,7 +47,10 @@ public class FitnessRestaurantServiceImpl implements FitnessRestaurantService {
         FitnessRestaurant fitnessRestaurant = fitnessRestaurantRepository
                 .findById(id)
                 .orElseThrow(() -> new NoSuchElementException("Fitness restaurant with ID " + id + " not found."));
-        return FitnessRestaurantMapper.toDto(fitnessRestaurant);
+        Subscription subscription = subscriptionRepository.findByVenueId(id);
+        FitnessRestaurantDto fitnessRestaurantDto = FitnessRestaurantMapper.toDto(fitnessRestaurant);
+        fitnessRestaurantDto.setSubscriptionExpirationDate(subscription.getExpirationDate().toLocalDate());
+        return fitnessRestaurantDto;
     }
 
     @Override
@@ -63,16 +76,21 @@ public class FitnessRestaurantServiceImpl implements FitnessRestaurantService {
 
     @Override
     @Transactional
-    public FitnessRestaurantDto add(UpsertFitnessRestaurantDto fitnessRestaurantDto) {
-        if (fitnessRestaurantRepository.findByName(fitnessRestaurantDto.getName()).isPresent()) {
-            throw new DuplicateKeyException("A fitness restaurant with the name '" + fitnessRestaurantDto.getName() + "' already exists.");
-        }
+    public FitnessRestaurantDto add(UpsertFitnessRestaurantDto fitnessRestaurantDto, SubscriptionResponse subscriptionResponse) {
         FitnessRestaurant fitnessRestaurant = FitnessRestaurantMapper.toModel(fitnessRestaurantDto);
         fitnessRestaurant.setMenu(new Menu(new ArrayList<>(), fitnessRestaurant));
 
-        fitnessRestaurantRepository.save(fitnessRestaurant);
+        mk.ukim.finki.fithubapi.VenueService.model.Subscription subscriptionToSave = new mk.ukim.finki.fithubapi.VenueService.model.Subscription(
+                subscriptionResponse.id(),
+                subscriptionResponse.customerId(),
+                fitnessRestaurant
+        );
 
-        return FitnessRestaurantMapper.toDto(fitnessRestaurant);
+        fitnessRestaurant.setSubscriptionForVenue(subscriptionToSave);
+
+        subscriptionRepository.save(subscriptionToSave);
+
+        return FitnessRestaurantMapper.toDto(fitnessRestaurantRepository.save(fitnessRestaurant));
     }
 
     @Override
@@ -81,13 +99,6 @@ public class FitnessRestaurantServiceImpl implements FitnessRestaurantService {
         FitnessRestaurant fitnessRestaurant = fitnessRestaurantRepository
                 .findById(id)
                 .orElseThrow(() -> new NoSuchElementException("Fitness restaurant with ID " + id + " not found."));
-
-        fitnessRestaurantRepository.findByName(fitnessRestaurantDto.getName())
-                .ifPresent(existingFitnessRestaurant -> {
-                    if (!existingFitnessRestaurant.getId().equals(id)) {
-                        throw new DuplicateKeyException("A fitness restaurant with the name '" + fitnessRestaurantDto.getName() + "' already exists.");
-                    }
-                });
 
         fitnessRestaurant.setUserId(fitnessRestaurantDto.getUserId());
         fitnessRestaurant.setName(fitnessRestaurantDto.getName());
@@ -131,7 +142,7 @@ public class FitnessRestaurantServiceImpl implements FitnessRestaurantService {
     public MenuDto removeMeal(Long id) {
         Meal meal = mealRepository.findById(id)
                 .orElseThrow(() -> new NoSuchElementException("Meal with ID " + id + " not found."));
-        Menu menu  = meal.getMenu();
+        Menu menu = meal.getMenu();
         menu.removeMeal(meal);
         FitnessRestaurant fitnessRestaurant = menu.getFitnessRestaurant();
         fitnessRestaurant.setMenu(menu);

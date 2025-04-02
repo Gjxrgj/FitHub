@@ -2,13 +2,16 @@ package mk.ukim.finki.fithubapi.VenueService.service.impl;
 
 import jakarta.transaction.Transactional;
 import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
+import mk.ukim.finki.fithubapi.UserService.dto.SubscriptionResponse;
 import mk.ukim.finki.fithubapi.VenueService.dto.FitnessShopDto;
 import mk.ukim.finki.fithubapi.VenueService.dto.UpsertFitnessShopDto;
 import mk.ukim.finki.fithubapi.VenueService.mapper.FitnessShopMapper;
 import mk.ukim.finki.fithubapi.VenueService.model.FitnessShop;
+import mk.ukim.finki.fithubapi.VenueService.model.Subscription;
 import mk.ukim.finki.fithubapi.VenueService.repository.FitnessShopRepository;
+import mk.ukim.finki.fithubapi.VenueService.repository.SubscriptionRepository;
 import mk.ukim.finki.fithubapi.VenueService.service.FitnessShopService;
-import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,20 +24,23 @@ import static mk.ukim.finki.fithubapi.VenueService.util.GeoUtils.calculateBoundi
 
 
 @Service
+@AllArgsConstructor
 public class FitnessShopServiceImpl implements FitnessShopService {
 
     private final FitnessShopRepository fitnessShopRepository;
 
-    public FitnessShopServiceImpl(FitnessShopRepository fitnessShopRepository) {
-        this.fitnessShopRepository = fitnessShopRepository;
-    }
+    private final SubscriptionRepository subscriptionRepository;
+
 
     @Override
     public FitnessShopDto getById(@NotNull Long id) {
         FitnessShop fitnessShop = fitnessShopRepository
                 .findById(id)
                 .orElseThrow(() -> new NoSuchElementException("Fitness shop with ID " + id + " not found."));
-        return FitnessShopMapper.toDto(fitnessShop);
+        Subscription subscription = subscriptionRepository.findByVenueId(id);
+        FitnessShopDto fitnessShopDto = FitnessShopMapper.toDto(fitnessShop);
+        fitnessShopDto.setSubscriptionExpirationDate(subscription.getExpirationDate().toLocalDate());
+        return fitnessShopDto;
     }
 
     @Override
@@ -57,15 +63,19 @@ public class FitnessShopServiceImpl implements FitnessShopService {
 
     @Override
     @Transactional
-    public FitnessShopDto add(@NotNull UpsertFitnessShopDto fitnessShopDto) {
-        if (fitnessShopRepository.findByName(fitnessShopDto.getName()).isPresent()) {
-            throw new DuplicateKeyException("A fitness shop with the name '" + fitnessShopDto.getName() + "' already exists.");
-        }
+    public FitnessShopDto add(@NotNull UpsertFitnessShopDto fitnessShopDto, @NotNull SubscriptionResponse subscriptionResponse) {
         FitnessShop fitnessShop = FitnessShopMapper.toModel(fitnessShopDto);
+        mk.ukim.finki.fithubapi.VenueService.model.Subscription subscriptionToSave = new mk.ukim.finki.fithubapi.VenueService.model.Subscription(
+                subscriptionResponse.id(),
+                subscriptionResponse.customerId(),
+                fitnessShop
+        );
 
-        fitnessShopRepository.save(fitnessShop);
+        fitnessShop.setSubscriptionForVenue(subscriptionToSave);
 
-        return FitnessShopMapper.toDto(fitnessShop);
+        subscriptionRepository.save(subscriptionToSave);
+
+        return FitnessShopMapper.toDto(fitnessShopRepository.save(fitnessShop));
     }
 
     @Override
@@ -75,13 +85,6 @@ public class FitnessShopServiceImpl implements FitnessShopService {
             @NotNull Long id) {
         FitnessShop fitnessShop = fitnessShopRepository.findById(id)
                 .orElseThrow(() -> new NoSuchElementException("Fitness shop with ID " + id + " not found."));
-
-        fitnessShopRepository.findByName(dto.getName())
-                .ifPresent(existingFitnessShop -> {
-                    if (!existingFitnessShop.getId().equals(id)) {
-                        throw new DuplicateKeyException("A fitness shop with the name '" + dto.getName() + "' already exists.");
-                    }
-                });
 
         fitnessShop.setUserId(dto.getUserId());
         fitnessShop.setName(dto.getName());

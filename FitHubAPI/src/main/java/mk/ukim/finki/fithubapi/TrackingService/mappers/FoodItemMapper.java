@@ -24,11 +24,15 @@ public class FoodItemMapper {
         return foodItem;
     }
 
+    public static List<FoodItem> toEntityList(List<UpsertFoodItemDto> foodItems, MealTrack mealTrack) {
+        return foodItems.stream().map(item -> toEntity(item, mealTrack)).toList();
+    }
+
     public static FoodItemDto toDto(FoodItem foodItem) {
         FoodItemDto dto = new FoodItemDto();
         dto.setId(foodItem.getId());
         dto.setUserId(foodItem.getUserId());
-        dto.setMealType(foodItem.getMeal().getMealType());
+        dto.setMealType(foodItem.getMeal() != null ? foodItem.getMeal().getMealType() : null);
         dto.setName(foodItem.getName());
         dto.setCaloriesPer100g(foodItem.getCaloriesPer100g());
         dto.setProteinsPer100g(foodItem.getProteinsPer100g());

@@ -1,6 +1,6 @@
 package mk.ukim.finki.fithubapi.TrackingService.dto;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
+import jakarta.annotation.Nullable;
 import lombok.Data;
 import mk.ukim.finki.fithubapi.TrackingService.enums.MealType;
 
@@ -8,6 +8,7 @@ import mk.ukim.finki.fithubapi.TrackingService.enums.MealType;
 public class FoodItemDto {
     private Long id;
     private Long userId;
+    @Nullable
     private MealType mealType;
     private String name;
     private Double caloriesPer100g;

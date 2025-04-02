@@ -1,6 +1,5 @@
 package mk.ukim.finki.fithubapi.VenueService.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -29,6 +28,8 @@ public abstract class Venue {
     private String contactNumber;
     private String contactEmail;
     private String businessWebsite;
+    @OneToOne
+    private Subscription subscriptionForVenue;
     @Column(name = "avatar", columnDefinition = "bytea")
     private byte[] avatar;
     @OneToMany(mappedBy = "venue", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
