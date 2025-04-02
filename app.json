@@ -1,12 +1,20 @@
 {
   "expo": {
     "name": "FitHubUI",
-    "slug": "FitHubUI",
+    "slug": "fithub",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
+    "extra": {
+      "MAPS_API_KEY": "AIzaSyDiP1lhzsDcMgbZYkLwnbJqS6rIUGxWV28",
+      "USDA_API_KEY": "f0P5YZfpnkvHZEIElIhCvXBy7CCHc89WMhVgD10M",
+      "STRIPE_PUBLISHABLE_API_KEY": "pk_test_51QqerX3BIkPNr9Q8zg4PFve5b6tGxa0HQA6Z4v5cNmv1VsVKQXjgoxMrkDfFte0sBpuzKnGYWq8xZ6GWxOcW1eGA00bPYghUNG",
+      "eas": {
+        "projectId": "c217d853-2684-4a5a-a7f1-67cbeb9ded7e"
+      }
+    },
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
@@ -16,6 +24,7 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.dornovich.fithub",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
@@ -23,6 +32,7 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "owner": "dornovich"
   }
 }
