@@ -34,6 +34,7 @@ export const CopyEditWorkoutScreen = () => {
         defaultValues: {
             exercises: workout.exercises.reduce((acc, exercise) => {
                 acc[exercise.id] = {
+                    id: exercise.id || 0,
                     reps: exercise.reps || 0,
                     name: exercise.name || '',
                     sets: exercise.sets || 0,
@@ -50,6 +51,9 @@ export const CopyEditWorkoutScreen = () => {
         onSubmit: ({value}) => {
             if (copyEditWorkout === CopyOrEditWorkout.EDIT) {
                 const transformedExercises: Array<ExerciseInWorkoutDto> = Object.entries(value.exercises).map(([id, exercise]) => ({
+                    id: exercise.id,
+                    name: exercise.name,
+                    exerciseId: exercise.exerciseId,
                     reps: exercise.reps,
                     sets: exercise.sets,
                     weight: exercise.weight,

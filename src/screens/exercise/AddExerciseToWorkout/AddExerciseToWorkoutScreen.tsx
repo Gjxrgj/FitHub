@@ -85,11 +85,10 @@ export const AddExerciseToWorkoutScreen = () => {
             data={[{}]}
             renderItem={() => (
                 <View>
-                    <View style={styles.titleContainer}>
-                        <Text style={styles.title}>{exerciseDto.name}</Text>
-                    </View>
-
                     <View style={styles.formFieldContainer}>
+                        <View style={styles.titleContainer}>
+                            <Text style={styles.title}>{exerciseDto.name}</Text>
+                        </View>
                         <form.Field
                             name={'reps'}>
                             {(field) => (

@@ -108,13 +108,12 @@ export const FoodItemScreen = () => {
 
     return (
         <ScrollView style={styles.container}>
-            <View style={styles.titleContainer}>
-                <Text style={styles.title}>
-                    {isUSDAFoodItem(foodItem) ? foodItem.description : isFoodItemDto(foodItem) ? foodItem.name : foodItem.product.product_name}
-                </Text>
-            </View>
-
             <View style={styles.nutritionContainer}>
+                <View style={styles.titleContainer}>
+                    <Text style={styles.title}>
+                        {isUSDAFoodItem(foodItem) ? foodItem.description : isFoodItemDto(foodItem) ? foodItem.name : foodItem.product.product_name}
+                    </Text>
+                </View>
                 <View style={styles.per100gLabel}>
                     <Text style={{color: '#6c6b6b', textAlign: 'center'}}>
                         Per 100g
@@ -126,7 +125,7 @@ export const FoodItemScreen = () => {
                 </View>
                 {renderMacronutrientRow()}
                 <View style={styles.fullWidth}>
-                    <Text style={styles.addMealText}> Add to meal</Text>
+                    <Text style={styles.addMealText}> Add To Meal</Text>
                 </View>
                 <form.Field name={'mealType'}>
                     {(field) => (
@@ -217,7 +216,7 @@ export const FoodItemScreen = () => {
                     )}
                 </form.Field>
                 <Button style={{marginTop: 10, marginHorizontal: 10, borderRadius: 2}} onPress={form.handleSubmit} mode={"contained"}>
-                    Add meal
+                    Add To Meal
                 </Button>
             </View>
         </ScrollView>

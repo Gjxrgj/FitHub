@@ -100,6 +100,7 @@ export const CreateNewExercise = () => {
                     {(field) => (
                         <View style={styles.inputContainer}>
                             <CustomTextInput
+                                multiline
                                 numberOfLines={4}
                                 label="Instructions"
                                 onChangeText={field.handleChange}

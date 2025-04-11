@@ -1,5 +1,6 @@
 import {StyleSheet} from 'react-native';
 import {theme} from "../../../../theme/theme";
+
 export const styles = StyleSheet.create({
     modalOverlay: {
         flex: 1,
@@ -37,7 +38,9 @@ export const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     modalButton: {
-        marginRight: 10,
+        marginHorizontal: 10,
+        marginTop: 20,
+        borderRadius: 2
     },
     input: {
         height: 50,

@@ -554,7 +554,7 @@ export const AddVenueScreen = () => {
                 <Button mode="contained"
                         style={{position: 'absolute', bottom: 0, borderRadius: 0, width: '100%'}}
                         onPress={form.handleSubmit}>
-                    Submit
+                    Create Subscription
                 </Button>
             </>
     );

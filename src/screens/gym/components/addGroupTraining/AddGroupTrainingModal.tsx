@@ -212,15 +212,13 @@ export const AddGroupTrainingModal: React.FC<AddGroupTrainingModalProps> = ({
                             </View>
                         )}
                     </form.Field>
-                    <View style={styles.modalButtons}>
-                        <Button
-                            mode="contained"
-                            onPress={form.handleSubmit}
-                            style={styles.modalButton}
-                        >
-                            Add Group Training
-                        </Button>
-                    </View>
+                    <Button
+                        mode="contained"
+                        onPress={form.handleSubmit}
+                        style={styles.modalButton}
+                    >
+                        Add Group Training
+                    </Button>
                 </View>
             </View>
         </Modal>

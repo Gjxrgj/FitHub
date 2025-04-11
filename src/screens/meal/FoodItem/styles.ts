@@ -4,10 +4,8 @@ import {theme} from '../../../theme/theme.ts';
 export const styles = StyleSheet.create({
     titleContainer: {
         alignItems: 'center',
-        marginTop: 20,
-        marginBottom: 60,
-        paddingVertical: 10,
-        borderRadius: 10,
+        marginTop: 30,
+        marginBottom: 60
     },
     title: {
         fontSize: 26,
@@ -52,12 +50,14 @@ export const styles = StyleSheet.create({
     },
     nutritionContainer: {
         padding: 20,
+        paddingBottom: 40,
         backgroundColor: '#fff',
         borderRadius: 10,
         elevation: 3,
         borderColor: '#ddd',
         borderWidth: 1,
         marginBottom: 20,
+        marginTop: 90
     },
     sectionTitle: {
         fontSize: 18,

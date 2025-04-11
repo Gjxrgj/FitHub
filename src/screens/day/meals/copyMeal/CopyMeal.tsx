@@ -46,7 +46,7 @@ export const CopyMeal = () => {
                     mealType: value.mealType,
                     fatsPer100g: foodItem.fatsPer100g,
                     carbsPer100g: foodItem.carbsPer100g,
-                    proteinsPer100g: foodItem.proteins_100g,
+                    proteinsPer100g: foodItem.proteinsPer100g,
                     caloriesPer100g: foodItem.caloriesPer100g,
                 } as UpsertFoodItemDto;
             });

@@ -97,7 +97,7 @@ export type RootStackParamList = {
     PostMeal: { mealId: number }
     PostWorkout: { workoutId: number };
     Resubscribe: { venue: GymDto | FitnessShopDto | FitnessRestaurantDto, venueType: VenueType }
-    CommentsScreen: { comments: Array<CommentDto> };
+    CommentsScreen: { comments: Array<CommentDto>, postId: number };
     AddExerciseToWorkoutScreen: { exerciseDto: ExerciseDto, postId: number }
     AddEditPostScreen: { postDto?: PostDto, upsertPostDto?: UpsertPostDto }
     DayMealsScreen: { meals?: Array<MealTrackDto>, upsertPostDto?: UpsertPostDto };

@@ -142,6 +142,7 @@ export const SignUpScreen2: React.FC = () => {
                     </View>
                     <CustomTextInput
                         label="Short bio"
+                        multiline
                         numberOfLines={4}
                         value={updatedUserDto.bio}
                         onChangeText={text => handleChange('bio', text)}

@@ -58,12 +58,12 @@ export const CommentsScreen = () => {
                             </Text>
                         </View>
                         <View>
-                            <TouchableOpacity onPress={() => deleteComment(item.id)
+                            {item.userId === auth.user.id && <TouchableOpacity onPress={() => deleteComment(item.id)
                                 .then((post) => {
                                 setComments(post.comments);
                             })}>
-                                <Icon name={'delete'} size={30} color={theme.colors.error}/>
-                            </TouchableOpacity>
+                            <Icon name={'delete'} size={30} color={theme.colors.error}/>
+                        </TouchableOpacity>}
                         </View>
                     </View>
                 )}

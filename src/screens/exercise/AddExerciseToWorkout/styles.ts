@@ -21,10 +21,7 @@ export const styles = StyleSheet.create({
     },
     titleContainer: {
         alignItems: 'center',
-        marginTop: 20,
-        marginBottom: 60,
-        paddingVertical: 10,
-        borderRadius: 10,
+        marginBottom: 50,
     },
     item: {
         padding: 8,
@@ -50,12 +47,13 @@ export const styles = StyleSheet.create({
     },
     formFieldContainer: {
         padding: 20,
+        paddingBottom: 40,
         backgroundColor: '#fff',
         borderRadius: 10,
         elevation: 3,
         borderColor: '#ddd',
         borderWidth: 1,
-        marginBottom: 20,
+        marginTop: 50
     },
     timeInputs: {
         flexDirection: 'row',
