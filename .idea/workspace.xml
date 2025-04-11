@@ -5,180 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7fe6fafb-54cd-44fc-a15a-9f7d784fee94" name="Changes" comment="Commiting everything thats not commited.">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/dbde2816-6d53-4a85-9e02-4d7d7b1520a7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/dbde2816-6d53-4a85-9e02-4d7d7b1520a7/storage_v2/_src_/database/FitHubDB.wv4f5A.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/dbde2816-6d53-4a85-9e02-4d7d7b1520a7/storage_v2/_src_/database/FitHubDB.wv4f5A/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/dbde2816-6d53-4a85-9e02-4d7d7b1520a7/storage_v2/_src_/database/FitHubDB.wv4f5A/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/dbde2816-6d53-4a85-9e02-4d7d7b1520a7/storage_v2/_src_/database/FitHubDB.wv4f5A/schema/public.abK9xQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/.idea/FitHubUI.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/eas.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/assets/images/logo-black-on-white.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/assets/images/logo-original-on white.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/assets/images/logo-original-transparent.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/assets/images/logo-white-on-black.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/components/BarcodeScanner/BarcodeScanner.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/components/BarcodeScanner/styles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/components/BottomNavigation/CustomBottomNavigation.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/components/BottomNavigation/style.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/components/ContactInfomationModal/ContactInformationModal.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/components/ContactInfomationModal/styles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/components/CustomTextInput/CustomTextInput.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/components/CustomTextInput/styles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/components/CustomView/CustomView.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/components/CustomView/style.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/components/Drawer/RightDrawerComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/components/Drawer/styles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/components/EditDescriptionModal/EditDescriptionModal.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/components/EditDescriptionModal/styles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/components/ErrorDisplay/ErrorDisplayComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/components/ImageModal/ImageModal.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/components/ImageModal/style.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/components/LoadingSpinner/LoadingSpinner.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/components/MainPagesView/MainPageView.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/components/MainPagesView/styles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/components/MapPickerModal/MapPickerModal.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/components/MapPickerModal/styles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/components/MapPinModal/MapPinModal.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/components/MapPinModal/styles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/components/Resubscribe/Resubscribe.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/components/ReviewsModal/ReviewsModal.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/components/ReviewsModal/style.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/components/SignUpHeader/SignUpHeader.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/components/SignUpHeader/styles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/components/VenueMapModal/VenueMapModal.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/components/VenueMapModal/styles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/config/config.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/context/AuthProvider.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/declarations.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/dto/types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/enums/enums.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/day/calorieOverview/CalorieOverview.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/day/meals/DayMealsScreen.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/day/meals/copyMeal/CopyMeal.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/day/meals/copyMeal/styles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/day/meals/mealStats/MealStatsModal.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/day/meals/mealStats/styles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/day/meals/styles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/day/workouts/CopyEditWorkout/CopyEditWorkoutScreen.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/day/workouts/CopyEditWorkout/styles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/day/workouts/DayWorkoutsScreen.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/day/workouts/styles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/exercise/AddExerciseToWorkout/AddExerciseToWorkoutScreen.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/exercise/AddExerciseToWorkout/styles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/exercise/CreateNewExercise/CreateNewExercise.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/exercise/CreateNewExercise/RadioSelectModal.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/exercise/CreateNewExercise/styles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/exercise/MyExercises/MyExercises.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/exercise/MyExercises/styles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/exercise/SearchExerciseScreen/SearchExerciseScreen.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/exercise/SearchExerciseScreen/styles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/exercise/coponents/AddWorkoutModal.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/exercise/coponents/styles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/fitnessRestaurant/FitnessRestaurantScreen.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/fitnessRestaurant/addIngredient/AddIngredientModal.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/fitnessRestaurant/addIngredient/styles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/fitnessRestaurant/addMeal/AddMealScreen.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/fitnessRestaurant/addMeal/styles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/fitnessRestaurant/menu/MenuScreen.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/fitnessRestaurant/menu/styles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/fitnessRestaurant/styles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/fitnessShop/FitnessShopScreen.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/fitnessShop/styles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/friends/SearchFriends.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/friends/styles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/gym/GymScreen.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/gym/components/addGroupTraining/AddGroupTrainingModal.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/gym/components/addGroupTraining/styles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/gym/components/addPersonalTraining/AddPersonalTrainingModal.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/gym/components/addPersonalTraining/styles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/gym/components/addPromotion/AddPromotionModal.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/gym/components/addPromotion/styles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/gym/components/updatePricingModal/UpdatePricingModal.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/gym/components/updatePricingModal/styles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/gym/styles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/home/CommentsScreen.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/home/HomeScreen.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/home/styles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/login/LoginScreen.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/login/styles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/map/MapScreen.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/map/styles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/meal/FoodItem/CreateNewFoodItem/CreateNewFoodItem.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/meal/FoodItem/FoodItemScreen.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/meal/FoodItem/MyFoodItems/MyFoodItems.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/meal/FoodItem/MyFoodItems/styles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/meal/FoodItem/styles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/meal/SearchMealScreen/SearchMealScreen.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/meal/SearchMealScreen/styles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/post/AddEditPostScreen.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/post/PostMeal/PostMeal.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/post/PostMeal/styles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/post/PostWorkout/PostWorkout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/post/PostWorkout/styles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/post/styles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/profile/ProfileScreen.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/profile/component/Account/EditBio/EditBioModal.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/profile/component/Account/EditBio/styles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/profile/component/Account/EditPersonalInfo/EditPersonalInfoScreen.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/profile/component/Account/EditPersonalInfo/styles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/profile/component/Account/ProfessionalTrainer/BecomeProfessionalTrainer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/profile/component/Account/ProfessionalTrainer/styles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/profile/component/FollowersOrFollowingModal/FollowersOrFollowingModal.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/profile/component/FollowersOrFollowingModal/styles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/profile/styles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/signUp/SignUpScreen1.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/signUp/SignUpScreen2.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/signUp/SignUpScreen3.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/signUp/styles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/venue/AddVenueScreen.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/venue/MyVenuesScreen.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/venue/addVenueStyles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/screens/venue/myVenuesStyles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/services/authService.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/services/dayService.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/services/exercisesInWorkoutService.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/services/exercisesService.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/services/fitnessRestaurantService.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/services/fitnessShopService.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/services/foodItemService.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/services/gymService.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/services/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/services/mealService.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/services/mealTrackSevices.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/services/openFoodFactsService.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/services/paymentService.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/services/postsService.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/services/professionalTrainerService.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/services/reviewService.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/services/usdaService.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/services/userService.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/services/venueService.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/services/workoutService.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/theme/theme.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/util/apiClient.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/util/dateUtil.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/util/formatBase64Image.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/util/imageUtil.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubUI/src/util/stringUtil.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dbde2816-6d53-4a85-9e02-4d7d7b1520a7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/dbde2816-6d53-4a85-9e02-4d7d7b1520a7.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dbde2816-6d53-4a85-9e02-4d7d7b1520a7/storage_v2/_src_/database/FitHubDB.wv4f5A/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/dbde2816-6d53-4a85-9e02-4d7d7b1520a7/storage_v2/_src_/database/FitHubDB.wv4f5A/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/mapper/PostMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/mapper/PostMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/models/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/models/Post.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/service/implementation/PostServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/service/implementation/PostServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FitHubUI" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubUI/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubUI/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubUI/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubUI/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/components/BarcodeScanner/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/components/BarcodeScanner/styles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/dto/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/dto/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/day/meals/copyMeal/CopyMeal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/day/meals/copyMeal/CopyMeal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/day/workouts/CopyEditWorkout/CopyEditWorkoutScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/day/workouts/CopyEditWorkout/CopyEditWorkoutScreen.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/exercise/AddExerciseToWorkout/AddExerciseToWorkoutScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/exercise/AddExerciseToWorkout/AddExerciseToWorkoutScreen.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/exercise/AddExerciseToWorkout/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/exercise/AddExerciseToWorkout/styles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/exercise/CreateNewExercise/CreateNewExercise.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/exercise/CreateNewExercise/CreateNewExercise.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/gym/components/addGroupTraining/AddGroupTrainingModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/gym/components/addGroupTraining/AddGroupTrainingModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/gym/components/addGroupTraining/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/gym/components/addGroupTraining/styles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/home/CommentsScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/home/CommentsScreen.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/meal/FoodItem/FoodItemScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/meal/FoodItem/FoodItemScreen.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/meal/FoodItem/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/meal/FoodItem/styles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/signUp/SignUpScreen2.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/signUp/SignUpScreen2.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/venue/AddVenueScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/venue/AddVenueScreen.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FitHubUI/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubUI/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/yarn.lock" afterDir="false" />
     </list>
     <list id="9ad12d3f-878a-45bc-852a-34975897acf4" name="do-not-commit" comment="do-not-commit" />
     <option name="SHOW_DIALOG" value="false" />
@@ -198,7 +46,7 @@
         <entry key="$PROJECT_DIR$/FitHubUI" value="main" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/FitHubUI" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -226,7 +74,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;Spring Boot.FitHubAPIApplication.executor&quot;: &quot;Debug&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/mark1/OneDrive/Desktop/FitHubBackUP/FitHub&quot;,
@@ -237,7 +85,7 @@
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;npm.run-ui.executor&quot;: &quot;Run&quot;,
     &quot;npm.start.executor&quot;: &quot;Run&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.uml&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\mark1\\OneDrive\\Desktop\\FitHubBackUP\\FitHub\\FitHubUI\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
@@ -261,7 +109,7 @@
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
-  <component name="RunManager" selected="npm.start">
+  <component name="RunManager" selected="Spring Boot.FitHubAPIApplication">
     <configuration name="FitHubAPIApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="FitHubAPI" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="mk.ukim.finki.fithubapi.FitHubAPIApplication" />
@@ -287,8 +135,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.start" />
         <item itemvalue="Spring Boot.FitHubAPIApplication" />
+        <item itemvalue="npm.start" />
         <item itemvalue="Spring Boot.FitHubAPIApplication" />
       </list>
     </recent_temporary>
@@ -320,6 +168,13 @@
       <workItem from="1743630319086" duration="606000" />
       <workItem from="1743631217935" duration="935000" />
       <workItem from="1743632291786" duration="694000" />
+      <workItem from="1743633001019" duration="398000" />
+      <workItem from="1743633409565" duration="353000" />
+      <workItem from="1743703473170" duration="2948000" />
+      <workItem from="1743787122197" duration="4497000" />
+      <workItem from="1744052630271" duration="729000" />
+      <workItem from="1744303504225" duration="2348000" />
+      <workItem from="1744401529164" duration="2766000" />
     </task>
     <task id="LOCAL-00001" summary="Created UserService">
       <option name="closed" value="true" />
@@ -361,7 +216,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735598664475</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Commiting everything thats not commited.">
+      <option name="closed" value="true" />
+      <created>1743633090728</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1743633090728</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

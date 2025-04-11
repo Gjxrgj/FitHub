@@ -31,7 +31,7 @@ public class PostMapper {
 
         postDto.setImage(post.getImage() != null ? encodeToBase64(post.getImage()) : null);
 
-        postDto.setMealId(post.getMealId());
+        postDto.setMealId(post.getMealTrackId());
         postDto.setWorkoutId(post.getWorkoutId());
 
         postDto.setComments(post.getComments().stream().map(CommentMapper::toDto).collect(Collectors.toList()));
@@ -68,7 +68,7 @@ public class PostMapper {
             post.setImage(decodeFromBase64(upsertPostDto.getImage()));
         }
 
-        post.setMealId(upsertPostDto.getMealId());
+        post.setMealTrackId(upsertPostDto.getMealId());
         post.setWorkoutId(upsertPostDto.getWorkoutId());
 
         return post;

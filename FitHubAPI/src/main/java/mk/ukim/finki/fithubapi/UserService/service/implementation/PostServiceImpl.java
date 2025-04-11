@@ -201,7 +201,7 @@ public class PostServiceImpl implements PostService {
         }
         existingPost.setTitle(upsertPostDto.getTitle());
         existingPost.setDescription(upsertPostDto.getDescription());
-        existingPost.setMealId(upsertPostDto.getMealId());
+        existingPost.setMealTrackId(upsertPostDto.getMealId());
         existingPost.setWorkoutId(upsertPostDto.getWorkoutId());
 
         Post savedPost = postRepository.save(existingPost);

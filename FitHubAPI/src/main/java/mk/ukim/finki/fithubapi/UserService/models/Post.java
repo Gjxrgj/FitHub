@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +23,7 @@ public class Post {
     private LocalDateTime creationDate;
     @Column(name = "image", columnDefinition = "bytea")
     private byte[] image;
-    private Long mealId;
+    private Long mealTrackId;
     private Long workoutId;
     @OneToMany
     private List<Comment> comments;
