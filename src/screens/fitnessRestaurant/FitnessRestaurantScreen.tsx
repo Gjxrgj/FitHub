@@ -221,7 +221,7 @@ export const FitnessRestaurantScreen = () => {
                     </View>
                 </View>
 
-                {auth.user?.id === gymDto.userId &&<TouchableOpacity style={{
+                {auth.user?.id === restaurantDto.userId &&<TouchableOpacity style={{
                     padding: 'auto',
                     paddingVertical: 10,
                     marginBottom: 20,
