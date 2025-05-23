@@ -4,19 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7fe6fafb-54cd-44fc-a15a-9f7d784fee94" name="Changes" comment="Some other changes.">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dbde2816-6d53-4a85-9e02-4d7d7b1520a7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/dbde2816-6d53-4a85-9e02-4d7d7b1520a7.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dbde2816-6d53-4a85-9e02-4d7d7b1520a7/storage_v2/_src_/database/FitHubDB.wv4f5A/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/dbde2816-6d53-4a85-9e02-4d7d7b1520a7/storage_v2/_src_/database/FitHubDB.wv4f5A/schema/public.abK9xQ.meta" afterDir="false" />
+    <list default="true" id="7fe6fafb-54cd-44fc-a15a-9f7d784fee94" name="Changes" comment="Some minor updates, and bug fixes.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/models/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/models/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/service/implementation/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/service/implementation/AuthenticationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/service/impl/StripeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/service/impl/StripeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubUI" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/fitnessRestaurant/FitnessRestaurantScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/fitnessRestaurant/FitnessRestaurantScreen.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/fitnessShop/FitnessShopScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/fitnessShop/FitnessShopScreen.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/gym/components/addGroupTraining/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/gym/components/addGroupTraining/styles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/home/CommentsScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/home/CommentsScreen.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/profile/component/Account/EditPersonalInfo/EditPersonalInfoScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/profile/component/Account/EditPersonalInfo/EditPersonalInfoScreen.tsx" afterDir="false" />
     </list>
     <list id="9ad12d3f-878a-45bc-852a-34975897acf4" name="do-not-commit" comment="do-not-commit" />
     <option name="SHOW_DIALOG" value="false" />
@@ -178,7 +168,7 @@
       <workItem from="1745528293756" duration="19000" />
       <workItem from="1747511867238" duration="1089000" />
       <workItem from="1747931793682" duration="2824000" />
-      <workItem from="1748001185894" duration="1990000" />
+      <workItem from="1748001185894" duration="2158000" />
     </task>
     <task id="LOCAL-00001" summary="Created UserService">
       <option name="closed" value="true" />
@@ -236,7 +226,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744407587388</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Some minor updates, and bug fixes.">
+      <option name="closed" value="true" />
+      <created>1748010943835</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1748010943835</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,7 +259,8 @@
     <MESSAGE value="Removed the application.properties" />
     <MESSAGE value="Commiting everything thats not commited." />
     <MESSAGE value="Some other changes." />
-    <option name="LAST_COMMIT_MESSAGE" value="Some other changes." />
+    <MESSAGE value="Some minor updates, and bug fixes." />
+    <option name="LAST_COMMIT_MESSAGE" value="Some minor updates, and bug fixes." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
