@@ -2,7 +2,6 @@ package mk.ukim.finki.fithubapi.UserService.models;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import mk.ukim.finki.fithubapi.UserService.enums.RoleName;
 
 import java.time.LocalDateTime;
@@ -27,15 +26,18 @@ public class Role {
     public Role() {
         users = new HashSet<>();
     }
+
     public Role(RoleName roleName) {
         users = new HashSet<>();
         this.name = roleName;
     }
+
     @PrePersist
     public void onCreate() {
         createdAt = LocalDateTime.now();
         updatedAt = LocalDateTime.now();
     }
+
     @PreUpdate
     public void onUpdate() {
         updatedAt = LocalDateTime.now();

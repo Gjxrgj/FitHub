@@ -1,7 +1,5 @@
 package mk.ukim.finki.fithubapi.UserService.service.implementation;
 
-import mk.ukim.finki.fithubapi.UserService.models.User;
-import mk.ukim.finki.fithubapi.UserService.service.UserService;
 import mk.ukim.finki.fithubapi.config.JwtUtil;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;

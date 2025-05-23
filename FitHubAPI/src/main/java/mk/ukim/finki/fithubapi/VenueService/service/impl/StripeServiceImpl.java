@@ -11,7 +11,6 @@ import com.stripe.param.CustomerCreateParams;
 import com.stripe.param.SubscriptionCreateParams;
 import com.stripe.param.SubscriptionCreateParams.Item;
 import mk.ukim.finki.fithubapi.UserService.dto.SubscriptionResponse;
-import mk.ukim.finki.fithubapi.VenueService.repository.SubscriptionRepository;
 import mk.ukim.finki.fithubapi.VenueService.service.StripeService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -19,15 +18,13 @@ import org.springframework.stereotype.Service;
 @Service
 public class StripeServiceImpl implements StripeService {
     private final String stripeApiKey;
-    private final SubscriptionRepository subscriptionRepository;
 
-    public StripeServiceImpl(@Value("${stripe.api.key}") String stripeApiKey, SubscriptionRepository subscriptionRepository) {
+    public StripeServiceImpl(@Value("${stripe.api.key}") String stripeApiKey) {
         if (stripeApiKey == null || stripeApiKey.isBlank()) {
             throw new IllegalArgumentException("Stripe API key is missing.");
         }
         this.stripeApiKey = stripeApiKey;
         Stripe.apiKey = stripeApiKey;
-        this.subscriptionRepository = subscriptionRepository;
     }
 
     public SubscriptionResponse resubscribe(String customerId, String priceId) throws Exception {

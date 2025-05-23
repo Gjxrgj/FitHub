@@ -4,29 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7fe6fafb-54cd-44fc-a15a-9f7d784fee94" name="Changes" comment="Commiting everything thats not commited.">
+    <list default="true" id="7fe6fafb-54cd-44fc-a15a-9f7d784fee94" name="Changes" comment="Some other changes.">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/dbde2816-6d53-4a85-9e02-4d7d7b1520a7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/dbde2816-6d53-4a85-9e02-4d7d7b1520a7.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/dbde2816-6d53-4a85-9e02-4d7d7b1520a7/storage_v2/_src_/database/FitHubDB.wv4f5A/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/dbde2816-6d53-4a85-9e02-4d7d7b1520a7/storage_v2/_src_/database/FitHubDB.wv4f5A/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/mapper/PostMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/mapper/PostMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/models/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/models/Post.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/service/implementation/PostServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/service/implementation/PostServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/models/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/models/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/service/implementation/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/UserService/service/implementation/AuthenticationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/service/impl/StripeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/service/impl/StripeServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FitHubUI" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubUI/src/components/BarcodeScanner/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/components/BarcodeScanner/styles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubUI/src/dto/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/dto/types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/day/meals/copyMeal/CopyMeal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/day/meals/copyMeal/CopyMeal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/day/workouts/CopyEditWorkout/CopyEditWorkoutScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/day/workouts/CopyEditWorkout/CopyEditWorkoutScreen.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/exercise/AddExerciseToWorkout/AddExerciseToWorkoutScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/exercise/AddExerciseToWorkout/AddExerciseToWorkoutScreen.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/exercise/AddExerciseToWorkout/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/exercise/AddExerciseToWorkout/styles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/exercise/CreateNewExercise/CreateNewExercise.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/exercise/CreateNewExercise/CreateNewExercise.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/gym/components/addGroupTraining/AddGroupTrainingModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/gym/components/addGroupTraining/AddGroupTrainingModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/fitnessRestaurant/FitnessRestaurantScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/fitnessRestaurant/FitnessRestaurantScreen.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/fitnessShop/FitnessShopScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/fitnessShop/FitnessShopScreen.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/gym/components/addGroupTraining/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/gym/components/addGroupTraining/styles.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/home/CommentsScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/home/CommentsScreen.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/meal/FoodItem/FoodItemScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/meal/FoodItem/FoodItemScreen.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/meal/FoodItem/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/meal/FoodItem/styles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/signUp/SignUpScreen2.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/signUp/SignUpScreen2.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/venue/AddVenueScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/venue/AddVenueScreen.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubUI/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/profile/component/Account/EditPersonalInfo/EditPersonalInfoScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/profile/component/Account/EditPersonalInfo/EditPersonalInfoScreen.tsx" afterDir="false" />
     </list>
     <list id="9ad12d3f-878a-45bc-852a-34975897acf4" name="do-not-commit" comment="do-not-commit" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,7 +36,7 @@
         <entry key="$PROJECT_DIR$/FitHubUI" value="main" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/FitHubUI" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -74,7 +64,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;Spring Boot.FitHubAPIApplication.executor&quot;: &quot;Debug&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/mark1/OneDrive/Desktop/FitHubBackUP/FitHub&quot;,
@@ -85,6 +75,9 @@
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;npm.run-ui.executor&quot;: &quot;Run&quot;,
     &quot;npm.start.executor&quot;: &quot;Run&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.uml&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\mark1\\OneDrive\\Desktop\\FitHubBackUP\\FitHub\\FitHubUI\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
@@ -175,6 +168,17 @@
       <workItem from="1744052630271" duration="729000" />
       <workItem from="1744303504225" duration="2348000" />
       <workItem from="1744401529164" duration="2766000" />
+      <workItem from="1744407551651" duration="842000" />
+      <workItem from="1744542880634" duration="2127000" />
+      <workItem from="1744977527210" duration="1997000" />
+      <workItem from="1745162645044" duration="11000" />
+      <workItem from="1745163213731" duration="689000" />
+      <workItem from="1745168592673" duration="8970000" />
+      <workItem from="1745347126859" duration="2390000" />
+      <workItem from="1745528293756" duration="19000" />
+      <workItem from="1747511867238" duration="1089000" />
+      <workItem from="1747931793682" duration="2824000" />
+      <workItem from="1748001185894" duration="1990000" />
     </task>
     <task id="LOCAL-00001" summary="Created UserService">
       <option name="closed" value="true" />
@@ -224,7 +228,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743633090728</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Some other changes.">
+      <option name="closed" value="true" />
+      <created>1744407587388</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1744407587388</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,7 +260,8 @@
     <MESSAGE value="Did a huge part of the application.&#10;Venue service done.&#10;Tracking service nearly done.&#10;Working on User(Social media) service." />
     <MESSAGE value="Removed the application.properties" />
     <MESSAGE value="Commiting everything thats not commited." />
-    <option name="LAST_COMMIT_MESSAGE" value="Commiting everything thats not commited." />
+    <MESSAGE value="Some other changes." />
+    <option name="LAST_COMMIT_MESSAGE" value="Some other changes." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
