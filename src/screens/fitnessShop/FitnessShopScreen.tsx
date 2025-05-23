@@ -229,7 +229,7 @@ export const FitnessShopScreen = () => {
                     </View>
                 </View>
 
-                <TouchableOpacity style={{
+                {auth.user?.id === shopDto.userId &&<TouchableOpacity style={{
                     padding: 'auto',
                     paddingVertical: 10,
                     marginBottom: 20,
@@ -239,7 +239,7 @@ export const FitnessShopScreen = () => {
                     <Text style={{fontSize: 16, textAlign: 'center', color: 'white'}}>
                         Resubscribe
                     </Text>
-                </TouchableOpacity>
+                </TouchableOpacity>}
                 <TouchableOpacity style={{
                     padding: 'auto',
                     paddingVertical: 10,

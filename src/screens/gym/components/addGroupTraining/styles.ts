@@ -43,7 +43,7 @@ export const styles = StyleSheet.create({
         borderRadius: 2
     },
     input: {
-        height: 50,
+        height: 50, 
         marginHorizontal: 10,
         marginBottom: -1,
     },

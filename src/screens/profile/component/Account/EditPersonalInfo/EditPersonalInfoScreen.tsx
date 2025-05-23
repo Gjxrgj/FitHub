@@ -109,7 +109,7 @@ export const EditPersonalInfoScreen = () => {
                                 keyboardType={"numeric"}
                                 value={field.state.value ? field.state.value.toString() : 0}
                                 onChangeText={value => field.handleChange(value)}
-                                right={<TextInput.Affix text={user?.units === 'METRIC' ? 'cm' : 'feet'}/>}
+                                right={<TextInput.Affix text={user?.units === 'IMPERIAL' ? 'feet' : 'cm'}/>}
                             />
                             <ErrorDisplayComponent errorMessages={field.state.meta.errors}/>
                         </View>
@@ -123,7 +123,7 @@ export const EditPersonalInfoScreen = () => {
                                 keyboardType={"numeric"}
                                 value={field.state.value ? field.state.value.toString() : 0}
                                 onChangeText={value => field.handleChange(value)}
-                                right={<TextInput.Affix text={user?.units === 'METRIC' ? 'kg' : 'lbs'}/>}
+                                right={<TextInput.Affix text={user?.units === 'IMPERIAL' ? 'lbs' : 'kg'}/>}
                             />
                             <ErrorDisplayComponent errorMessages={field.state.meta.errors}/>
                         </View>

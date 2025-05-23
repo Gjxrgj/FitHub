@@ -91,6 +91,8 @@ export const CommentsScreen = () => {
                         fontWeight: "normal"
                     }}
                     placeholder="Add a comment..."
+                    multiline={true}
+                    numberOfLines={4}
                     value={newComment}
                     onChangeText={setNewComment}
                 />

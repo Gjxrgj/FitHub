@@ -8,7 +8,7 @@ import {
     RootStackParamList,
     UpsertImageDto,
 } from '../../dto/types.ts';
-import React, {useCallback, useEffect, useState} from 'react';
+import React, {useCallback, useState} from 'react';
 import {CustomView} from '../../components/CustomView/CustomView.tsx';
 import {theme} from '../../theme/theme.ts';
 import {formatBase64Image} from '../../util/formatBase64Image.ts';
@@ -213,7 +213,7 @@ export const FitnessRestaurantScreen = () => {
                     <View style={{marginTop: 30, alignItems: 'center'}}>
                         <Text style={styles.name}>{restaurantDto.name}</Text>
                         {renderStars(averageRating)}
-                        {reviews.length >=  0 ?
+                        {reviews.length >= 0 ?
                             <Button onPress={() => setShowReviewsModal(true)} style={styles.reviewButton}>
                                 View Reviews ({reviews.length})
                             </Button> :
@@ -221,7 +221,7 @@ export const FitnessRestaurantScreen = () => {
                     </View>
                 </View>
 
-                <TouchableOpacity style={{
+                {auth.user?.id === gymDto.userId &&<TouchableOpacity style={{
                     padding: 'auto',
                     paddingVertical: 10,
                     marginBottom: 20,
@@ -233,7 +233,7 @@ export const FitnessRestaurantScreen = () => {
                     <Text style={{fontSize: 16, textAlign: 'center', color: 'white'}}>
                         Resubscribe
                     </Text>
-                </TouchableOpacity>
+                </TouchableOpacity>}
                 <TouchableOpacity style={{
                     padding: 'auto',
                     paddingVertical: 10,
