@@ -44,7 +44,7 @@ export const MapPinModal: FC<MapPinModalProps> = ({
                     </View>
                     <View style={styles.buttonContainer}>
                         <Button mode={'contained'} onPress={onViewDetails} style={styles.button}>
-                            View Details
+                            More
                         </Button>
                         <Button mode={'contained'} onPress={onClose} style={styles.button}>
                             Close

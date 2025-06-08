@@ -96,10 +96,11 @@ export const SignUpScreen2: React.FC = () => {
         <>
             <ScrollView>
                 <ProgressBar progress={2 / 3} color={theme.colors.primary} style={{height: 10}}/>
-                <Text style={{fontSize: 40, textAlign: 'center', marginTop: 40}}>
-                    Sign Up
-                </Text>
-                <CustomView>
+                <ScrollView>
+                    <Text
+                        style={{fontSize: 40, textAlign: 'center', marginVertical: 60}}>
+                        Sign Up
+                    </Text>
                     <View style={styles.avatarContainer}>
                         <TouchableOpacity onPress={handleImagePick}>
                             {updatedUserDto.avatar ? (
@@ -167,7 +168,7 @@ export const SignUpScreen2: React.FC = () => {
                             />
                         </RadioButton.Group>
                     </View>
-                </CustomView>
+                </ScrollView>
             </ScrollView>
             <Button mode="contained" style={{borderRadius: 0}} onPress={() => {
                 if (checkFormValid()) {

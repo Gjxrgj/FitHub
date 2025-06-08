@@ -7,7 +7,6 @@ import {styles} from './styles.ts';
 import {PricingDto} from '../../../../dto/types.ts';
 import {editPricing} from '../../../../services/gymService.ts';
 import {CustomTextInput} from '../../../../components/CustomTextInput/CustomTextInput.tsx';
-import {ErrorDisplayComponent} from "../../../../components/ErrorDisplay/ErrorDisplayComponent.tsx";
 
 interface ContactInformationModalProps {
     visible: boolean;
@@ -18,12 +17,12 @@ interface ContactInformationModalProps {
 }
 
 export const UpdatePricingModal: React.FC<ContactInformationModalProps> = ({
-                                                                                    visible,
-                                                                                    onClose,
-                                                                                    venueId,
-                                                                                    pricing,
-                                                                                    updatePricing,
-                                                                                }) => {
+                                                                               visible,
+                                                                               onClose,
+                                                                               venueId,
+                                                                               pricing,
+                                                                               updatePricing,
+                                                                           }) => {
     const form = useForm({
         defaultValues: {
             dailyPrice: pricing.dailyPass,
@@ -86,15 +85,13 @@ export const UpdatePricingModal: React.FC<ContactInformationModalProps> = ({
                         )}
                     </form.Field>
 
-                    <View style={styles.modalButtons}>
-                        <Button
-                            mode="contained"
-                            onPress={form.handleSubmit}
-                            style={styles.modalButton}
-                        >
-                            Update Pricing
-                        </Button>
-                    </View>
+                    <Button
+                        mode="contained"
+                        onPress={form.handleSubmit}
+                        style={styles.modalButton}
+                    >
+                        Update
+                    </Button>
                 </View>
             </View>
         </Modal>

@@ -141,7 +141,7 @@ export const DayMealsScreen = () => {
     };
 
     return (
-        <View style={{flex: 1, backgroundColor: theme.colors.background}}>
+        <View style={{flex: 1, backgroundColor: theme.colors.background, paddingBottom: 50}}>
             <ScrollView>
                 {meals && <CalorieOverview
                     date={date}

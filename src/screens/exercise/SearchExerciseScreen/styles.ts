@@ -9,19 +9,19 @@ export const styles = StyleSheet.create({
         height: 40,
         flexDirection: 'row',
         alignItems: 'center',
-        paddingHorizontal: 10,
         justifyContent: 'space-between',
-        width: '93%'
+        width: '100%',
+        marginHorizontal: 10,
     },
     iconContainer: {
         position: 'absolute',
         zIndex: 999,
-        left: 20,
+        left: 10,
     },
     IconXContainer: {
         position: 'absolute',
         zIndex: 999,
-        left: '96%',
+        left: '77%',
     },
     searchBar: {
         flex: 1,
@@ -34,6 +34,7 @@ export const styles = StyleSheet.create({
         paddingHorizontal: 10,
         paddingLeft: 35,
         backgroundColor: 'white',
+        marginRight: 10,
     },
     scrollContainer: {
         flex: 1,

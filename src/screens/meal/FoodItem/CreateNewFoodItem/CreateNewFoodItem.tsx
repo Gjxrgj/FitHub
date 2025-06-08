@@ -53,7 +53,7 @@ export const CreateNewFoodItem = () => {
                 borderRadius: 10,
                 padding: 10,
                 paddingVertical: 20,
-                marginTop: '30%',
+                marginTop: 60,
                 margin: 10,
                 backgroundColor: 'white'
             }}>

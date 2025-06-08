@@ -4,7 +4,6 @@ import {theme} from "../../../theme/theme.ts";
 export const styles = StyleSheet.create({
     container: {
         flexGrow: 1,
-        backgroundColor: theme.colors.red,
     },
     title: {
         marginTop: 40,

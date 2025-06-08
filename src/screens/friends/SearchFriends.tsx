@@ -52,6 +52,8 @@ export const SearchFriends = () => {
                 fontWeight: 'normal',
                 color: theme.colors.primary,
                 marginHorizontal: 'auto',
+                paddingTop: 20,
+                paddingBottom: 20
             }}>Find Friends</Text>
             <View style={styles.searchContainer}>
                 <View style={styles.iconContainer}>

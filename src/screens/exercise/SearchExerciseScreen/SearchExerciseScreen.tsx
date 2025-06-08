@@ -75,7 +75,7 @@ export const SearchExerciseScreen = () => {
                 flexDirection: 'row',
                 justifyContent: 'space-between',
                 alignItems: 'center',
-                paddingVertical: 20,
+                paddingVertical: 10,
                 marginRight: 20,
             }}>
                 <View style={styles.searchContainer}>
@@ -94,10 +94,10 @@ export const SearchExerciseScreen = () => {
                             <Icon name="close" size={20} color={theme.colors.primary}/>
                         </TouchableOpacity>
                     </View>
+                    <TouchableOpacity style={styles.addExerciseButton} onPress={() => navigation.navigate('MyExercises')}>
+                        <Icon name="weight-lifter" size={30} color={theme.colors.primary}/>
+                    </TouchableOpacity>
                 </View>
-                <TouchableOpacity style={styles.addExerciseButton} onPress={() => navigation.navigate('MyExercises')}>
-                    <Icon name="weight-lifter" size={30} color={theme.colors.primary}/>
-                </TouchableOpacity>
             </View>
             <View style={styles.scrollContainer}>
                 <ScrollView>

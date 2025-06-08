@@ -6,7 +6,7 @@ import {StackNavigationProp} from '@react-navigation/stack';
 import {useNavigation} from '@react-navigation/native';
 import {CustomView} from '../../components/CustomView/CustomView.tsx';
 import {CustomTextInput} from '../../components/CustomTextInput/CustomTextInput.tsx';
-import {TouchableOpacity} from 'react-native';
+import {ScrollView, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {theme} from '../../theme/theme.ts';
 import _ from "lodash";
@@ -189,12 +189,11 @@ export const SignUpScreen1: React.FC = () => {
     return (
         <>
             <ProgressBar progress={1 / 3} color={theme.colors.primary} style={{height: 10}}/>
-            <Text
-                style={{fontSize: 40, textAlign: 'center', marginTop: 40}}>
-                Sign Up
-            </Text>
-            <CustomView>
-
+            <ScrollView>
+                <Text
+                    style={{fontSize: 40, textAlign: 'center', marginVertical: 60}}>
+                    Sign Up
+                </Text>
                 <CustomTextInput
                     label="First Name"
                     value={userDto.firstName}
@@ -246,7 +245,7 @@ export const SignUpScreen1: React.FC = () => {
                 <HelperText type="error" style={{display: repeatPasswordError ? 'flex' : 'none'}}>
                     {repeatPasswordError || 'Password is required'}
                 </HelperText>
-            </CustomView>
+            </ScrollView>
             <Button mode="contained" style={{borderRadius: 0}} onPress={() => {
                 if (checkFormValid()) {
                     navigation.navigate('SignUpStep2', {userDto});

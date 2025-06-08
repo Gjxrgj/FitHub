@@ -486,7 +486,7 @@ export const GymScreen = () => {
                                 <View style={styles.priceItem}>
                                     <Text style={styles.pricingText}>Valid until</Text>
                                     <Text
-                                        style={styles.priceValue}>{formatDate(promotion.validUntil)}</Text>
+                                        style={styles.priceValue}>{moment(promotion.validUntil, "YYYYMMDD").format("DD.MM.YYYY")}</Text>
                                 </View>
                             </View>
                         ))}

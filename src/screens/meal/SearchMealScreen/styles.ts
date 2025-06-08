@@ -20,7 +20,7 @@ export const styles = StyleSheet.create({
     IconXContainer: {
         position: 'absolute',
         zIndex: 999,
-        left: '96%',
+        left: '95%',
     },
     searchBar: {
         flex: 1,
@@ -37,7 +37,7 @@ export const styles = StyleSheet.create({
     qrButton: {
         alignItems: 'center',
         justifyContent: 'center',
-        width: 130,
+        width: 100,
         height: 80,
         borderWidth: 1,
         borderRadius: 5,

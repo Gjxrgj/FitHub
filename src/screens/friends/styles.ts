@@ -6,11 +6,12 @@ export const styles = StyleSheet.create({
         flex: 1,
     },
     searchContainer: {
-        height: '10%',
+        height: 40,
         flexDirection: 'row',
         alignItems: 'center',
         paddingHorizontal: 10,
         justifyContent: 'space-between',
+        marginBottom: 10
     },
     iconContainer: {
         position: 'absolute',
@@ -20,7 +21,7 @@ export const styles = StyleSheet.create({
     IconXContainer: {
         position: 'absolute',
         zIndex: 999,
-        left: '96%',
+        left: '95%',
     },
     searchBar: {
         flex: 1,

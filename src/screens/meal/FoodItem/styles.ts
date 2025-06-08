@@ -57,7 +57,7 @@ export const styles = StyleSheet.create({
         borderColor: '#ddd',
         borderWidth: 1,
         marginBottom: 20,
-        marginTop: 90
+        marginTop: 10
     },
     sectionTitle: {
         fontSize: 18,

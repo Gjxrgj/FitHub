@@ -44,15 +44,15 @@ export const styles = StyleSheet.create({
         textAlign: 'center',
         color: 'white',
         width: '100%',
-        fontSize: 12,
+        fontSize: 10,
     },
     statsContainer: {
         backgroundColor: theme.colors.primary,
         borderRadius: 15,
-        width: 110,
-        height: 80,
-        padding: 20,
+        width: 90,
+        height: 70,
         elevation: 10,
+        paddingTop: 10
     },
     profileHeader: {
         alignItems: 'center',

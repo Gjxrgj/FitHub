@@ -20,7 +20,7 @@ export const styles = StyleSheet.create({
     IconXContainer: {
         position: 'absolute',
         zIndex: 999,
-        left: '96%',
+        left: '95%',
     },
     searchBar: {
         flex: 1,

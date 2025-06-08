@@ -15,6 +15,7 @@ import {Picker} from "@react-native-picker/picker";
 import {MealType} from "../../../../enums/enums";
 import {capitalizeFirstLetter} from "../../../../util/stringUtil";
 import {styles} from "./styles";
+import {useAuth} from "../../../../context/AuthProvider";
 
 type CopyMealRootProp = RouteProp<RootStackParamList, "CopyMeal">;
 
@@ -26,6 +27,7 @@ export const CopyMeal = () => {
     const navigation = useNavigation();
     const [showDatePicker, setShowDatePicker] = useState(false);
     const [showSnackbar, setShowSnackbar] = useState(false);
+    const auth = useAuth();
 
     const form = useForm({
         defaultValues: {
@@ -41,7 +43,7 @@ export const CopyMeal = () => {
             const upsertFoodItems = foodItems.map((foodItem) => {
                 return {
                     name: foodItem.name,
-                    userId: foodItem.userId,
+                    userId: auth.user.id,
                     quantity: quantities[foodItem.id],
                     mealType: value.mealType,
                     fatsPer100g: foodItem.fatsPer100g,

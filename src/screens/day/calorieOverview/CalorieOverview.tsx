@@ -163,7 +163,7 @@ export const CalorieOverview: FC<CalorieOverviewProps> = ({
 
 const styles = StyleSheet.create({
     calorieTextBox: {
-        padding: 20,
+        padding: 15,
         alignItems: 'center',
         width: '26.6%',
     },

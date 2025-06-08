@@ -11,6 +11,7 @@ export const styles = StyleSheet.create({
         fontSize: 13,
         fontWeight: 'normal',
         marginLeft: 10,
+        marginBottom: 10,
         color: '#555',
     },
     rowContainer: {
@@ -53,7 +54,7 @@ export const styles = StyleSheet.create({
         elevation: 3,
         borderColor: '#ddd',
         borderWidth: 1,
-        marginTop: 50
+        marginBottom: 40
     },
     timeInputs: {
         flexDirection: 'row',
@@ -72,7 +73,8 @@ export const styles = StyleSheet.create({
     inputContainer: {
         flexDirection: 'row', // Align items horizontally
         justifyContent: 'space-between',
-        width: '100%',
+        width: '93%',
+        marginHorizontal: 10,
         marginBottom: 20,
     },
     punctuationMark: {

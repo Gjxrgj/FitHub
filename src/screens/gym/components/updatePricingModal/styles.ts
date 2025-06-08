@@ -30,12 +30,9 @@ export const styles = StyleSheet.create({
         marginBottom: 10,
         marginHorizontal: 10,
     },
-    modalButtons: {
-        marginTop: 20,
-        flexDirection: 'row',
-        justifyContent: 'center',
-    },
     modalButton: {
-        marginRight: 10,
+        marginTop: 20,
+        marginHorizontal: 10,
+        borderRadius: 2,
     },
 });

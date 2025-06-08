@@ -135,6 +135,7 @@ export const AddExerciseToWorkoutScreen = () => {
                                 {(field) => (
                                     <View>
                                         <CustomTextInput
+                                            style={{width: "100%"}}
                                             value={field.state.value.toString()}
                                             label={'Hours'}
                                             onChangeText={(text) => field.handleChange(parseInt(text, 10))}
@@ -150,6 +151,7 @@ export const AddExerciseToWorkoutScreen = () => {
                                 {(field) => (
                                     <View>
                                         <CustomTextInput
+                                            style={{width: "100%"}}
                                             label={'Minutes'}
                                             value={field.state.value.toString()}
                                             onChangeText={(text) => field.handleChange(parseInt(text, 10))}
@@ -165,6 +167,7 @@ export const AddExerciseToWorkoutScreen = () => {
                                 {(field) => (
                                     <View>
                                         <CustomTextInput
+                                            style={{width: "100%"}}
                                             label={'Seconds'}
                                             value={field.state.value.toString()}
                                             onChangeText={(text) => field.handleChange(parseInt(text, 10))}

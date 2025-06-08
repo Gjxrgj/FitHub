@@ -425,7 +425,7 @@ export const ProfileScreen = () => {
                                             <Text style={styles.username}>@{userDto?.username}</Text>
                                         </View>
                                     </View>
-                                    <View style={{flexDirection: 'row', justifyContent: 'space-evenly'}}>
+                                    <View style={{flexDirection: 'row', justifyContent: 'space-evenly', marginHorizontal: 10}}>
                                         <View style={styles.statsContainer}>
                                             <Text style={styles.statsNumber}>{userDto?.numPosts}</Text>
                                             <Text style={styles.statsLabel}>Posts</Text>

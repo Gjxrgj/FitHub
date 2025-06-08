@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useCallback, useState} from 'react';
 import {getVenuesForUser} from '../../services';
 import {useAuth} from '../../context/AuthProvider.tsx';
 import {VenueType} from '../../enums/enums.ts';
@@ -6,11 +6,10 @@ import {FitnessRestaurantDto, FitnessShopDto, GymDto, RootStackParamList} from '
 import {Card, List, Text, Title} from 'react-native-paper';
 import {ScrollView, TouchableOpacity, View} from 'react-native';
 import {theme} from '../../theme/theme.ts';
-import {useNavigation} from '@react-navigation/native';
+import {useFocusEffect, useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {LoadingSpinner} from '../../components/LoadingSpinner/LoadingSpinner.tsx';
 import {styles} from './myVenuesStyles.ts';
-import {formatDate} from "../../util/dateUtil";
 import moment from "moment";
 
 type MyVenuesNavigation = StackNavigationProp<RootStackParamList, 'MyVenues'>;
@@ -23,24 +22,27 @@ export const MyVenuesScreen = () => {
     const auth = useAuth();
     const [isLoading, setIsLoading] = useState<boolean>(true);
 
-    useEffect(() => {
-        if (auth.user && auth.user.id) {
-            getVenuesForUser(auth.user.id)
-                .then(venueMap => {
-                    const gymList = venueMap[VenueType.GYM]?.flat() as Array<GymDto> || [];
-                    const shopList = venueMap[VenueType.SHOP]?.flat() as Array<FitnessShopDto> || [];
-                    const restaurantList = venueMap[VenueType.RESTAURANT]?.flat() as Array<FitnessRestaurantDto> || [];
+    useFocusEffect(
+        useCallback(() => {
+            if (auth.user && auth.user.id) {
+                setIsLoading(true);
+                getVenuesForUser(auth.user.id)
+                    .then(venueMap => {
+                        const gymList = venueMap[VenueType.GYM]?.flat() as Array<GymDto> || [];
+                        const shopList = venueMap[VenueType.SHOP]?.flat() as Array<FitnessShopDto> || [];
+                        const restaurantList = venueMap[VenueType.RESTAURANT]?.flat() as Array<FitnessRestaurantDto> || [];
 
-                    setGyms(gymList);
-                    setShops(shopList);
-                    setRestaurants(restaurantList);
-                    setIsLoading(false);
-                })
-                .catch(error => {
-                    console.error('Error fetching venues:', error);
-                });
-        }
-    }, [auth.user]);
+                        setGyms(gymList);
+                        setShops(shopList);
+                        setRestaurants(restaurantList);
+                    })
+                    .catch(error => {
+                        console.error('Error fetching venues:', error);
+                    })
+                    .finally(() => setIsLoading(false));
+            }
+        }, [auth.user?.id])
+    );
 
     if (isLoading) {
         return (
@@ -70,7 +72,8 @@ export const MyVenuesScreen = () => {
                                             ? theme.colors.error
                                             : theme.colors.warning
                                 }]}>
-                                    Valid until {moment(gym.subscriptionExpirationDate, "YYYYMMDD").format("DD.MM.YYYY")}
+                                    Valid
+                                    until {moment(gym.subscriptionExpirationDate, "YYYYMMDD").format("DD.MM.YYYY")}
                                 </Text>
                             </View>
 
@@ -100,14 +103,15 @@ export const MyVenuesScreen = () => {
                                             ? theme.colors.error
                                             : theme.colors.warning
                                 }]}>
-                                    Valid until {moment(shop.subscriptionExpirationDate, "YYYYMMDD").format("DD.MM.YYYY")}
+                                    Valid
+                                    until {moment(shop.subscriptionExpirationDate, "YYYYMMDD").format("DD.MM.YYYY")}
                                 </Text>
                             </View>
 
                             <List.Item
                                 title={`Location: ${shop.vicinity}`}
                                 description={`Description: ${shop.description}`}
-                                left={() => <List.Icon color={theme.colors.primary} icon="dumbbell"/>}
+                                left={() => <List.Icon color={theme.colors.primary} icon="shopping"/>}
                             />
                         </Card.Content>
                     </Card>
@@ -130,7 +134,8 @@ export const MyVenuesScreen = () => {
                                             ? theme.colors.error
                                             : theme.colors.warning
                                 }]}>
-                                    Valid until {moment(restaurant.subscriptionExpirationDate, "YYYYMMDD").format("DD.MM.YYYY")}
+                                    Valid
+                                    until {moment(restaurant.subscriptionExpirationDate, "YYYYMMDD").format("DD.MM.YYYY")}
 
                                 </Text>
                             </View>
@@ -138,7 +143,7 @@ export const MyVenuesScreen = () => {
                             <List.Item
                                 title={`Location: ${restaurant.vicinity}`}
                                 description={`Description: ${restaurant.description}`}
-                                left={() => <List.Icon color={theme.colors.primary} icon="dumbbell"/>}
+                                left={() => <List.Icon color={theme.colors.primary} icon="food"/>}
                             />
                         </Card.Content>
                     </Card>

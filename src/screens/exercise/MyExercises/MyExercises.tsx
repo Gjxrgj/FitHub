@@ -80,11 +80,11 @@ export const MyExercises = () => {
                             <Icon name="close" size={20} color={theme.colors.primary}/>
                         </TouchableOpacity>
                     </View>
+                    <TouchableOpacity style={styles.addExerciseButton}
+                                      onPress={() => navigation.navigate('CreateNewExercise')}>
+                        <Icon name="plus" size={30} color={theme.colors.primary}/>
+                    </TouchableOpacity>
                 </View>
-                <TouchableOpacity style={styles.addExerciseButton}
-                                  onPress={() => navigation.navigate('CreateNewExercise')}>
-                    <Icon name="plus" size={30} color={theme.colors.primary}/>
-                </TouchableOpacity>
             </View>
             <View style={styles.scrollContainer}>
                 <ScrollView>

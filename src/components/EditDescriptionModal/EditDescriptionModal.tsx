@@ -85,7 +85,7 @@ export const EditDescriptionModal: React.FC<EditDescriptionModalProps> = ({
                             onPress={form.handleSubmit}
                             style={styles.modalButton}
                         >
-                            Edit description
+                            Update
                         </Button>
                 </View>
             </View>

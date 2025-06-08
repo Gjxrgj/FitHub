@@ -5,7 +5,7 @@ import {RouteProp, useNavigation, useRoute} from '@react-navigation/native';
 import {CustomTextInput} from '../../components/CustomTextInput/CustomTextInput.tsx';
 import {CustomView} from '../../components/CustomView/CustomView.tsx';
 import {Button, HelperText, Modal, Portal, ProgressBar, RadioButton, Text, TextInput} from 'react-native-paper';
-import {View} from 'react-native';
+import {ScrollView, View} from 'react-native';
 import {ActivityLevel, Goal, Unit} from '../../enums/enums.ts';
 import {register} from "../../services";
 import {styles} from "./styles.ts";
@@ -108,11 +108,11 @@ export const SignUpScreen3: React.FC = () => {
     return (
         <>
             <ProgressBar progress={3 / 3} color={theme.colors.primary} style={{height: 10}}/>
-            <Text
-                style={{fontSize: 40, textAlign: 'center', marginTop: 40}}>
-                Sign Up
-            </Text>
-            <CustomView>
+            <ScrollView style={{ marginHorizontal: 10}}>
+                <Text
+                    style={{fontSize: 40, textAlign: 'center', marginVertical: 60}}>
+                    Sign Up
+                </Text>
                 <View style={styles.pickerContainer}>
                     <Text style={styles.pickerLabel}>Units</Text>
                     <RadioButton.Group
@@ -257,7 +257,7 @@ export const SignUpScreen3: React.FC = () => {
                         </RadioButton.Group>
                     </Modal>
                 </Portal>
-            </CustomView>
+            </ScrollView>
             <Button mode="contained" style={{borderRadius: 0}} onPress={() => {
                 if (checkFormValid()) {
                     register(updatedUserDto).then(() => navigation.navigate('Login'));

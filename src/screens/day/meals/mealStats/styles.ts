@@ -54,11 +54,12 @@ export const styles = StyleSheet.create({
     caloriesContainer: {
         backgroundColor: '#f8f8f8',
         padding: 15,
+        width: 150,
         borderRadius: 10,
         alignItems: 'center',
         borderWidth: 1,
         borderColor: '#ddd',
-        marginHorizontal: 100,
+        marginHorizontal: "auto",
         borderBottomWidth: 0,
         borderBottomLeftRadius: 0,
         borderBottomRightRadius: 0,

@@ -1,4 +1,4 @@
-import {FlatList, ScrollView, TouchableOpacity, View} from 'react-native';
+import {ScrollView, TouchableOpacity, View} from 'react-native';
 import {useForm} from '@tanstack/react-form';
 import {RootStackParamList, UpsertIngredientDto, UpsertMealDto} from '../../../dto/types.ts';
 import {Currency, FoodCategory} from '../../../enums/enums.ts';
