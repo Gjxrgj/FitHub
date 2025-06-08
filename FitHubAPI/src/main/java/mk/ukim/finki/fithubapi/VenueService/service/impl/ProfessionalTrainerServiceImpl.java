@@ -49,7 +49,8 @@ public class ProfessionalTrainerServiceImpl implements ProfessionalTrainerServic
 
     @Override
     public ProfessionalTrainerDto getById(Long id) {
-        return ProfessionalTrainerMapper.toDto(professionalTrainerRepository.findById(id)
-                .orElseThrow(() -> new UserNotFoundException("Professional trainer not found with id: " + id)));
+        return professionalTrainerRepository.findById(id)
+                .map(ProfessionalTrainerMapper::toDto)
+                .orElse(null);
     }
 }

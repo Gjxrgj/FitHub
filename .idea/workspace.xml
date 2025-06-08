@@ -4,9 +4,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7fe6fafb-54cd-44fc-a15a-9f7d784fee94" name="Changes" comment="Some minor updates, and bug fixes.">
+    <list default="true" id="7fe6fafb-54cd-44fc-a15a-9f7d784fee94" name="Changes" comment="Fixed resubscribe button visibility.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/fitnessRestaurant/FitnessRestaurantScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/fitnessRestaurant/FitnessRestaurantScreen.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/service/impl/ProfessionalTrainerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/VenueService/service/impl/ProfessionalTrainerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/components/EditDescriptionModal/EditDescriptionModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/components/EditDescriptionModal/EditDescriptionModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/components/MapPinModal/MapPinModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/components/MapPinModal/MapPinModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/day/calorieOverview/CalorieOverview.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/day/calorieOverview/CalorieOverview.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/day/meals/DayMealsScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/day/meals/DayMealsScreen.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/day/meals/copyMeal/CopyMeal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/day/meals/copyMeal/CopyMeal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/day/meals/mealStats/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/day/meals/mealStats/styles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/exercise/AddExerciseToWorkout/AddExerciseToWorkoutScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/exercise/AddExerciseToWorkout/AddExerciseToWorkoutScreen.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/exercise/AddExerciseToWorkout/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/exercise/AddExerciseToWorkout/styles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/exercise/MyExercises/MyExercises.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/exercise/MyExercises/MyExercises.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/exercise/MyExercises/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/exercise/MyExercises/styles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/exercise/SearchExerciseScreen/SearchExerciseScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/exercise/SearchExerciseScreen/SearchExerciseScreen.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/exercise/SearchExerciseScreen/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/exercise/SearchExerciseScreen/styles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/fitnessRestaurant/addMeal/AddMealScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/fitnessRestaurant/addMeal/AddMealScreen.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/fitnessRestaurant/addMeal/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/fitnessRestaurant/addMeal/styles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/friends/SearchFriends.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/friends/SearchFriends.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/friends/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/friends/styles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/gym/GymScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/gym/GymScreen.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/gym/components/updatePricingModal/UpdatePricingModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/gym/components/updatePricingModal/UpdatePricingModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/gym/components/updatePricingModal/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/gym/components/updatePricingModal/styles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/meal/FoodItem/CreateNewFoodItem/CreateNewFoodItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/meal/FoodItem/CreateNewFoodItem/CreateNewFoodItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/meal/FoodItem/MyFoodItems/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/meal/FoodItem/MyFoodItems/styles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/meal/FoodItem/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/meal/FoodItem/styles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/meal/SearchMealScreen/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/meal/SearchMealScreen/styles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/post/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/post/styles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/profile/ProfileScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/profile/ProfileScreen.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/profile/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/profile/styles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/signUp/SignUpScreen1.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/signUp/SignUpScreen1.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/signUp/SignUpScreen2.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/signUp/SignUpScreen2.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/signUp/SignUpScreen3.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/signUp/SignUpScreen3.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/venue/MyVenuesScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/venue/MyVenuesScreen.tsx" afterDir="false" />
     </list>
     <list id="9ad12d3f-878a-45bc-852a-34975897acf4" name="do-not-commit" comment="do-not-commit" />
     <option name="SHOW_DIALOG" value="false" />
@@ -168,7 +199,11 @@
       <workItem from="1745528293756" duration="19000" />
       <workItem from="1747511867238" duration="1089000" />
       <workItem from="1747931793682" duration="2824000" />
-      <workItem from="1748001185894" duration="2158000" />
+      <workItem from="1748001185894" duration="3543000" />
+      <workItem from="1748085267039" duration="6447000" />
+      <workItem from="1749200415353" duration="5601000" />
+      <workItem from="1749375611915" duration="722000" />
+      <workItem from="1749376346188" duration="2614000" />
     </task>
     <task id="LOCAL-00001" summary="Created UserService">
       <option name="closed" value="true" />
@@ -234,7 +269,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748010943835</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Fixed resubscribe button visibility.">
+      <option name="closed" value="true" />
+      <created>1748011094512</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1748011094512</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -260,7 +303,8 @@
     <MESSAGE value="Commiting everything thats not commited." />
     <MESSAGE value="Some other changes." />
     <MESSAGE value="Some minor updates, and bug fixes." />
-    <option name="LAST_COMMIT_MESSAGE" value="Some minor updates, and bug fixes." />
+    <MESSAGE value="Fixed resubscribe button visibility." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed resubscribe button visibility." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
