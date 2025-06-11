@@ -57,7 +57,7 @@ public class ExerciseInWorkoutServiceImpl implements ExerciseInWorkoutService {
 
         workout.getExercises().remove(exercise);
 
-        exerciseInWorkoutRepository.save(exercise);
+        exerciseInWorkoutRepository.delete(exercise);
         workoutRepository.save(workout);
         return exerciseId;
     }
