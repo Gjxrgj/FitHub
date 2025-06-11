@@ -231,9 +231,17 @@ export const DayWorkoutsScreen = () => {
                     ))}
 
                     {workouts.length === 0 && (
-                        <Text style={{textAlign: 'center', marginTop: 20, fontSize: 16}}>
-                            No workouts for this day.
-                        </Text>
+                        <View>
+                            <TouchableOpacity
+                                style={styles.addButton}
+                                onPress={() => {navigation.navigate('SearchExerciseScreen')}}>
+                                <Icon name="plus" size={20} color={'white'}/>
+                                <Text style={styles.addButtonText}>Add Exercise</Text>
+                            </TouchableOpacity>
+                            <Text style={{textAlign: 'center', marginTop: 20, fontSize: 16}}>
+                                No workouts for this day.
+                            </Text>
+                        </View>
                     )}
                 </View>
             </ScrollView>

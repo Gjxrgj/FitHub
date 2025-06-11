@@ -16,7 +16,7 @@ export const becomeProfessionalTrainer = async (upsertProfessionalTrainer: Upser
     }
 };
 
-export const getProfessionalTrainerById = async (id: number): Promise<Array<ProfessionalTrainerAutocompleteDto>> => {
+export const getProfessionalTrainerById = async (id: number): Promise<ProfessionalTrainerDto> => {
     try {
         return await apiClient.get<Array<ProfessionalTrainerAutocompleteDto>>(`${config.BACKEND_URL}/api/professional_trainer/${id}`)
             .then(response => response.data);

@@ -15,7 +15,7 @@ type BecomeProfessionalTrainerNavigation = StackNavigationProp<RootStackParamLis
 type BecomeProfessionalTrainerRootProp = RouteProp<RootStackParamList, 'BecomeProfessionalTrainer'>;
 
 export const BecomeProfessionalTrainer = () => {
-    const {user} = useAuth();
+    const {user, setUser} = useAuth();
     const navigation = useNavigation<BecomeProfessionalTrainerNavigation>();
     const route = useRoute<BecomeProfessionalTrainerRootProp>();
     const {params} = route || {};
@@ -38,7 +38,10 @@ export const BecomeProfessionalTrainer = () => {
                 becomeProfessionalTrainer(upsertProfessionalTrainerDto)
                     .then((professionalTrainerDto) => {
                         linkProfessionalTrainerToUser(user.id, professionalTrainerDto.id)
-                            .then(() => navigation.navigate("Profile"), { userId: user.id });
+                            .then((usr) => {
+                                setUser(usr);
+                                navigation.navigate("Profile", { userId: usr?.id })
+                            });
                     });
             }
         },
