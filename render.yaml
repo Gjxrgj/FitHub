@@ -2,6 +2,7 @@ services:
   - type: web
     name: fithub-backend
     runtime: docker
+    region: frankfurt
     repo: https://github.com/Gjxrgj/FitHub
     branch: main
     plan: free

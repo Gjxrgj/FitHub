@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7fe6fafb-54cd-44fc-a15a-9f7d784fee94" name="Changes" comment="Added a deserializer for ExerciseCategory.">
-      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/enums/ExerciseCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/enums/ExerciseCategory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/util/EnumNormalizerDeserializer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/util/ExerciseCategoryDeserializer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/resources/exercises.json" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/resources/exercises.json" afterDir="false" />
-    </list>
+    <list default="true" id="7fe6fafb-54cd-44fc-a15a-9f7d784fee94" name="Changes" comment="Removed unneeded deserializer and updated the exercise.json." />
     <list id="9ad12d3f-878a-45bc-852a-34975897acf4" name="do-not-commit" comment="do-not-commit">
       <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/resources/application.properties" afterDir="false" />
     </list>
@@ -187,7 +182,7 @@
       <workItem from="1753429004814" duration="604000" />
       <workItem from="1753429877749" duration="3592000" />
       <workItem from="1753474398669" duration="2246000" />
-      <workItem from="1753477311627" duration="1135000" />
+      <workItem from="1753477311627" duration="1471000" />
     </task>
     <task id="LOCAL-00001" summary="Created UserService">
       <option name="closed" value="true" />
@@ -365,7 +360,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753478199048</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Removed unneeded deserializer and updated the exercise.json.">
+      <option name="closed" value="true" />
+      <created>1753478474208</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1753478474208</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -403,7 +406,8 @@
     <MESSAGE value="Updated teh JsonLoader" />
     <MESSAGE value="Updated dependencies for jackson.&#10;Made the JsonLoader case-insensitive for enums." />
     <MESSAGE value="Added a deserializer for ExerciseCategory." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a deserializer for ExerciseCategory." />
+    <MESSAGE value="Removed unneeded deserializer and updated the exercise.json." />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed unneeded deserializer and updated the exercise.json." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
