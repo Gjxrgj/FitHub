@@ -29,6 +29,19 @@ services:
         sync: false
       - key: MAIL_PASSWORD
         sync: false
+      - key: SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GOOGLE_CLIENT_ID
+        sync: false
+      - key: SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GOOGLE_CLIENT_SECRET
+        sync: false
+      - key: SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GOOGLE_REDIRECT_URI
+        value: https://fithub-backend.onrender.com/login/oauth2/code/google
+      - key: SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GOOGLE_SCOPE
+        sync: false
+      - key: SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GOOGLE_AUTHORIZATION_GRANT_TYPE
+        sync: false
+      - key: SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GOOGLE_CLIENT_NAME
+        sync: false
+
 
 databases:
   - name: fithub-db
