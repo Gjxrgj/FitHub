@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7fe6fafb-54cd-44fc-a15a-9f7d784fee94" name="Changes" comment="Updated dependencies for jackson.&#10;Made the JsonLoader case-insensitive for enums.">
-      <change afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/util/EnumNormalizerDeserializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/util/ExerciseCategoryDeserializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/util/ExerciseLevelDeserializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/util/MechanicDeserializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="7fe6fafb-54cd-44fc-a15a-9f7d784fee94" name="Changes" comment="Added a deserializer for ExerciseCategory.">
       <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/enums/ExerciseCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/enums/ExerciseCategory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/enums/Mechanic.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/enums/Mechanic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/util/EnumNormalizerDeserializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/util/ExerciseCategoryDeserializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/resources/exercises.json" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/resources/exercises.json" afterDir="false" />
     </list>
     <list id="9ad12d3f-878a-45bc-852a-34975897acf4" name="do-not-commit" comment="do-not-commit">
       <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/resources/application.properties" afterDir="false" />
@@ -190,7 +187,7 @@
       <workItem from="1753429004814" duration="604000" />
       <workItem from="1753429877749" duration="3592000" />
       <workItem from="1753474398669" duration="2246000" />
-      <workItem from="1753477311627" duration="788000" />
+      <workItem from="1753477311627" duration="1135000" />
     </task>
     <task id="LOCAL-00001" summary="Created UserService">
       <option name="closed" value="true" />
@@ -360,7 +357,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753477474174</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Added a deserializer for ExerciseCategory.">
+      <option name="closed" value="true" />
+      <created>1753478199048</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1753478199048</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -397,7 +402,8 @@
     <MESSAGE value="Added oauth2 env variables to render." />
     <MESSAGE value="Updated teh JsonLoader" />
     <MESSAGE value="Updated dependencies for jackson.&#10;Made the JsonLoader case-insensitive for enums." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated dependencies for jackson.&#10;Made the JsonLoader case-insensitive for enums." />
+    <MESSAGE value="Added a deserializer for ExerciseCategory." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a deserializer for ExerciseCategory." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
