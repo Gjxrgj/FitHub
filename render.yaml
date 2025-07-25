@@ -47,4 +47,5 @@ services:
 databases:
   - name: fithub-db
     plan: free
+    region: frankfurt
     postgresMajorVersion: 15
