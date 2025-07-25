@@ -21,4 +21,6 @@ Tech Stack
 
 - Database: PostgreSQL
 
-**All documentation and presentation slides with demo videos can be found in the /docs folder.**
+**The documentation can be found in the /docs folder.**
+
+**The peresntation with the demo videos can be found on the following link https://drive.google.com/file/d/17tkrj44dMBxllmdy9U02T9QSsnDT2P8A/view?usp=sharing.**
