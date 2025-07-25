@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7fe6fafb-54cd-44fc-a15a-9f7d784fee94" name="Changes" comment="Added oauth2 env variables to render.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/render.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/render.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/util/JsonLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/util/JsonLoader.java" afterDir="false" />
     </list>
     <list id="9ad12d3f-878a-45bc-852a-34975897acf4" name="do-not-commit" comment="do-not-commit">
       <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/resources/application.properties" afterDir="false" />
@@ -182,7 +182,7 @@
       <workItem from="1753374438615" duration="1963000" />
       <workItem from="1753429004814" duration="604000" />
       <workItem from="1753429877749" duration="3592000" />
-      <workItem from="1753474398669" duration="416000" />
+      <workItem from="1753474398669" duration="1178000" />
     </task>
     <task id="LOCAL-00001" summary="Created UserService">
       <option name="closed" value="true" />
@@ -328,7 +328,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753433055502</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Added oauth2 env variables to render.">
+      <option name="closed" value="true" />
+      <created>1753474826063</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1753474826063</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

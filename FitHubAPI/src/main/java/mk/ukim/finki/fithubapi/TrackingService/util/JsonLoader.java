@@ -7,6 +7,7 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
+import java.io.InputStream;
 import java.util.List;
 
 @Service
@@ -17,11 +18,11 @@ public class JsonLoader {
 
         objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
-        try {
-            File jsonFile = new ClassPathResource("exercises.json").getFile();
-
-            return objectMapper.readValue(jsonFile,
-                    objectMapper.getTypeFactory().constructCollectionType(List.class, Exercise.class));
+        try (InputStream inputStream = new ClassPathResource("exercises.json").getInputStream()) {
+            return objectMapper.readValue(
+                    inputStream,
+                    objectMapper.getTypeFactory().constructCollectionType(List.class, Exercise.class)
+            );
         } catch (Exception e) {
             e.printStackTrace();
             throw new RuntimeException("Failed to load JSON file from resources.");
