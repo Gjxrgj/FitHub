@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7fe6fafb-54cd-44fc-a15a-9f7d784fee94" name="Changes" comment="Adding documentation.">
-      <change afterPath="$PROJECT_DIR$/renderer.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dbde2816-6d53-4a85-9e02-4d7d7b1520a7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/dbde2816-6d53-4a85-9e02-4d7d7b1520a7.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="7fe6fafb-54cd-44fc-a15a-9f7d784fee94" name="Changes" comment="Added renderer.yaml&#10;Updated the application.properties">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/renderer.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/render.yaml" afterDir="false" />
+    </list>
+    <list id="9ad12d3f-878a-45bc-852a-34975897acf4" name="do-not-commit" comment="do-not-commit">
       <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/resources/application.properties" afterDir="false" />
     </list>
-    <list id="9ad12d3f-878a-45bc-852a-34975897acf4" name="do-not-commit" comment="do-not-commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -182,7 +181,7 @@
       <workItem from="1753374053395" duration="370000" />
       <workItem from="1753374438615" duration="1963000" />
       <workItem from="1753429004814" duration="604000" />
-      <workItem from="1753429877749" duration="751000" />
+      <workItem from="1753429877749" duration="1449000" />
     </task>
     <task id="LOCAL-00001" summary="Created UserService">
       <option name="closed" value="true" />
@@ -272,7 +271,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751645105791</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Added renderer.yaml&#10;Updated the application.properties">
+      <option name="closed" value="true" />
+      <created>1753430878735</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1753430878735</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -301,7 +308,8 @@
     <MESSAGE value="Fixed resubscribe button visibility." />
     <MESSAGE value="Visual updates.&#10;Copy meal bug fix." />
     <MESSAGE value="Adding documentation." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding documentation." />
+    <MESSAGE value="Added renderer.yaml&#10;Updated the application.properties" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added renderer.yaml&#10;Updated the application.properties" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
