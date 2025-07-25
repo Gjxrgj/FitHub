@@ -1,11 +1,12 @@
 services:
   - type: web
     name: fithub-backend
-    env: java
+    runtime: docker
+    repo: https://github.com/Gjxrgj/FitHub
+    branch: main
     plan: free
-    buildCommand: ./mvnw clean package -DskipTests
-    startCommand: java -jar target/FitHubAPI-0.0.1-SNAPSHOT.jar
-    rootDir: FitHubAPI
+    autoDeploy: true
+    dockerContext: ./FitHubAPI
     envVars:
       - key: SPRING_DATASOURCE_URL
         fromDatabase:
@@ -19,6 +20,13 @@ services:
         fromDatabase:
           name: fithub-db
           property: password
+      - key: STRIPE_API_KEY
+        sync: false
+      - key: MAIL_USERNAME
+        sync: false
+      - key: MAIL_PASSWORD
+        sync: false
+
 databases:
   - name: fithub-db
     plan: free
