@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7fe6fafb-54cd-44fc-a15a-9f7d784fee94" name="Changes" comment="Visual updates.&#10;Copy meal bug fix.">
+    <list default="true" id="7fe6fafb-54cd-44fc-a15a-9f7d784fee94" name="Changes" comment="Adding documentation.">
+      <change afterPath="$PROJECT_DIR$/renderer.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dbde2816-6d53-4a85-9e02-4d7d7b1520a7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/dbde2816-6d53-4a85-9e02-4d7d7b1520a7.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/service/impl/ExerciseInWorkoutServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/service/impl/ExerciseInWorkoutServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubUI" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/day/workouts/DayWorkoutsScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/day/workouts/DayWorkoutsScreen.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/profile/component/Account/ProfessionalTrainer/BecomeProfessionalTrainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/profile/component/Account/ProfessionalTrainer/BecomeProfessionalTrainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubUI/src/services/professionalTrainerService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/services/professionalTrainerService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/resources/application.properties" afterDir="false" />
     </list>
     <list id="9ad12d3f-878a-45bc-852a-34975897acf4" name="do-not-commit" comment="do-not-commit" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,7 +29,7 @@
         <entry key="$PROJECT_DIR$/FitHubUI" value="main" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/FitHubUI" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -48,45 +47,45 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Spring Boot.FitHubAPIApplication.executor&quot;: &quot;Debug&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/mark1/OneDrive/Desktop/FitHubBackUP/FitHub&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.run-ui.executor&quot;: &quot;Run&quot;,
-    &quot;npm.start.executor&quot;: &quot;Run&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.uml&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\mark1\\OneDrive\\Desktop\\FitHubBackUP\\FitHub\\FitHubUI\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.FitHubAPIApplication.executor": "Debug",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/mark1/OneDrive/Desktop/Faks/FitHub/FitHubBackUP/FitHub",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.run-ui.executor": "Run",
+    "npm.start.executor": "Run",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.uml",
+    "ts.external.directory.path": "C:\\Users\\mark1\\OneDrive\\Desktop\\Faks\\FitHub\\FitHubBackUP\\FitHub\\FitHubUI\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ],
-    &quot;GitStage.ChangesTree.GroupingKeys&quot;: [
-      &quot;directory&quot;,
-      &quot;module&quot;,
-      &quot;repository&quot;
+    "GitStage.ChangesTree.GroupingKeys": [
+      "directory",
+      "module",
+      "repository"
     ]
   }
-}</component>
+}]]></component>
   <component name="Push.Settings">
     <force-push-targets>
       <force-push-target remote-path="origin" branch="feature/Creation-of-user-service" />
@@ -179,6 +178,11 @@
       <workItem from="1749376346188" duration="5790000" />
       <workItem from="1749573956142" duration="4430000" />
       <workItem from="1749671155204" duration="3304000" />
+      <workItem from="1751733172007" duration="41000" />
+      <workItem from="1753374053395" duration="370000" />
+      <workItem from="1753374438615" duration="1963000" />
+      <workItem from="1753429004814" duration="604000" />
+      <workItem from="1753429877749" duration="751000" />
     </task>
     <task id="LOCAL-00001" summary="Created UserService">
       <option name="closed" value="true" />
@@ -260,7 +264,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749384827895</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Adding documentation.">
+      <option name="closed" value="true" />
+      <created>1751645105791</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1751645105791</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -288,7 +300,8 @@
     <MESSAGE value="Some minor updates, and bug fixes." />
     <MESSAGE value="Fixed resubscribe button visibility." />
     <MESSAGE value="Visual updates.&#10;Copy meal bug fix." />
-    <option name="LAST_COMMIT_MESSAGE" value="Visual updates.&#10;Copy meal bug fix." />
+    <MESSAGE value="Adding documentation." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding documentation." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
