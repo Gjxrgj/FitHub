@@ -22,6 +22,8 @@ services:
           property: password
       - key: STRIPE_API_KEY
         sync: false
+      - key: MAIL_HOST
+        sync: false
       - key: MAIL_USERNAME
         sync: false
       - key: MAIL_PASSWORD
