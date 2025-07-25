@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7fe6fafb-54cd-44fc-a15a-9f7d784fee94" name="Changes" comment="Added oauth2 env variables to render.">
+    <list default="true" id="7fe6fafb-54cd-44fc-a15a-9f7d784fee94" name="Changes" comment="Updated teh JsonLoader">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/util/JsonLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/util/JsonLoader.java" afterDir="false" />
     </list>
     <list id="9ad12d3f-878a-45bc-852a-34975897acf4" name="do-not-commit" comment="do-not-commit">
@@ -48,6 +49,8 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Maven.FitHubAPI [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.FitHubAPI [install].executor&quot;: &quot;Run&quot;,
     &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
     &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
     &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
@@ -182,7 +185,7 @@
       <workItem from="1753374438615" duration="1963000" />
       <workItem from="1753429004814" duration="604000" />
       <workItem from="1753429877749" duration="3592000" />
-      <workItem from="1753474398669" duration="1178000" />
+      <workItem from="1753474398669" duration="2246000" />
     </task>
     <task id="LOCAL-00001" summary="Created UserService">
       <option name="closed" value="true" />
@@ -336,7 +339,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753474826063</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Updated teh JsonLoader">
+      <option name="closed" value="true" />
+      <created>1753476255861</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1753476255861</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -371,7 +382,8 @@
     <MESSAGE value="Updated the render.yaml" />
     <MESSAGE value="Updated Dockerfile" />
     <MESSAGE value="Added oauth2 env variables to render." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added oauth2 env variables to render." />
+    <MESSAGE value="Updated teh JsonLoader" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated teh JsonLoader" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
