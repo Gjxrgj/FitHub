@@ -4,18 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7fe6fafb-54cd-44fc-a15a-9f7d784fee94" name="Changes" comment="Updated the render region to frankfurt for db.">
+    <list default="true" id="7fe6fafb-54cd-44fc-a15a-9f7d784fee94" name="Changes" comment="Updated the AppIcon.&#10;Updated AppName.&#10;Removed unneeded images.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/repository/WorkoutRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/repository/WorkoutRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/service/impl/WorkoutServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/service/impl/WorkoutServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FitHubUI/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubUI/assets/adaptive-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubUI/assets/favicon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubUI/assets/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubUI/assets/splash-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubUI/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubUI/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FitHubUI/src/config/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/config/config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubUI/src/services/authService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/services/authService.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubUI/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/day/meals/DayMealsScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/day/meals/DayMealsScreen.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/day/workouts/DayWorkoutsScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/day/workouts/DayWorkoutsScreen.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/exercise/AddExerciseToWorkout/AddExerciseToWorkoutScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/exercise/AddExerciseToWorkout/AddExerciseToWorkoutScreen.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/exercise/coponents/AddWorkoutModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/exercise/coponents/AddWorkoutModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/gym/GymScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/gym/GymScreen.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/home/HomeScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/home/HomeScreen.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/meal/FoodItem/FoodItemScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/meal/FoodItem/FoodItemScreen.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/profile/ProfileScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/profile/ProfileScreen.tsx" afterDir="false" />
     </list>
     <list id="9ad12d3f-878a-45bc-852a-34975897acf4" name="do-not-commit" comment="do-not-commit">
       <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/resources/application.properties" afterDir="false" />
@@ -40,6 +43,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/FitHubUI" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -105,7 +111,7 @@
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
-  <component name="RunManager" selected="npm.start">
+  <component name="RunManager" selected="Spring Boot.FitHubAPIApplication">
     <configuration name="FitHubAPIApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="FitHubAPI" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="mk.ukim.finki.fithubapi.FitHubAPIApplication" />
@@ -131,8 +137,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.start" />
         <item itemvalue="Spring Boot.FitHubAPIApplication" />
+        <item itemvalue="npm.start" />
         <item itemvalue="Spring Boot.FitHubAPIApplication" />
       </list>
     </recent_temporary>
@@ -195,7 +201,11 @@
       <workItem from="1753429877749" duration="3592000" />
       <workItem from="1753474398669" duration="2246000" />
       <workItem from="1753477311627" duration="7391000" />
-      <workItem from="1753527495141" duration="4582000" />
+      <workItem from="1753527495141" duration="5745000" />
+      <workItem from="1753552357646" duration="1961000" />
+      <workItem from="1753559483849" duration="2197000" />
+      <workItem from="1753609636071" duration="4064000" />
+      <workItem from="1753624824738" duration="6769000" />
     </task>
     <task id="LOCAL-00001" summary="Created UserService">
       <option name="closed" value="true" />
@@ -397,7 +407,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753479147933</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Updated the AppIcon.&#10;Updated AppName.&#10;Removed unneeded images.">
+      <option name="closed" value="true" />
+      <created>1753532365420</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1753532365420</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -438,7 +456,8 @@
     <MESSAGE value="Removed unneeded deserializer and updated the exercise.json." />
     <MESSAGE value="Updated the render region to frankfurt." />
     <MESSAGE value="Updated the render region to frankfurt for db." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated the render region to frankfurt for db." />
+    <MESSAGE value="Updated the AppIcon.&#10;Updated AppName.&#10;Removed unneeded images." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated the AppIcon.&#10;Updated AppName.&#10;Removed unneeded images." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -13,6 +13,8 @@ import java.util.List;
 public interface WorkoutRepository extends JpaRepository<Workout, Long> {
     @Query("SELECT w FROM Workout w WHERE w.day.userId = :userId AND w.day.date BETWEEN :startDate AND CURRENT_DATE")
     List<Workout> findRecentWorkouts(@NotNull @Param("userId") Long userId, @Param("startDate") LocalDate startDate);
+    List<Workout> findAllByNameContainingAndDay_UserIdAndDay_Date(@NotNull String name, @NotNull Long userId, @NotNull LocalDate date);
+
     List<Workout> findAllByNameContainingAndDay_UserId(@NotNull String name, @NotNull Long userId);
     List<Workout> findAllByDay_DateAndDay_UserId(@NotNull LocalDate date, @NotNull Long userId);
 }

@@ -38,14 +38,21 @@ public class WorkoutServiceImpl implements WorkoutService {
     @Override
     public List<WorkoutDto> getWorkoutsByDateOrName(@NotNull Long userId, LocalDate date, String workoutName) {
         List<Workout> workouts;
-        if (workoutName != null) {
-            workouts = workoutRepository.findAllByNameContainingAndDay_UserId(workoutName, userId);
-        } else {
-            workouts = workoutRepository.findAllByDay_DateAndDay_UserId(date, userId);
+
+        if (workoutName != null && date != null) {
+            workouts = workoutRepository.findAllByNameContainingAndDay_UserIdAndDay_Date(workoutName, userId, date);
+            return WorkoutMapper.toDtoList(workouts);
         }
 
+        if (workoutName != null) {
+            workouts = workoutRepository.findAllByNameContainingAndDay_UserId(workoutName, userId);
+            return WorkoutMapper.toDtoList(workouts);
+        }
+
+        workouts = workoutRepository.findAllByDay_DateAndDay_UserId(date, userId);
         return WorkoutMapper.toDtoList(workouts);
     }
+
 
     @Override
     public WorkoutDto getWorkoutById(Long id) {
