@@ -112,6 +112,53 @@ export const HomeScreen: FC = () => {
         }
     };
 
+    const unlikePosts = (item: PostDto) => {
+        setPosts((prevPosts) =>
+            prevPosts.map((post) =>
+                post.id === item.id
+                    ? {
+                        ...post,
+                        likes: post.likes.filter((like) => like.userId !== auth.user.id),
+                    }
+                    : post
+            )
+        );
+        unlikePost(item.id, auth.user?.id)
+            .then((updatedPost) => {
+                setPosts((prevPosts) =>
+                    prevPosts.map((post) =>
+                        post.id === updatedPost.id ? updatedPost : post
+                    )
+                );
+            });
+    }
+    const likePosts = (item: PostDto) => {
+        setPosts((prevPosts) =>
+            prevPosts.map((post) =>
+                post.id === item.id
+                    ? {
+                        ...post,
+                        likes: [
+                            ...post.likes,
+                            {
+                                id: 0,
+                                userId: auth.user.id,
+                                postId: post.id,
+                            },
+                        ],
+                    }
+                    : post
+            )
+        );
+        likePost(item.id, auth.user?.id)
+            .then((updatedPost) => {
+                setPosts((prevPosts) =>
+                    prevPosts.map((post) =>
+                        post.id === updatedPost.id ? updatedPost : post
+                    )
+                );
+            });
+    }
     const storePostToBeUpdated = async (postId: number) => {
         try {
             await AsyncStorage.setItem('postToBeUpdated', postId.toString());
@@ -161,23 +208,9 @@ export const HomeScreen: FC = () => {
             }}>
                 <TouchableOpacity style={{alignItems: "center", flexDirection: "row"}} onPress={() => {
                     if (item.likes.map(like => like.userId).includes(auth.user?.id)) {
-                        unlikePost(item.id, auth.user?.id)
-                            .then((updatedPost) => {
-                                setPosts((prevPosts) =>
-                                    prevPosts.map((post) =>
-                                        post.id === updatedPost.id ? updatedPost : post
-                                    )
-                                );
-                            });
+                        unlikePosts(item);
                     } else {
-                        likePost(item.id, auth.user?.id)
-                            .then((updatedPost) => {
-                                setPosts((prevPosts) =>
-                                    prevPosts.map((post) =>
-                                        post.id === updatedPost.id ? updatedPost : post
-                                    )
-                                );
-                            });
+                        likePosts(item);
                     }
                 }}>
                     {

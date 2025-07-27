@@ -12,6 +12,8 @@ import {StackNavigationProp} from '@react-navigation/stack';
 import {styles} from './styles.ts';
 import {CustomBottomNavigation} from "../../../components/BottomNavigation/CustomBottomNavigation";
 import {CopyOrEditWorkout} from "../../../enums/enums";
+import {AddWorkoutModal} from "../../exercise/coponents/AddWorkoutModal";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 type DayWorkoutsScreenRouteProp = RouteProp<RootStackParamList, 'DayWorkoutsScreen'>;
 type DayWorkoutsScreenNavigation = StackNavigationProp<RootStackParamList, 'DayWorkoutsScreen'>;
@@ -25,6 +27,7 @@ export const DayWorkoutsScreen = () => {
     const [workouts, setWorkouts] = useState<Array<WorkoutDto>>([]);
     const navigation = useNavigation<DayWorkoutsScreenNavigation>();
     const [openMenuId, setOpenMenuId] = useState<number | null>(null);
+    const [openAddWorkoutModal, setOpenAddWorkoutModal] = useState<boolean>(false);
 
     useFocusEffect(
         useCallback(() => {
@@ -200,9 +203,19 @@ export const DayWorkoutsScreen = () => {
                                 ))}
                                 {!upsertPostDto && <TouchableOpacity
                                     style={styles.addButton}
-                                    onPress={() => {
-                                        navigation.navigate("SearchExerciseScreen")
-                                    }}>
+                                    onPress={async () => {
+                                        try {
+                                            await AsyncStorage.setItem('workoutName', workout.name);
+                                            await AsyncStorage.setItem('dayDate', dayDate ?
+                                                dayDate.format("YYYY-MM-DD") :
+                                                date.format("YYYY-MM-DD")
+                                        );
+                                            navigation.navigate('SearchExerciseScreen');
+                                        } catch (e) {
+                                            console.error('Failed to save workout or date:', e);
+                                        }
+                                    }}
+                                >
                                     <Icon name="plus" size={20} color={'white'}/>
                                     <Text style={styles.addButtonText}>Add exercise</Text>
                                 </TouchableOpacity>}
@@ -234,18 +247,22 @@ export const DayWorkoutsScreen = () => {
                         <View>
                             <TouchableOpacity
                                 style={styles.addButton}
-                                onPress={() => {navigation.navigate('SearchExerciseScreen')}}>
+                                onPress={() => setOpenAddWorkoutModal(true)}>
                                 <Icon name="plus" size={20} color={'white'}/>
-                                <Text style={styles.addButtonText}>Add Exercise</Text>
+                                <Text style={styles.addButtonText}>Create Workout</Text>
                             </TouchableOpacity>
-                            <Text style={{textAlign: 'center', marginTop: 20, fontSize: 16}}>
-                                No workouts for this day.
-                            </Text>
                         </View>
                     )}
                 </View>
             </ScrollView>
-
+            <AddWorkoutModal
+                visible={openAddWorkoutModal}
+                onClose={(date) => {
+                    if(date) {
+                        loadWorkoutsForDay(moment(date));
+                    }
+                    setOpenAddWorkoutModal(false);
+                }}/>
             <CustomBottomNavigation/>
         </View>
     );

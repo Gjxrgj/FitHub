@@ -13,6 +13,7 @@ import {StackNavigationProp} from '@react-navigation/stack';
 import {styles} from './styles.ts';
 import {CustomBottomNavigation} from "../../../components/BottomNavigation/CustomBottomNavigation";
 import {MealStatsModal} from "./mealStats/MealStatsModal";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const calculateMealCalories = (foodItems: Array<FoodItemDto>): number => {
     return foodItems.reduce((total, item) => {
@@ -130,7 +131,8 @@ export const DayMealsScreen = () => {
                     <Text style={styles.addButtonText}>Link to post</Text>
                 </TouchableOpacity> :
                     <TouchableOpacity style={styles.addButton} onPress={() => {
-                        navigation.navigate('SearchMealScreen');
+                        AsyncStorage.setItem('mealType', mealType)
+                            .then(() => navigation.navigate('SearchMealScreen'));
                     }}>
                         <Icon name="plus" size={20} color="white"/>
                         <Text style={styles.addButtonText}>Add Food</Text>

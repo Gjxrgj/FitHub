@@ -4,7 +4,7 @@
     "slug": "fithub",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./src/assets/images/logo-original-transparent.png",
+    "icon": "./src/assets/images/logo-black-on-white.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "extra": {
@@ -16,9 +16,8 @@
       }
     },
     "splash": {
-      "image": "./src/assets/images/logo-original-transparent.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "image": "./src/assets/images/logo-black-on-white.png",
+      "resizeMode": "contain"
     },
     "ios": {
       "supportsTablet": true
@@ -26,8 +25,7 @@
     "android": {
       "package": "com.dornovich.fithub",
       "adaptiveIcon": {
-        "foregroundImage": "./src/assets/images/logo-original-transparent.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage": "./src/assets/images/logo-black-on-white.png"
       },
       "config": {
         "googleMaps": {
@@ -36,7 +34,7 @@
       }
     },
     "web": {
-      "favicon": "./src/assets/images/logo-original-transparent.png"
+      "favicon": "./src/assets/images/logo-black-on-white.png"
     },
     "owner": "dornovich"
   }

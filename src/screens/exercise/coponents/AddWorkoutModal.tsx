@@ -14,7 +14,7 @@ import {styles} from './styles.ts';
 
 interface AddWorkoutModal {
     visible: boolean;
-    onClose: () => void;
+    onClose: (dayDate?: Date) => void;
 }
 
 export const AddWorkoutModal: FC<AddWorkoutModal> = ({
@@ -37,7 +37,7 @@ export const AddWorkoutModal: FC<AddWorkoutModal> = ({
             if (auth.user?.id) {
                 addWorkout(auth.user?.id, upsertWorkoutDto)
                     .then(() => {
-                        onClose();
+                        onClose(form.getFieldValue("date"));
                         form.reset();
                     });
             }

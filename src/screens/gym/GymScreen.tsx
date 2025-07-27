@@ -30,7 +30,6 @@ import {theme} from '../../theme/theme.ts';
 import {Avatar, Button, Text} from 'react-native-paper';
 import {formatBase64Image} from '../../util/formatBase64Image.ts';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import {formatDate} from '../../util/dateUtil.ts';
 import {styles} from './styles.ts';
 import {VenueMapModal} from '../../components/VenueMapModal/VenueMapModal.tsx';
 import {ReviewsModal} from '../../components/ReviewsModal/ReviewsModal.tsx';

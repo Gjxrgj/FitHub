@@ -52,81 +52,53 @@ export const ProfileScreen = () => {
     const [postLoading, setPostLoading] = useState<boolean>(true);
     const [openMenuId, setOpenMenuId] = useState<number | null>(null);
     const [professionalTrainer, setProfessionalTrainer] = useState<ProfessionalTrainerDto | undefined>(undefined);
+    const [followButtonText, setFollowButtonText] = useState<String>("");
     const openMenu = (postId: number) => setOpenMenuId(postId);
     const closeMenu = () => setOpenMenuId(null);
-
 
     useFocusEffect(
         useCallback(() => {
             setLoading(true);
             setPostLoading(true);
             setPosts([]);
-            fetchUsersPosts();
-            if (userId && params) {
-                if (userDto.professionalTrainerId) {
-                    getProfessionalTrainerById(userDto.professionalTrainerId)
-                        .then((professionalTrainer) => {
-                            setProfessionalTrainer(professionalTrainer);
-                        });
-                }
-                getUserById(userId)
-                    .then(user => {
-                        setUserDto(user);
-                        getFollowersForUser(userId)
-                            .then(followers => {
-                                setUserFollowers(followers);
-                                setLoading(false);
-                            });
-                    });
+            if (params && userId) {
+                fetchAllData(userId);
             } else {
                 setUserDto(auth.user)
             }
         }, [userId]),
     );
 
-    useFocusEffect(
-        useCallback(() => {
-            setLoading(true);
-            setPostLoading(true);
-            setPosts([]);
-            fetchUsersPosts();
-            if (userId && params) {
-                if (userDto.professionalTrainerId) {
-                    getProfessionalTrainerById(userDto.professionalTrainerId)
+    const fetchAllData = useCallback((userId: number) => {
+        getUserById(userId)
+            .then(user => {
+                setUserDto(user);
+                getFollowersForUser(user.id)
+                    .then(followers => {
+                        setUserFollowers(followers);
+                        setFollowButtonText(followers.map(follower => follower.id).includes(auth.user?.id) ? "Unfollow" : "Follow");
+                        setLoading(false);
+                    });
+                getPostsForUser(user.id)
+                    .then(p => {
+                        setPosts(p);
+                        setPostLoading(false);
+                    });
+                if (user?.professionalTrainerId) {
+                    getProfessionalTrainerById(user.professionalTrainerId)
                         .then((professionalTrainer) => {
                             setProfessionalTrainer(professionalTrainer);
                         });
                 }
-                getUserById(userId)
-                    .then(user => {
-                        setUserDto(user);
-                        getFollowersForUser(userId)
-                            .then(followers => {
-                                setUserFollowers(followers);
-                                setLoading(false);
-                            });
-                    });
-            } else {
-                setUserDto(auth.user)
-            }
-        }, []),
-    );
-
-    const fetchUsersPosts = useCallback(() => {
-        if (!userId) {
-            return;
-        }
-        getPostsForUser(userId)
-            .then(p => {
-                setPosts(p);
-                setPostLoading(false);
             });
-    }, [userId]);
+
+    }, []);
+
 
     const handleImagePick = () => {
         pickImage()
             .then((data) => {
-                updateUserAvatar(userId, data)
+                updateUserAvatar(userDto.id, data)
                     .then((updatedUser) => setUserDto(updatedUser));
             })
     };
@@ -242,6 +214,53 @@ export const ProfileScreen = () => {
         }
     };
 
+    const unlikePosts = (item: PostDto) => {
+        setPosts((prevPosts) =>
+            prevPosts.map((post) =>
+                post.id === item.id
+                    ? {
+                        ...post,
+                        likes: post.likes.filter((like) => like.userId !== auth.user.id),
+                    }
+                    : post
+            )
+        );
+        unlikePost(item.id, auth.user?.id)
+            .then((updatedPost) => {
+                setPosts((prevPosts) =>
+                    prevPosts.map((post) =>
+                        post.id === updatedPost.id ? updatedPost : post
+                    )
+                );
+            });
+    }
+    const likePosts = (item: PostDto) => {
+        setPosts((prevPosts) =>
+            prevPosts.map((post) =>
+                post.id === item.id
+                    ? {
+                        ...post,
+                        likes: [
+                            ...post.likes,
+                            {
+                                id: 0,
+                                userId: auth.user.id,
+                                postId: post.id,
+                            },
+                        ],
+                    }
+                    : post
+            )
+        );
+        likePost(item.id, auth.user?.id)
+            .then((updatedPost) => {
+                setPosts((prevPosts) =>
+                    prevPosts.map((post) =>
+                        post.id === updatedPost.id ? updatedPost : post
+                    )
+                );
+            });
+    }
 
     const renderPost = ({item}: { item: PostDto }) => (
         <View style={styles.post}>
@@ -306,23 +325,9 @@ export const ProfileScreen = () => {
             }}>
                 <TouchableOpacity style={{alignItems: "center", flexDirection: "row"}} onPress={() => {
                     if (item.likes.map(like => like.userId).includes(auth.user?.id)) {
-                        unlikePost(item.id, auth.user?.id)
-                            .then((updatedPost) => {
-                                setPosts((prevPosts) =>
-                                    prevPosts.map((post) =>
-                                        post.id === updatedPost.id ? updatedPost : post
-                                    )
-                                );
-                            });
+                        unlikePosts(item);
                     } else {
-                        likePost(item.id, auth.user?.id)
-                            .then((updatedPost) => {
-                                setPosts((prevPosts) =>
-                                    prevPosts.map((post) =>
-                                        post.id === updatedPost.id ? updatedPost : post
-                                    )
-                                );
-                            });
+                        likePosts(item);
                     }
                 }}>
                     {
@@ -425,7 +430,11 @@ export const ProfileScreen = () => {
                                             <Text style={styles.username}>@{userDto?.username}</Text>
                                         </View>
                                     </View>
-                                    <View style={{flexDirection: 'row', justifyContent: 'space-evenly', marginHorizontal: 10}}>
+                                    <View style={{
+                                        flexDirection: 'row',
+                                        justifyContent: 'space-evenly',
+                                        marginHorizontal: 10
+                                    }}>
                                         <View style={styles.statsContainer}>
                                             <Text style={styles.statsNumber}>{userDto?.numPosts}</Text>
                                             <Text style={styles.statsLabel}>Posts</Text>
@@ -450,7 +459,7 @@ export const ProfileScreen = () => {
                                             </View>
                                         </Pressable>
                                     </View>
-                                    {auth.user?.id === userId ?
+                                    {auth.user?.id === userDto.id ?
                                         <View style={{marginHorizontal: 20, marginTop: 30}}>
                                             <Pressable style={styles.pressable}
                                                        onPress={() => navigation.navigate('AddEditPostScreen', {postDto: undefined})}>
@@ -464,6 +473,7 @@ export const ProfileScreen = () => {
                                         <View style={{marginHorizontal: 20, marginTop: 30}}>
                                             <Pressable style={styles.pressable}
                                                        onPress={() => {
+                                                           followButtonText === "Follow" ? setFollowButtonText("Unfollow") : setFollowButtonText("Follow");
                                                            if (userFollowers.map(follower => follower.id).includes(auth.user?.id)) {
                                                                unfollowUser(userDto.id).then(user => {
                                                                    setUserDto(user);
@@ -479,7 +489,7 @@ export const ProfileScreen = () => {
                                                        }}>
                                                 <View style={styles.pickAnImage}>
                                                     <Text style={styles.pickAnImageText}>
-                                                        {userFollowers.map(follower => follower.id).includes(auth.user?.id) ? "Unfollow" : "Follow"}
+                                                        {followButtonText}
                                                     </Text>
                                                 </View>
                                             </Pressable>

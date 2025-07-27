@@ -8,11 +8,11 @@ import {useForm} from '@tanstack/react-form';
 import {RootStackParamList, UpsertExerciseInWorkoutDto, WorkoutDto} from '../../../dto/types.ts';
 import {NavigationProp, RouteProp, useNavigation, useRoute} from '@react-navigation/native';
 import _ from 'lodash';
-import {getWorkoutsByNameOrDate} from '../../../services';
+import {addExerciseInWorkout, getWorkoutsByNameOrDate} from '../../../services';
 import {AddWorkoutModal} from '../coponents/AddWorkoutModal.tsx';
-import {addExerciseInWorkout} from '../../../services';
 import {useAuth} from '../../../context/AuthProvider.tsx';
 import moment from "moment";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 type AddExerciseToWorkoutProps = RouteProp<RootStackParamList, 'AddExerciseToWorkoutScreen'>;
 type AddExerciseToWorkoutNavigationProps = NavigationProp<RootStackParamList, 'AddExerciseToWorkoutScreen'>;
@@ -27,6 +27,7 @@ export const AddExerciseToWorkoutScreen = () => {
     const [openAddWorkoutModal, setOpenAddWorkoutModal] = useState<boolean>(false);
     const auth = useAuth();
     const navigation = useNavigation<AddExerciseToWorkoutNavigationProps>();
+    const [workoutId, setWorkoutId] = useState<undefined | number>(undefined);
 
     const form = useForm({
         defaultValues: {
@@ -41,7 +42,7 @@ export const AddExerciseToWorkoutScreen = () => {
         onSubmit: ({value}): void => {
             const timeInMinutes = (value.hours * 60) + (value.mins) + (value.secs / 60);
             const upsertExerciseInWorkoutDto: UpsertExerciseInWorkoutDto = {
-                workoutId: value.workoutId,
+                workoutId: workoutId || value.workoutId,
                 exerciseId: exerciseDto.id,
                 reps: value.reps,
                 sets: value.sets,
@@ -55,6 +56,7 @@ export const AddExerciseToWorkoutScreen = () => {
         },
     });
 
+
     useEffect(() => {
         if (query.length > 1) {
             debouncedFetchSuggestions(query);
@@ -62,6 +64,21 @@ export const AddExerciseToWorkoutScreen = () => {
             setSuggestions([]);
         }
     }, [query]);
+
+    useEffect(() => {
+        AsyncStorage.getItem('workoutName')
+            .then(workoutName => {
+                AsyncStorage.getItem('dayDate').then(dayDate => {
+                    getWorkoutsByNameOrDate(auth.user.id, dayDate, workoutName)
+                        .then(workouts => {
+                            const firstWorkout = workouts[0];
+                            setQuery(firstWorkout.name + ' - ' + moment(firstWorkout.dayDate, "YYYY,MM,DD")
+                                .format("DD.MM.YYYY"));
+                            setWorkoutId(firstWorkout.id);
+                        })
+                })
+            });
+    }, []);
 
     const debouncedFetchSuggestions = useRef(
         _.debounce(async (input: string) => {
@@ -182,12 +199,12 @@ export const AddExerciseToWorkoutScreen = () => {
                             name={'workoutId'}>
                             {(field) => (
                                 <View style={{marginHorizontal: 10}}>
-                                    <View style={{width: '100%', marginBottom: 15}}>
+                                    {!workoutId &&  <View style={{width: '100%', marginBottom: 15}}>
                                         <Button style={{borderRadius: 0, height: 42}} mode={'contained'}
                                                 onPress={() => setOpenAddWorkoutModal(true)}>
                                             Add New Workout
                                         </Button>
-                                    </View>
+                                    </View>}
                                     <View style={styles.rowContainer}>
                                         <View style={{width: '100%'}}>
                                             <CustomTextInput
@@ -224,7 +241,8 @@ export const AddExerciseToWorkoutScreen = () => {
                         <AddWorkoutModal
                             visible={openAddWorkoutModal}
                             onClose={() => setOpenAddWorkoutModal(false)}/>
-                        <Button style={{marginTop: 10, marginHorizontal: 10, borderRadius: 2}} onPress={form.handleSubmit} mode={"contained"}>
+                        <Button style={{marginTop: 10, marginHorizontal: 10, borderRadius: 2}}
+                                onPress={form.handleSubmit} mode={"contained"}>
                             Add To Workout
                         </Button>
                     </View>

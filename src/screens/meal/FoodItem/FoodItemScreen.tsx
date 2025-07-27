@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {ScrollView, Text, TouchableOpacity, View} from 'react-native';
 import {RouteProp, useNavigation, useRoute} from '@react-navigation/native';
 import {OFFFoodItemDto, RootStackParamList, UpsertFoodItemDto, USDAFoodItem, FoodItemDto} from '../../../dto/types.ts';
@@ -15,6 +15,7 @@ import {addFoodItem} from '../../../services';
 import {styles} from './styles.ts';
 import {ErrorDisplayComponent} from '../../../components/ErrorDisplay/ErrorDisplayComponent.tsx';
 import {StackNavigationProp} from '@react-navigation/stack';
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 type MealScreenRouteProp = RouteProp<RootStackParamList, 'MealScreen'>;
 type MealScreenNavigation = StackNavigationProp<RootStackParamList, 'MealScreen'>;
@@ -49,6 +50,12 @@ export const FoodItemScreen = () => {
             }
         },
     });
+
+    useEffect(() => {
+        AsyncStorage.getItem('mealType').then(mealType => {
+            form.setFieldValue('mealType', mealType);
+        });
+    }, []);
 
     const isUSDAFoodItem = (item: USDAFoodItem | OFFFoodItemDto | FoodItemDto): item is USDAFoodItem => {
         return (item as USDAFoodItem).fdcId !== undefined;
