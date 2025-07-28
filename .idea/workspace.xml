@@ -4,24 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7fe6fafb-54cd-44fc-a15a-9f7d784fee94" name="Changes" comment="Updated the AppIcon.&#10;Updated AppName.&#10;Removed unneeded images.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/repository/WorkoutRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/repository/WorkoutRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/service/impl/WorkoutServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/java/mk/ukim/finki/fithubapi/TrackingService/service/impl/WorkoutServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubUI" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubUI/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/app.json" afterDir="false" />
+    <list default="true" id="7fe6fafb-54cd-44fc-a15a-9f7d784fee94" name="Changes" comment="Updated a docker-compose.yml">
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FitHubUI/src/config/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/config/config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/day/meals/DayMealsScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/day/meals/DayMealsScreen.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/day/workouts/DayWorkoutsScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/day/workouts/DayWorkoutsScreen.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/exercise/AddExerciseToWorkout/AddExerciseToWorkoutScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/exercise/AddExerciseToWorkout/AddExerciseToWorkoutScreen.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/exercise/coponents/AddWorkoutModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/exercise/coponents/AddWorkoutModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/gym/GymScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/gym/GymScreen.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/home/HomeScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/home/HomeScreen.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/meal/FoodItem/FoodItemScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/meal/FoodItem/FoodItemScreen.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FitHubUI/src/screens/profile/ProfileScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubUI/src/screens/profile/ProfileScreen.tsx" afterDir="false" />
     </list>
     <list id="9ad12d3f-878a-45bc-852a-34975897acf4" name="do-not-commit" comment="do-not-commit">
-      <change beforePath="$PROJECT_DIR$/FitHubAPI/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/FitHubAPI/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +29,7 @@
         <entry key="$PROJECT_DIR$/FitHubUI" value="main" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/FitHubUI" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="KubernetesApiProvider">{
@@ -63,6 +52,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Docker.FitHubAPI/Dockerfile build.executor": "Run",
     "Maven.FitHubAPI [clean].executor": "Run",
     "Maven.FitHubAPI [install].executor": "Run",
     "RequestMappingsPanelOrder0": "0",
@@ -73,7 +63,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.FitHubAPIApplication.executor": "Debug",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/mark1/OneDrive/Desktop/Faks/FitHub/FitHubBackUP/FitHub",
@@ -111,7 +101,7 @@
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
-  <component name="RunManager" selected="Spring Boot.FitHubAPIApplication">
+  <component name="RunManager" selected="npm.start">
     <configuration name="FitHubAPIApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="FitHubAPI" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="mk.ukim.finki.fithubapi.FitHubAPIApplication" />
@@ -125,6 +115,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="FitHubAPI/Dockerfile build" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="imageTag" value="maven3.9.6-eclipse-temurin-17_build" />
+          <option name="buildCliOptions" value="--target build" />
+          <option name="buildKitEnabled" value="true" />
+          <option name="buildOnly" value="true" />
+          <option name="sourceFilePath" value="FitHubAPI/Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
+      <deployment type="dockerfile">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/FitHubUI/package.json" />
       <command value="run" />
@@ -137,8 +145,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.FitHubAPIApplication" />
         <item itemvalue="npm.start" />
+        <item itemvalue="Docker.FitHubAPI/Dockerfile build" />
+        <item itemvalue="Spring Boot.FitHubAPIApplication" />
         <item itemvalue="Spring Boot.FitHubAPIApplication" />
       </list>
     </recent_temporary>
@@ -205,7 +214,10 @@
       <workItem from="1753552357646" duration="1961000" />
       <workItem from="1753559483849" duration="2197000" />
       <workItem from="1753609636071" duration="4064000" />
-      <workItem from="1753624824738" duration="6769000" />
+      <workItem from="1753624824738" duration="6864000" />
+      <workItem from="1753635347627" duration="667000" />
+      <workItem from="1753728446880" duration="5016000" />
+      <workItem from="1753734383331" duration="841000" />
     </task>
     <task id="LOCAL-00001" summary="Created UserService">
       <option name="closed" value="true" />
