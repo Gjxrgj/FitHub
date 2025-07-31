@@ -14,3 +14,5 @@ export const formatEnumLabel = (input: string): string => {
         .toLowerCase()
         .replace(/^\w/, (c) => c.toUpperCase());
 };
+
+export const isNumeric = (value) => !isNaN(parseFloat(value)) && isFinite(value);

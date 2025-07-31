@@ -13,6 +13,7 @@ import {AddWorkoutModal} from '../coponents/AddWorkoutModal.tsx';
 import {useAuth} from '../../../context/AuthProvider.tsx';
 import moment from "moment";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import {isNumeric} from "../../../util/stringUtil";
 
 type AddExerciseToWorkoutProps = RouteProp<RootStackParamList, 'AddExerciseToWorkoutScreen'>;
 type AddExerciseToWorkoutNavigationProps = NavigationProp<RootStackParamList, 'AddExerciseToWorkoutScreen'>;
@@ -31,23 +32,23 @@ export const AddExerciseToWorkoutScreen = () => {
 
     const form = useForm({
         defaultValues: {
-            reps: 0,
-            sets: 0,
-            weight: 0,
-            hours: 0,
-            mins: 0,
-            secs: 0,
-            workoutId: 0,
+            reps: '',
+            sets: '',
+            weight: '',
+            hours: '',
+            mins: '',
+            secs: '',
+            workoutId: '',
         },
         onSubmit: ({value}): void => {
             const timeInMinutes = (value.hours * 60) + (value.mins) + (value.secs / 60);
             const upsertExerciseInWorkoutDto: UpsertExerciseInWorkoutDto = {
                 workoutId: workoutId || value.workoutId,
                 exerciseId: exerciseDto.id,
-                reps: value.reps,
-                sets: value.sets,
-                weight: value.weight,
-                timeInMins: timeInMinutes,
+                reps: Number(value.reps),
+                sets: Number(value.sets),
+                weight: Number(value.weight),
+                timeInMins: Number(timeInMinutes)
             };
             addExerciseInWorkout(upsertExerciseInWorkoutDto)
                 .then(() => {
@@ -107,39 +108,48 @@ export const AddExerciseToWorkoutScreen = () => {
                             <Text style={styles.title}>{exerciseDto.name}</Text>
                         </View>
                         <form.Field
-                            name={'reps'}>
+                            name={'reps'}
+                            validators={{
+                                onChange: ({value}) => !isNumeric(value) && 'Reps must be a number'
+                            }}>
                             {(field) => (
                                 <View style={{marginBottom: 15}}>
                                     <CustomTextInput
                                         label={'Repetitions'}
                                         keyboardType="numeric"
-                                        onChangeText={(text) => field.handleChange(parseInt(text, 10) || 0)}
+                                        onChangeText={(text) => field.handleChange(text)}
                                         value={field.state.value.toString()}/>
                                     <ErrorDisplayComponent errorMessages={field.state.meta.errors}/>
                                 </View>
                             )}
                         </form.Field>
                         <form.Field
-                            name={'sets'}>
+                            name={'sets'}
+                            validators={{
+                                onChange: ({value}) => !isNumeric(value) && 'Sets must be a number'
+                            }}>
                             {(field) => (
                                 <View style={{marginBottom: 15}}>
                                     <CustomTextInput
                                         label={'Sets'}
                                         keyboardType="numeric"
-                                        onChangeText={(text) => field.handleChange(parseInt(text, 10) || 0)}
+                                        onChangeText={(text) => field.handleChange(text)}
                                         value={field.state.value.toString()}/>
                                     <ErrorDisplayComponent errorMessages={field.state.meta.errors}/>
                                 </View>
                             )}
                         </form.Field>
                         <form.Field
-                            name={'weight'}>
+                            name={'weight'}
+                            validators={{
+                                onChange: ({value}) => !isNumeric(value) && 'Weight must be a number'
+                            }}>
                             {(field) => (
                                 <View style={{marginBottom: 15}}>
                                     <CustomTextInput
                                         keyboardType="numeric"
                                         label={'Weight'}
-                                        onChangeText={(text) => field.handleChange(parseFloat(text) || 0)}
+                                        onChangeText={(text) => field.handleChange(text)}
                                         value={field.state.value.toString()}/>
                                     <ErrorDisplayComponent errorMessages={field.state.meta.errors}/>
                                 </View>
@@ -148,14 +158,17 @@ export const AddExerciseToWorkoutScreen = () => {
                         <Text style={styles.label}>Exercise Duration</Text>
                         <View style={styles.inputContainer}>
                             <form.Field
-                                name={'hours'}>
+                                name={'hours'}
+                                validators={{
+                                    onChange: ({value}) => !isNumeric(value) && 'Hours must be a number'
+                                }}>
                                 {(field) => (
                                     <View>
                                         <CustomTextInput
                                             style={{width: "100%"}}
                                             value={field.state.value.toString()}
                                             label={'Hours'}
-                                            onChangeText={(text) => field.handleChange(parseInt(text, 10))}
+                                            onChangeText={(text) => field.handleChange(text)}
                                             keyboardType="numeric"
                                             maxLength={2}
                                         />
@@ -164,14 +177,17 @@ export const AddExerciseToWorkoutScreen = () => {
                             </form.Field>
                             <Text style={styles.punctuationMark}>:</Text>
                             <form.Field
-                                name={'mins'}>
+                                name={'mins'}
+                                validators={{
+                                    onChange: ({value}) => !isNumeric(value) && 'Minutes must be a number'
+                                }}>
                                 {(field) => (
                                     <View>
                                         <CustomTextInput
                                             style={{width: "100%"}}
                                             label={'Minutes'}
                                             value={field.state.value.toString()}
-                                            onChangeText={(text) => field.handleChange(parseInt(text, 10))}
+                                            onChangeText={(text) => field.handleChange(text)}
                                             keyboardType="numeric"
                                             maxLength={2}
                                         />
@@ -180,14 +196,17 @@ export const AddExerciseToWorkoutScreen = () => {
                             </form.Field>
                             <Text style={styles.punctuationMark}>:</Text>
                             <form.Field
-                                name={'secs'}>
+                                name={'secs'}
+                                validators={{
+                                    onChange: ({value}) => !isNumeric(value) && 'Seconds must be a number'
+                                }}>
                                 {(field) => (
                                     <View>
                                         <CustomTextInput
                                             style={{width: "100%"}}
                                             label={'Seconds'}
                                             value={field.state.value.toString()}
-                                            onChangeText={(text) => field.handleChange(parseInt(text, 10))}
+                                            onChangeText={(text) => field.handleChange(text)}
                                             keyboardType="numeric"
                                             maxLength={2}
                                         />
@@ -195,8 +214,7 @@ export const AddExerciseToWorkoutScreen = () => {
                                 )}
                             </form.Field>
                         </View>
-                        <form.Field
-                            name={'workoutId'}>
+                        <form.Field name={'workoutId'}>
                             {(field) => (
                                 <View style={{marginHorizontal: 10}}>
                                     {!workoutId &&  <View style={{width: '100%', marginBottom: 15}}>

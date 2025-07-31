@@ -11,8 +11,8 @@ import {useAuth} from "../../../../context/AuthProvider";
 import {createFoodItem} from "../../../../services";
 import {useNavigation} from "@react-navigation/native";
 import {StackNavigationProp} from "@react-navigation/stack";
-import {isNumber} from "lodash";
 import {theme} from "../../../../theme/theme";
+import {isNumeric} from "../../../../util/stringUtil";
 
 type CreateNewFoodItemNavigation = StackNavigationProp<RootStackParamList, 'CreateNewFoodItem'>;
 
@@ -22,10 +22,10 @@ export const CreateNewFoodItem = () => {
     const form = useForm({
         defaultValues: {
             name: '',
-            caloriesPer100g: 0,
-            proteinsPer100g: 0,
-            fatsPer100g: 0,
-            carbsPer100g: 0,
+            caloriesPer100g: '',
+            proteinsPer100g: '',
+            fatsPer100g: '',
+            carbsPer100g: '',
         },
         onSubmit: async ({value}) => {
             if (auth.user?.id) {
@@ -72,14 +72,14 @@ export const CreateNewFoodItem = () => {
                 </form.Field>
 
                 <form.Field name="caloriesPer100g" validators={{
-                    onChange: ({value}) => !isNumber(value) && 'Calories must be a number'
+                    onChange: ({value}) => !isNumeric(value) && 'Calories must be a number'
                 }}>
                     {(field) => (
                         <View style={styles.inputContainer}>
                             <CustomTextInput
                                 label="Calories Per 100g"
                                 keyboardType="numeric"
-                                onChangeText={(text) => field.handleChange(Number(text) || 0)}
+                                onChangeText={(text) => field.handleChange(text)}
                                 value={field.state.value.toString()}
                                 right={<TextInput.Affix text="kcal"/>}
                             />
@@ -89,14 +89,14 @@ export const CreateNewFoodItem = () => {
                 </form.Field>
 
                 <form.Field name="proteinsPer100g" validators={{
-                    onChange: ({value}) => !isNumber(value) && 'Proteins must be a number'
+                    onChange: ({value}) => !isNumeric(value) && 'Proteins must be a number'
                 }}>
                     {(field) => (
                         <View style={styles.inputContainer}>
                             <CustomTextInput
                                 label="Proteins Per 100g"
                                 keyboardType="numeric"
-                                onChangeText={(text) => field.handleChange(Number(text) || 0)}
+                                onChangeText={(text) => field.handleChange(text)}
                                 value={field.state.value.toString()}
                                 right={<TextInput.Affix text="g"/>}
                             />
@@ -106,14 +106,14 @@ export const CreateNewFoodItem = () => {
                 </form.Field>
 
                 <form.Field name="fatsPer100g" validators={{
-                    onChange: ({value}) => !isNumber(value) && 'Fats must be a number'
+                    onChange: ({value}) => !isNumeric(value) && 'Fats must be a number'
                 }}>
                     {(field) => (
                         <View style={styles.inputContainer}>
                             <CustomTextInput
                                 label="Fats Per 100g"
                                 keyboardType="numeric"
-                                onChangeText={(text) => field.handleChange(Number(text) || 0)}
+                                onChangeText={(text) => field.handleChange(text)}
                                 value={field.state.value.toString()}
                                 right={<TextInput.Affix text="g"/>}
                             />
@@ -123,14 +123,14 @@ export const CreateNewFoodItem = () => {
                 </form.Field>
 
                 <form.Field name="carbsPer100g" validators={{
-                    onChange: ({value}) => !isNumber(value) && 'Carbs must be a number'
+                    onChange: ({value}) => !isNumeric(value) && 'Carbs must be a number'
                 }}>
                     {(field) => (
                         <View style={styles.inputContainer}>
                             <CustomTextInput
                                 label="Carbs Per 100g"
                                 keyboardType="numeric"
-                                onChangeText={(text) => field.handleChange(Number(text) || 0)}
+                                onChangeText={(text) => field.handleChange(text)}
                                 value={field.state.value.toString()}
                                 right={<TextInput.Affix text="g"/>}
                             />

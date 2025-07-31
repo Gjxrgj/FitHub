@@ -35,14 +35,14 @@ export const CopyEditWorkoutScreen = () => {
             exercises: workout.exercises.reduce((acc, exercise) => {
                 acc[exercise.id] = {
                     id: exercise.id || 0,
-                    reps: exercise.reps || 0,
+                    reps: exercise.reps || '',
                     name: exercise.name || '',
-                    sets: exercise.sets || 0,
-                    weight: exercise.weight || 0,
-                    exerciseId: exercise.exerciseId || 0,
-                    hours: Math.floor(exercise.timeInMins / 60) || 0,
-                    mins: Math.floor(exercise.timeInMins % 60) || 0,
-                    secs: Math.round((exercise.timeInMins % 1) * 60) || 0,
+                    sets: exercise.sets || '',
+                    weight: exercise.weight || '',
+                    exerciseId: exercise.exerciseId || '',
+                    hours: Math.floor(exercise.timeInMins / 60) || '',
+                    mins: Math.floor(exercise.timeInMins % 60) || '',
+                    secs: Math.round((exercise.timeInMins % 1) * 60) || '',
                 };
                 return acc;
             }, {} as Record<number, UpsertExerciseInWorkoutDto>),
@@ -54,21 +54,21 @@ export const CopyEditWorkoutScreen = () => {
                     id: exercise.id,
                     name: exercise.name,
                     exerciseId: exercise.exerciseId,
-                    reps: exercise.reps,
-                    sets: exercise.sets,
-                    weight: exercise.weight,
-                    timeInMins: exercise.hours * 60 + exercise.mins + exercise.secs / 60,
+                    reps: Number(exercise.reps),
+                    sets: Number(exercise.sets),
+                    weight: Number(exercise.weight),
+                    timeInMins: Number(exercise.hours) * 60 + Number(exercise.mins) + Number(exercise.secs) / 60,
                 }));
                 editMultiple(transformedExercises)
                     .then(workout => navigation.navigate("DayWorkoutsScreen"));
             } else {
                 const transformedExercises: Array<UpsertExerciseInWorkoutDto> = Object.entries(value.exercises).map(([id, exercise]) => ({
-                    reps: exercise.reps,
-                    sets: exercise.sets,
-                    weight: exercise.weight,
-                    timeInMins: exercise.hours * 60 + exercise.mins + exercise.secs / 60,
-                    exerciseId: exercise.exerciseId,
-                    workoutId: value.workoutId
+                    reps: Number(exercise.reps),
+                    sets: Number(exercise.sets),
+                    weight: Number(exercise.weight),
+                    timeInMins: Number(exercise.hours) * 60 + Number(exercise.mins) + Number(exercise.secs) / 60,
+                    exerciseId: Number(exercise.exerciseId),
+                    workoutId: Number(value.workoutId)
                 }));
                 addMultipleExercisesInWorkout(transformedExercises)
                     .then(workout => {
@@ -78,7 +78,6 @@ export const CopyEditWorkoutScreen = () => {
             }
         },
     });
-
 
     useEffect(() => {
         if (copyEditWorkout === CopyOrEditWorkout.COPY) {
@@ -106,7 +105,7 @@ export const CopyEditWorkoutScreen = () => {
         }, 500),
     ).current;
 
-    const handleUpdate = (exerciseId: number, fieldName: string, newValue: number) => {
+    const handleUpdate = (exerciseId: number, fieldName: string, newValue: string) => {
         const currentExercise = form.state.values.exercises[exerciseId];
         const updatedExercise = {
             ...currentExercise,
@@ -199,7 +198,7 @@ export const CopyEditWorkoutScreen = () => {
                                         <CustomTextInput
                                             label={fieldName.charAt(0).toUpperCase() + fieldName.slice(1)}
                                             keyboardType="numeric"
-                                            onChangeText={(text) => handleUpdate(exerciseDto.id, fieldName, parseFloat(text) || 0)}
+                                            onChangeText={(text) => handleUpdate(exerciseDto.id, fieldName, text)}
                                             value={field.state.value[exerciseDto.id]?.[fieldName]?.toString() || ""}
                                         />
                                     );
