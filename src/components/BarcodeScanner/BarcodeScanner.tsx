@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {BarcodeType, CameraType, CameraView, useCameraPermissions} from 'expo-camera';
+import {BarcodeType, Camera, CameraType, CameraView, useCameraPermissions} from 'expo-camera';
 import {Modal, Text, TouchableOpacity, View} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
@@ -33,41 +33,21 @@ export const BarcodeScanner = () => {
         'code128',
         'upc_a',
     ];
+
     useEffect(() => {
         if (permission) {
             setLoading(false);
+            if (!permission.granted) {
+                requestPermission();
+            }
         }
-    }, [permission]);
+    }, [permission, requestPermission]);
 
     if (loading || !permission) {
         return (
             <View style={styles.container}>
                 <Text style={styles.message}>Loading...</Text>
             </View>
-        );
-    }
-    if (!permission.granted) {
-        return (
-            <Modal
-                visible={!permission.granted}
-                animationType="fade"
-                transparent={true}
-                onRequestClose={() => {
-                }}
-            >
-                <View style={styles.modalOverlay}>
-                    <View style={styles.modalContainer}>
-                        <Text style={styles.modalTitle}>Camera Permission Required</Text>
-                        <Text style={styles.modalMessage}>
-                            We need your permission to access the camera in order to proceed.
-                        </Text>
-                        <View style={styles.flipCameraButton}>
-                            <Button mode={"contained"} onPress={requestPermission}>Grant Permission</Button>
-                            <Button mode={"contained"} onPress={() => navigation.navigate("SearchMealScreen")}>Cancel</Button>
-                        </View>
-                    </View>
-                </View>
-            </Modal>
         );
     }
 
