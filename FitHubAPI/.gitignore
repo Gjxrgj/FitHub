@@ -25,6 +25,7 @@ target/
 .idea/modules.xml
 .idea/vcs.xml
 
+
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
