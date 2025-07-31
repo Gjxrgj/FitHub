@@ -1,0 +1,112 @@
+import {StyleSheet} from 'react-native';
+import {theme} from '../../../theme/theme.ts';
+
+export const styles = StyleSheet.create({
+    header: {
+        fontSize: 24,
+        fontWeight: 'bold',
+        color: '#555',
+        marginTop: 30,
+        marginBottom: 60,
+        textAlign: 'center',
+    },
+    categorySection: {
+        marginBottom: 30,
+        backgroundColor: theme.colors.primaryLight,
+        padding: 10,
+        borderRadius: 10,
+    },
+    categoryHeader: {
+        fontSize: 22,
+        fontWeight: 'bold',
+        color: "#555",
+        marginBottom: 12,
+        marginLeft: 10,
+    },
+    mealContainer: {
+        marginBottom: 20,
+        padding: 16,
+        borderWidth: 1,
+        borderColor: theme.colors.primaryLight,
+        borderRadius: 10,
+        backgroundColor: '#fff',
+        shadowColor: '#000',
+        shadowOffset: {width: 0, height: 2},
+        shadowOpacity: 0.1,
+        shadowRadius: 4,
+        elevation: 2,
+    },
+    mealName: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        color: "#555",
+        marginBottom: 8,
+    },
+    mealRow: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginBottom: 4,
+        paddingRight: 10,
+    },
+    mealText: {
+        fontSize: 16,
+        color: '#555',
+        flex: 1,
+    },
+    mealValue: {
+        fontSize: 16,
+        color: theme.colors.primary,
+        fontWeight: 'bold',
+        flex: 1,
+        textAlign: 'right',
+    },
+    ingredientContainer: {
+        marginTop: 12,
+        paddingTop: 8,
+        borderTopWidth: 1,
+        borderTopColor: '#ddd',
+    },
+    ingredientTitle: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        color: "#555",
+        marginBottom: 6,
+    },
+    ingredientText: {
+        fontSize: 14,
+        color: '#555',
+        marginBottom: 2,
+        flex: 1,
+    },
+    ingredientValue: {
+        fontSize: 14,
+        color: theme.colors.primary,
+        fontWeight: 'bold',
+        textAlign: 'right',
+        flex: 1,
+    },
+    nameDelete: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginTop: 10,
+        marginBottom: 25,
+    },
+    addMealButton: {
+        flexDirection: 'row',
+        justifyContent: 'flex-end',
+        alignItems: 'center',
+        marginBottom: 40,
+        paddingRight: 10,
+    },
+    mealTypeButton: {
+        backgroundColor: 'transparent',
+        padding: 5,
+        minWidth: 150,
+        alignItems: 'flex-start',
+        borderRadius: 0,
+    },
+    buttonText: {
+      color: 'white',
+    },
+});
