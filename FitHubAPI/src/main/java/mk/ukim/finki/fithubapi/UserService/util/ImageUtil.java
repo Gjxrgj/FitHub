@@ -13,11 +13,28 @@ public class ImageUtil {
             throw new IllegalArgumentException("Base64 string cannot be null or empty");
         }
         try {
-            // Sanitize input by removing non-base64 characters and padding
             String sanitizedBase64String = base64String.trim().replaceAll("[^A-Za-z0-9+/=]", "");
             return Base64.getDecoder().decode(sanitizedBase64String);
         } catch (IllegalArgumentException e) {
             throw new IllegalArgumentException("Invalid base64 string", e);
+        }
+    }
+    public static String resizeAvatarToBase64(byte[] avatarBytes) {
+        try {
+            byte[] resizedBytes = ImageResizeUtil.resizeForAvatar(avatarBytes);
+
+            String base64String = ImageUtil.encodeToBase64(resizedBytes);
+            return "data:image/jpeg;base64," + base64String;
+
+        } catch (Exception e) {
+            System.err.println("Resize failed: " + e.getMessage());
+            try {
+                String originalBase64 = ImageUtil.encodeToBase64(avatarBytes);
+                return "data:image/jpeg;base64," + originalBase64;
+            } catch (Exception fallbackError) {
+                System.err.println("Fallback 1 failed: " + fallbackError.getMessage());
+                return null;
+            }
         }
     }
 }

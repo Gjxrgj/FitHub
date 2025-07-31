@@ -12,7 +12,7 @@ import static mk.ukim.finki.fithubapi.UserService.util.ImageUtil.encodeToBase64;
 
 public class UserMapper {
 
-    public static UserDto toDto(User user) {
+    public static UserDto toDto(User user, Boolean lowResolution) {
         UserDto dto = new UserDto();
         dto.setId(user.getId());
         dto.setNumFollowers(user.getFollowers() != null ? user.getFollowers().size() : 0);
@@ -56,7 +56,7 @@ public class UserMapper {
         return user;
     }
 
-    public static List<UserDto> toDtoList(List<User> users) {
-        return users.stream().map(UserMapper::toDto).toList();
+    public static List<UserDto> toDtoList(List<User> users, Boolean lowResolution) {
+        return users.stream().map(user -> toDto(user, lowResolution)).toList();
     }
 }

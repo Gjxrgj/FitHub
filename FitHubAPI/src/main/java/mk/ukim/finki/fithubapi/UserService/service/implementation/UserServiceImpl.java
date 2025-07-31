@@ -2,6 +2,7 @@ package mk.ukim.finki.fithubapi.UserService.service.implementation;
 
 import jakarta.transaction.Transactional;
 import jakarta.validation.constraints.NotNull;
+import mk.ukim.finki.fithubapi.UserService.dto.LiteUserDto;
 import mk.ukim.finki.fithubapi.UserService.dto.UpdatePersonalInfoDto;
 import mk.ukim.finki.fithubapi.UserService.dto.UpsertUserDto;
 import mk.ukim.finki.fithubapi.UserService.dto.UserDto;
@@ -16,6 +17,8 @@ import mk.ukim.finki.fithubapi.UserService.models.User;
 import mk.ukim.finki.fithubapi.UserService.repository.RoleRepository;
 import mk.ukim.finki.fithubapi.UserService.repository.UserRepository;
 import mk.ukim.finki.fithubapi.UserService.service.UserService;
+import mk.ukim.finki.fithubapi.UserService.util.ImageResizeUtil;
+import mk.ukim.finki.fithubapi.UserService.util.ImageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -25,8 +28,10 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import static mk.ukim.finki.fithubapi.UserService.util.ImageUtil.decodeFromBase64;
+import static mk.ukim.finki.fithubapi.UserService.util.ImageUtil.resizeAvatarToBase64;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -58,7 +63,7 @@ public class UserServiceImpl implements UserService {
         user.setPassword(passwordEncoder.encode(userDto.getPassword()));
         user.setDailyCalories(getDailyCaloriesForLoggedUser(user));
         User savedUser = userRepository.save(user);
-        return UserMapper.toDto(savedUser);
+        return UserMapper.toDto(savedUser, false);
     }
 
     @Override
@@ -71,7 +76,7 @@ public class UserServiceImpl implements UserService {
     @Transactional
     public UserDto findById(@NotNull Long id) {
         return UserMapper.toDto(userRepository.findById(id)
-                .orElseThrow(() -> new UserNotFoundException("User not found with id: " + id)));
+                .orElseThrow(() -> new UserNotFoundException("User not found with id: " + id)), false);
     }
 
     @Override
@@ -94,7 +99,7 @@ public class UserServiceImpl implements UserService {
             user.setDailyCalories(getDailyCaloriesForLoggedUser(user));
             user.onUpdate();
             User savedUser = userRepository.save(user);
-            return UserMapper.toDto(savedUser);
+            return UserMapper.toDto(savedUser, false);
         } else {
             throw new UserNotFoundException("User not found with id: " + id);
         }
@@ -109,7 +114,7 @@ public class UserServiceImpl implements UserService {
             throw new UserNotFoundException("User not found with username: " + username);
         }
 
-        return UserMapper.toDto(user);
+        return UserMapper.toDto(user, false);
     }
 
     @Override
@@ -170,7 +175,7 @@ public class UserServiceImpl implements UserService {
                 .orElseThrow(() -> new UserNotFoundException("User not found with id: " + userId));
         List<User> users = userRepository.findAllByIdIn(user.getFollowers());
 
-        return UserMapper.toDtoList(users);
+        return UserMapper.toDtoList(users, true);
     }
 
     @Override
@@ -179,7 +184,7 @@ public class UserServiceImpl implements UserService {
                 .orElseThrow(() -> new UserNotFoundException("User not found with id: " + userId));
         List<User> users = userRepository.findAllByIdIn(user.getFollowing());
 
-        return UserMapper.toDtoList(users);
+        return UserMapper.toDtoList(users, true);
     }
 
     @Override
@@ -188,7 +193,7 @@ public class UserServiceImpl implements UserService {
                 .orElseThrow(() -> new UserNotFoundException("User not found with id: " + userId));
         user.setAvatar(decodeFromBase64(avatarData));
         User savedUser = userRepository.save(user);
-        return UserMapper.toDto(savedUser);
+        return UserMapper.toDto(savedUser, true);
     }
 
     @Override
@@ -197,7 +202,7 @@ public class UserServiceImpl implements UserService {
                 .orElseThrow(() -> new UserNotFoundException("User not found with id: " + userId));
         user.setBio(bio);
 
-        return UserMapper.toDto(userRepository.save(user));
+        return UserMapper.toDto(userRepository.save(user), false);
     }
 
     @Override
@@ -213,12 +218,12 @@ public class UserServiceImpl implements UserService {
         user.setActivityLevel(upsertUserDto.getActivityLevel());
         user.setDailyCalories(getDailyCaloriesForLoggedUser(user));
 
-        return UserMapper.toDto(userRepository.save(user));
+        return UserMapper.toDto(userRepository.save(user), false);
     }
 
     @Override
     public List<UserDto> findUsersByUsername(String username) {
-        return UserMapper.toDtoList(userRepository.findAllByUsernameContainingIgnoreCase(username));
+        return UserMapper.toDtoList(userRepository.findAllByUsernameContainingIgnoreCase(username), true);
     }
 
     @Override
@@ -238,7 +243,7 @@ public class UserServiceImpl implements UserService {
         followedUser.addFollower(loggedInUser.getId());
 
         userRepository.save(loggedInUser);
-        return UserMapper.toDto(userRepository.save(followedUser));
+        return UserMapper.toDto(userRepository.save(followedUser), false);
     }
 
     @Override
@@ -257,7 +262,7 @@ public class UserServiceImpl implements UserService {
         followedUser.removeFollower(loggedInUser.getId());
 
         userRepository.save(loggedInUser);
-        return UserMapper.toDto(userRepository.save(followedUser));
+        return UserMapper.toDto(userRepository.save(followedUser), false);
     }
 
     @Override
@@ -267,7 +272,7 @@ public class UserServiceImpl implements UserService {
         user.setProfessionalTrainerId(professionalTrainerId);
 
         User savedUser = userRepository.save(user);
-        return UserMapper.toDto(savedUser);
+        return UserMapper.toDto(savedUser, false);
     }
 
     @Override
@@ -281,4 +286,20 @@ public class UserServiceImpl implements UserService {
         Optional<User> user = userRepository.findByEmail(email);
         return user.isPresent();
     }
+
+    @Override
+    public List<LiteUserDto> getUsersForLikeModal(List<Long> usersIds) {
+        List<User> users = userRepository.findAllByIdIn(usersIds);
+
+        return users.stream()
+                .map(user -> new LiteUserDto(
+                        user.getId(),
+                        user.getUsername(),
+                        user.getFirstName(),
+                        user.getLastName(),
+                        user.getAvatar() != null ? resizeAvatarToBase64(user.getAvatar()) : null))
+                .collect(Collectors.toList());
+    }
+
+
 }

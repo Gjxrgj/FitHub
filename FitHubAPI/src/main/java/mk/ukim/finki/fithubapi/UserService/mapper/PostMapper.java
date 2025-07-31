@@ -10,8 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static mk.ukim.finki.fithubapi.UserService.util.ImageUtil.decodeFromBase64;
-import static mk.ukim.finki.fithubapi.UserService.util.ImageUtil.encodeToBase64;
+import static mk.ukim.finki.fithubapi.UserService.util.ImageUtil.*;
 
 public class PostMapper {
 
@@ -25,7 +24,7 @@ public class PostMapper {
         postDto.setUserId(post.getUser() != null ? post.getUser().getId() : null);
         postDto.setOwnerUsername(post.getOwnerUsername());
         postDto.setCreationDate(post.getCreationDate());
-        postDto.setOwnerAvatar(post.getUser().getAvatar() != null ? encodeToBase64(post.getUser().getAvatar()) : null);
+        postDto.setOwnerAvatar(post.getUser().getAvatar() != null ? resizeAvatarToBase64(post.getUser().getAvatar()) : null);
         postDto.setTitle(post.getTitle());
         postDto.setDescription(post.getDescription());
 

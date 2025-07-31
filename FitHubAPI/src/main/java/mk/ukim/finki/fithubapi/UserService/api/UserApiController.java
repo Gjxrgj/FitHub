@@ -2,6 +2,7 @@ package mk.ukim.finki.fithubapi.UserService.api;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
+import mk.ukim.finki.fithubapi.UserService.dto.LiteUserDto;
 import mk.ukim.finki.fithubapi.UserService.dto.UpdatePersonalInfoDto;
 import mk.ukim.finki.fithubapi.UserService.dto.UpsertUserDto;
 import mk.ukim.finki.fithubapi.UserService.dto.UserDto;
@@ -97,5 +98,10 @@ public class UserApiController {
             @RequestBody @NotNull Map<String, Long> requestBody
     ) {
         return ResponseEntity.ok(userService.addProfessionalTrainerToUser(userId, requestBody.get("professionalTrainerId")));
+    }
+
+    @PostMapping("/lite_users")
+    public ResponseEntity<List<LiteUserDto>> getUsersForLikeModal(@RequestBody List<Long> usersIds){
+        return ResponseEntity.ok(userService.getUsersForLikeModal(usersIds));
     }
 }

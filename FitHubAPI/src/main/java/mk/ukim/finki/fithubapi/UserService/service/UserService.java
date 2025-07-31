@@ -1,6 +1,7 @@
 package mk.ukim.finki.fithubapi.UserService.service;
 
 import jakarta.validation.constraints.NotNull;
+import mk.ukim.finki.fithubapi.UserService.dto.LiteUserDto;
 import mk.ukim.finki.fithubapi.UserService.dto.UpdatePersonalInfoDto;
 import mk.ukim.finki.fithubapi.UserService.dto.UserDto;
 import mk.ukim.finki.fithubapi.UserService.models.User;
@@ -44,4 +45,6 @@ public interface UserService {
     Boolean usernameAlreadyExists(String email);
 
     Boolean emailAlreadyExists(String username);
+
+    List<LiteUserDto> getUsersForLikeModal(List<Long> usersIds);
 }
