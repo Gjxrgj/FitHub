@@ -14,6 +14,7 @@ import {CustomBottomNavigation} from '../../../components/BottomNavigation/Custo
 import {LoadingSpinner} from '../../../components/LoadingSpinner/LoadingSpinner.tsx';
 import {fetchRecentMealTracks} from "../../../services";
 import {useAuth} from "../../../context/AuthProvider.tsx";
+import {capitalizeFirstLetter} from "../../../util/stringUtil";
 
 type SearchMealScreenNavigation = StackNavigationProp<RootStackParamList, 'SearchMealScreen'>;
 
@@ -130,7 +131,7 @@ export const SearchMealScreen = () => {
                                 <TouchableOpacity key={index}
                                                   onPress={() => navigation.navigate('MealScreen', {foodItem: item})}>
                                     <View style={styles.foodItemContainer}>
-                                        <Text style={styles.foodName}>{foodName}</Text>
+                                        <Text style={styles.foodName}>{capitalizeFirstLetter(foodName)}</Text>
                                         <Text style={styles.foodItemText}>
                                             {energy} {unit} per 100 g
                                         </Text>

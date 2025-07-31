@@ -426,6 +426,7 @@ export interface USDAFoodItem {
     servingSizeUnit: string;
     servingSize: number;
     foodNutrients: Array<{
+        Energy: string;
         nutrientId: number;
         nutrientName: string;
         unitName: string;

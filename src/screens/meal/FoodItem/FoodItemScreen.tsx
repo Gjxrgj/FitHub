@@ -24,7 +24,7 @@ export const FoodItemScreen = () => {
     const auth = useAuth();
     const navigation = useNavigation<MealScreenNavigation>();
     const route = useRoute<MealScreenRouteProp>();
-    const {foodItem} = route.params;
+    let {foodItem} = route.params;
     const [showDatePicker, setShowDatePicker] = useState<boolean>(false);
     const form = useForm({
         defaultValues: {
@@ -68,15 +68,15 @@ export const FoodItemScreen = () => {
     const renderMacronutrientRow = () => (
         <View style={styles.macroRow}>
             <View style={styles.macroColumn}>
-                <Text style={[styles.macroValue, {color: theme.colors.tertiary}]}>{protein}g</Text>
+                <Text style={[styles.macroValue, {color: theme.colors.tertiary}]}>{protein.toFixed(1)}g</Text>
                 <Text style={styles.macroLabel}>Protein</Text>
             </View>
             <View style={styles.macroColumn}>
-                <Text style={[styles.macroValue, {color: theme.colors.primary}]}>{fats}g</Text>
+                <Text style={[styles.macroValue, {color: theme.colors.primary}]}>{fats.toFixed(1)}g</Text>
                 <Text style={styles.macroLabel}>Fats</Text>
             </View>
             <View style={styles.macroColumn}>
-                <Text style={[styles.macroValue, {color: theme.colors.error}]}>{carbs}g</Text>
+                <Text style={[styles.macroValue, {color: theme.colors.error}]}>{carbs.toFixed(1)}g</Text>
                 <Text style={styles.macroLabel}>Carbs</Text>
             </View>
         </View>
@@ -106,12 +106,30 @@ export const FoodItemScreen = () => {
             ? foodItem.carbsPer100g
             : foodItem.product.nutriments.carbohydrates_100g || 0;
 
+    const normalizeUSDAEnergyToKcal = (
+        item: USDAFoodItem | OFFFoodItemDto | FoodItemDto
+    ): number => {
+        if (isUSDAFoodItem(item)) {
+            const energyNutrient = item.foodNutrients.find(
+                n => n.nutrientName.toLowerCase() === 'energy'
+            );
+
+            if (energyNutrient && energyNutrient.unitName.toLowerCase() !== 'kcal') {
+                if (energyNutrient.unitName.toLowerCase() === 'kj') {
+                    energyNutrient.value = +(energyNutrient.value / 4.184).toFixed(1);
+                }
+                energyNutrient.unitName = 'kcal';
+                foodItem = item;
+            }
+            return energyNutrient.value;
+        }
+    };
+
     const calories = isUSDAFoodItem(foodItem)
-        ? foodItem.foodNutrients?.find(n => n.nutrientName === 'Energy')?.value || 0
+        ? normalizeUSDAEnergyToKcal(foodItem) || 0
         : isFoodItemDto(foodItem)
             ? foodItem.caloriesPer100g
             : foodItem.product.nutriments['energy-kcal_100g'] || 0;
-
 
     return (
         <ScrollView style={styles.container}>
