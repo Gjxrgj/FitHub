@@ -1,14 +1,20 @@
-import React, {useState} from "react";
-import {FlatList, Text, TextInput, TouchableOpacity, View} from "react-native";
-import {RouteProp, useRoute} from "@react-navigation/native";
-import {CommentDto, RootStackParamList, UpsertCommentDto} from "../../dto/types";
+import React, {useEffect, useState} from "react";
+import {FlatList, Image, Text, TextInput, TouchableOpacity, View} from "react-native";
+import {RouteProp, useNavigation, useRoute} from "@react-navigation/native";
+import {CommentDto, LiteUserDto, RootStackParamList, UpsertCommentDto} from "../../dto/types";
 import {useAuth} from "../../context/AuthProvider";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import {theme} from "../../theme/theme";
-import {commentOnPost, deleteComment} from "../../services";
+import {commentOnPost, deleteComment, fetchLiteUsers} from "../../services";
 import moment from "moment";
+import {LoadingSpinner} from "../../components/LoadingSpinner/LoadingSpinner";
+import {formatBase64Image} from "../../util/formatBase64Image";
+import {StackNavigationProp} from "@react-navigation/stack";
+import {ExpandableText} from "../../components/ExpandableText/ExpandableText";
 
 type CommentsScreenProps = RouteProp<RootStackParamList, 'CommentsScreen'>;
+type CommentsScreenNavigationProps = StackNavigationProp<RootStackParamList, 'Profile'>;
 
 export const CommentsScreen = () => {
     const route = useRoute<CommentsScreenProps>();
@@ -17,6 +23,24 @@ export const CommentsScreen = () => {
     const [comments, setComments] = useState<CommentDto[]>(initialComments);
     const [newComment, setNewComment] = useState("");
     const auth = useAuth();
+    const [liteUsers, setLiteUsers] = useState<Record<number, LiteUserDto>>();
+    const [loading, setLoading] = useState<boolean>(true);
+    const navigation = useNavigation<CommentsScreenNavigationProps>();
+
+    useEffect(() => {
+        setLoading(true);
+        if (comments.length === 0) return;
+
+        fetchLiteUsers(comments.map(comment => comment.userId))
+            .then(lu => {
+                const mapped = lu.reduce((acc, user) => {
+                    acc[user.id] = user;
+                    return acc;
+                }, {} as Record<number, LiteUserDto>);
+                setLiteUsers(mapped);
+                setLoading(false);
+            });
+    }, [comments]);
 
     const addComment = () => {
         if (newComment.trim().length === 0) {
@@ -45,27 +69,81 @@ export const CommentsScreen = () => {
                 data={comments}
                 keyExtractor={(item) => item.id.toString()}
                 renderItem={({item}) => (
-                    <View style={{
-                        marginBottom: 10,
-                        flexDirection: "row",
-                        justifyContent: "space-between",
-                        alignItems: "center"
-                    }}>
-                        <View style={{flex: 1}}>
-                            <Text>{item.comment}</Text>
-                            <Text style={{fontSize: 12, color: "gray"}}>
-                                {moment(item.creationDate).format("DD.MM.YYYY")}
-                            </Text>
+                    loading ? <LoadingSpinner/> :
+                        <View style={{
+                            marginBottom: 10,
+                            flexDirection: "row",
+                            justifyContent: "space-between",
+                            alignItems: "center"
+                        }}>
+                            <View style={{flex: 1}}>
+                                <View>
+                                    <View style={{
+                                        flexDirection: 'row',
+                                        alignItems: 'center',
+                                        marginVertical: 10,
+                                        paddingHorizontal: 10,
+                                        alignItems: 'flex-start',
+                                    }}>
+                                        <TouchableOpacity key={item.userId} onPress={() => {
+                                            navigation.navigate("Profile", {userId: item.userId});
+                                        }}>
+                                            <View style={{paddingTop: 5}}>
+                                                {liteUsers[item.userId].avatar ? (
+                                                    <Image
+                                                        source={{uri: formatBase64Image(liteUsers[item.userId].avatar)}}
+                                                        style={{
+                                                            width: 50,
+                                                            height: 50,
+                                                            borderRadius: 50,
+                                                            marginRight: 10,
+                                                            resizeMode: 'cover',
+                                                        }}
+                                                        resizeMode="covers"/>
+                                                ) : (
+                                                    <MaterialCommunityIcons
+                                                        name="account-circle"
+                                                        size={50}
+                                                        color="gray"
+                                                        style={{
+                                                            width: 50,
+                                                            height: 50,
+                                                            marginRight: 10,
+                                                        }}
+                                                    />
+                                                )}
+                                            </View>
+                                        </TouchableOpacity>
+                                        <View style={{
+                                            flex: 1,
+                                        }}>
+                                            <TouchableOpacity key={item.userId} onPress={() => {
+                                                navigation.navigate("Profile", {userId: item.userId});
+                                            }}>
+                                                <Text style={{
+                                                    fontSize: 16,
+                                                    fontWeight: 'bold',
+                                                    color: theme.colors.primary,
+                                                }}>
+                                                    @{liteUsers[item.userId].username}
+                                                </Text>
+                                            </TouchableOpacity>
+                                            <ExpandableText date={moment(item.creationDate).format("DD.MM.YYYY")}>
+                                                {item.comment}
+                                            </ExpandableText>
+                                        </View>
+                                    </View>
+                                </View>
+                            </View>
+                            <View>
+                                {item.userId === auth.user.id && <TouchableOpacity onPress={() => deleteComment(item.id)
+                                    .then((post) => {
+                                        setComments(post.comments);
+                                    })}>
+                                    <Icon name={'delete'} size={30} color={theme.colors.error}/>
+                                </TouchableOpacity>}
+                            </View>
                         </View>
-                        <View>
-                            {item.userId === auth.user.id && <TouchableOpacity onPress={() => deleteComment(item.id)
-                                .then((post) => {
-                                setComments(post.comments);
-                            })}>
-                            <Icon name={'delete'} size={30} color={theme.colors.error}/>
-                        </TouchableOpacity>}
-                        </View>
-                    </View>
                 )}
                 ListEmptyComponent={<Text style={{textAlign: "center", marginTop: 20}}>There are no comments yet</Text>}
                 contentContainerStyle={{paddingBottom: 80}}

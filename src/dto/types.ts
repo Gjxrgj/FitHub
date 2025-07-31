@@ -605,3 +605,12 @@ export interface UpsertExerciseDto {
     secondaryMuscles: string[];
 }
 
+export interface LiteUserDto {
+    id: number;
+    username: string;
+    firstName: string;
+    lastName: string;
+    avatar: string | null;
+}
+
+

@@ -7,6 +7,8 @@ import {getFollowersForUser, getFollowingForUser} from '../../../../services';
 import {styles} from "./styles.ts";
 import {useNavigation} from "@react-navigation/native";
 import {StackNavigationProp} from "@react-navigation/stack";
+import {formatBase64Image} from "../../../../util/formatBase64Image";
+import {LoadingSpinner} from "../../../../components/LoadingSpinner/LoadingSpinner";
 
 export enum DataType {
     FOLLOWERS,
@@ -30,16 +32,26 @@ export const FollowersOrFollowingModal: React.FC<FollowersOrFollowingModalProps>
                                                                                     }) => {
     const [followersOrFollowing, setFollowersOrFollowing] = useState<Array<UserDto>>([]);
     const navigation = useNavigation<FollowerOrFollowingNavigationProps>();
+    const [loading, setLoading] = useState<boolean>(true);
 
     useEffect(() => {
-        fetchFollowersOrFollowing();
-    }, [userId, dataType, visible]);
+        if (visible) {
+            fetchFollowersOrFollowing();
+        }
+    }, [visible]);
 
     const fetchFollowersOrFollowing = useCallback(() => {
+        setLoading(true);
         if (dataType === DataType.FOLLOWERS) {
-            getFollowersForUser(userId).then(followers => setFollowersOrFollowing(followers));
+            getFollowersForUser(userId).then(followers => {
+                setFollowersOrFollowing(followers);
+                setLoading(false);
+            });
         } else {
-            getFollowingForUser(userId).then(following => setFollowersOrFollowing(following));
+            getFollowingForUser(userId).then(following => {
+                setFollowersOrFollowing(following);
+                setLoading(false);
+            });
         }
     }, [userId, dataType]);
 
@@ -48,7 +60,10 @@ export const FollowersOrFollowingModal: React.FC<FollowersOrFollowingModalProps>
             visible={visible}
             transparent={true}
             animationType="fade"
-            onRequestClose={onClose}
+            onRequestClose={() => {
+                setFollowersOrFollowing([]);
+                onClose();
+            }}
         >
             <View style={styles.overlay}>
                 <View style={styles.modalContainer}>
@@ -60,38 +75,46 @@ export const FollowersOrFollowingModal: React.FC<FollowersOrFollowingModalProps>
                             icon={() => (
                                 <MaterialCommunityIcons name="close" size={30} color="black"/>
                             )}
-                            onPress={onClose}
+                            onPress={() => {
+                                setFollowersOrFollowing([]);
+                                onClose();
+                            }}
                             style={styles.closeButton}
                         />
                     </View>
-                    <ScrollView>
-                        {followersOrFollowing.map((user) => (
-                            <TouchableOpacity key={user.id} onPress={() => {
-                                navigation.navigate("Profile", {userId: user.id});
-                                onClose();
-                            }}>
-                                <View style={styles.userRow}>
-                                    {user.avatar ? (
-                                        <Image source={{uri: user.avatar}} style={styles.avatar}/>
-                                    ) : (
-                                        <MaterialCommunityIcons
-                                            name="account-circle"
-                                            size={50}
-                                            color="gray"
-                                            style={styles.avatarPlaceholder}
-                                        />
-                                    )}
+                    {loading ? <LoadingSpinner/> :
+                        <View>
+                            <ScrollView>
+                                {followersOrFollowing.map((user) => (
+                                    <TouchableOpacity key={user.id} onPress={() => {
+                                        navigation.navigate("Profile", {userId: user.id});
+                                        setFollowersOrFollowing([]);
+                                        onClose();
+                                    }}>
+                                        <View style={styles.userRow}>
+                                            {user.avatar ? (
+                                                <Image source={{uri: formatBase64Image(user.avatar)}}
+                                                       style={styles.avatar}/>
+                                            ) : (
+                                                <MaterialCommunityIcons
+                                                    name="account-circle"
+                                                    size={50}
+                                                    color="gray"
+                                                    style={styles.avatarPlaceholder}
+                                                />
+                                            )}
 
-                                    <View style={styles.userInfo}>
-                                        <Text style={styles.username}>@{user.username}</Text>
-                                        <Text style={styles.fullName}>
-                                            {user.firstName} {user.lastName}
-                                        </Text>
-                                    </View>
-                                </View>
-                            </TouchableOpacity>
-                        ))}
-                    </ScrollView>
+                                            <View style={styles.userInfo}>
+                                                <Text style={styles.username}>@{user.username}</Text>
+                                                <Text style={styles.fullName}>
+                                                    {user.firstName} {user.lastName}
+                                                </Text>
+                                            </View>
+                                        </View>
+                                    </TouchableOpacity>
+                                ))}
+                            </ScrollView>
+                        </View>}
                 </View>
             </View>
         </Modal>

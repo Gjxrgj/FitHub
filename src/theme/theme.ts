@@ -9,6 +9,7 @@ export const theme = {
         primaryLight: '#f0e5ff',
         secondary: '#d4ebf9',
         tertiary: '#7fd1c6',
+        pastelBlue: '#7aa9ff',
         background: '#f9f9f9',
         error: '#ff7571',
         warning: '#f0e68c',

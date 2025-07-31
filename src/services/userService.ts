@@ -1,4 +1,4 @@
-import {UpdatePersonalInfoDto, UserDto} from '../dto/types.ts';
+import {LiteUserDto, UpdatePersonalInfoDto, UserDto} from '../dto/types.ts';
 import {config} from '../config/config.ts';
 import apiClient from '../util/apiClient.ts';
 
@@ -143,5 +143,17 @@ export const updatePersonalInfo = async (userId: number, updatedPersonalInfo: Up
     }
 };
 
+export const fetchLiteUsers = async (userIds: number[]): Promise<LiteUserDto[]> => {
+    try {
+        const response = await apiClient.post<LiteUserDto[]>(
+            `${config.BACKEND_URL}/api/users/lite_users`,
+            userIds
+        );
+        return response.data;
+    } catch (error) {
+        console.error("Error fetching lite users:", error);
+        throw error;
+    }
+};
 
 

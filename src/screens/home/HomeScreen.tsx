@@ -15,6 +15,8 @@ import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import {StackNavigationProp} from "@react-navigation/stack";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import {theme} from "../../theme/theme";
+import {LikesModal} from "./LikesModal/LikesModal";
+import {ExpandableText} from "../../components/ExpandableText/ExpandableText";
 
 
 type HomeScreenNavigation = StackNavigationProp<RootStackParamList, 'HomeScreen'>;
@@ -30,6 +32,8 @@ export const HomeScreen: FC = () => {
     const [page, setPage] = useState(0);
     const [hasMore, setHasMore] = useState(true);
     const navigation = useNavigation<HomeScreenNavigation>();
+    const [openLikeModal, setOpenLikeModal] = useState<boolean>(false);
+    const [userIds, setUserIds] = useState<Array<number>>([]);
 
     useFocusEffect(
         useCallback(() => {
@@ -197,7 +201,7 @@ export const HomeScreen: FC = () => {
             </TouchableOpacity>
             <Image source={{uri: formatBase64Image(item.image)}} style={styles.postImage}/>
             <Text style={styles.postTitle}>{item.title}</Text>
-            <Text style={styles.postDescription}>{item.description}</Text>
+            <ExpandableText style={styles.postDescription}>{item.description}</ExpandableText>
             <View style={styles.cardRow}>
 
             </View>
@@ -218,7 +222,12 @@ export const HomeScreen: FC = () => {
                             <Icon name="heart" size={24} color="red"/> :
                             <Icon name="heart-outline" size={24} color="red"/>
                     }
-                    <Text style={{paddingLeft: 5}}>{item.likes.length}</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={{paddingRight: 10, alignItems: 'center'}} onPress={() => {
+                    setUserIds(item.likes.map(like => like.userId));
+                    setOpenLikeModal(true);
+                }}>
+                    <Text style={{paddingLeft: 5, paddingTop: 12}}>{item.likes.length}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={{padding: 10, alignItems: "center", flexDirection: "row"}} onPress={() => {
                     storePostToBeUpdated(item.id)
@@ -275,6 +284,12 @@ export const HomeScreen: FC = () => {
                     <ActivityIndicator style={{margin: "auto"}} size="large" color={theme.colors.primary}/> : null}
             />
             <CustomBottomNavigation/>
+            <LikesModal visible={openLikeModal}
+                        onClose={() => {
+                            setOpenLikeModal(false);
+                            setUserIds([]);
+                        }}
+                        userIds={userIds}/>
         </MainPageView>
     );
 };

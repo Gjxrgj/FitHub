@@ -30,6 +30,8 @@ import {DataType, FollowersOrFollowingModal} from './component/FollowersOrFollow
 import {DrawerLayout} from "react-native-gesture-handler";
 import {pickImage} from "../../util/imageUtil";
 import {EditBioModal} from "./component/Account/EditBio/EditBioModal";
+import {LikesModal} from "../home/LikesModal/LikesModal";
+import {ExpandableText} from "../../components/ExpandableText/ExpandableText";
 
 type ProfileNavigation = StackNavigationProp<RootStackParamList, 'Profile'>;
 type ProfileScreenRootProp = RouteProp<RootStackParamList, 'Profile'>;
@@ -53,6 +55,9 @@ export const ProfileScreen = () => {
     const [openMenuId, setOpenMenuId] = useState<number | null>(null);
     const [professionalTrainer, setProfessionalTrainer] = useState<ProfessionalTrainerDto | undefined>(undefined);
     const [followButtonText, setFollowButtonText] = useState<String>("");
+    const [openLikeModal, setOpenLikeModal] = useState<boolean>(false);
+    const [userIds, setUserIds] = useState<Array<number>>([]);
+
     const openMenu = (postId: number) => setOpenMenuId(postId);
     const closeMenu = () => setOpenMenuId(null);
 
@@ -317,7 +322,7 @@ export const ProfileScreen = () => {
             </View>
             <Image source={{uri: formatBase64Image(item.image)}} style={styles.postImage}/>
             <Text style={styles.postTitle}>{item.title}</Text>
-            <Text style={styles.postDescription}>{item.description}</Text>
+            <ExpandableText style={styles.postDescription}>{item.description}</ExpandableText>
             <View style={{
                 justifyContent: "flex-start",
                 flexDirection: "row",
@@ -335,7 +340,12 @@ export const ProfileScreen = () => {
                             <Icon name="heart" size={24} color="red"/> :
                             <Icon name="heart-outline" size={24} color="red"/>
                     }
-                    <Text style={{paddingLeft: 5}}>{item.likes.length}</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={{paddingRight: 10, alignItems: 'center'}} onPress={() => {
+                    setUserIds(item.likes.map(like => like.userId));
+                    setOpenLikeModal(true);
+                }}>
+                    <Text style={{paddingLeft: 5, paddingTop: 12}}>{item.likes.length}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={{padding: 10, alignItems: "center", flexDirection: "row"}} onPress={() => {
                     storePostToBeUpdated(item.id)
@@ -555,6 +565,12 @@ export const ProfileScreen = () => {
                         />
                     </View>
                 </View>
+                <LikesModal visible={openLikeModal}
+                            onClose={() => {
+                                setOpenLikeModal(false);
+                                setUserIds([]);
+                            }}
+                            userIds={userIds}/>
             </MainPageView>
             <FollowersOrFollowingModal
                 visible={openFollowerFollowingModal}
